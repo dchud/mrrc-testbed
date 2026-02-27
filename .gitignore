@@ -5,9 +5,9 @@
 data/downloads/
 !data/downloads/.gitkeep
 
-# Custom datasets (never commit)
-data/custom/
-!data/custom/.gitkeep
+# Local datasets (never commit)
+data/local/
+!data/local/.gitkeep
 
 # Local test results
 results/

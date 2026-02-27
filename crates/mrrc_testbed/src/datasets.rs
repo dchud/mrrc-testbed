@@ -7,9 +7,9 @@ use crate::config;
 /// Test mode determines which datasets are available.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum TestMode {
-    /// CI mode: fixtures only, no downloads or custom data.
+    /// CI mode: fixtures only, no downloads or local data.
     Ci,
-    /// Local mode: custom paths -> downloads -> fixtures.
+    /// Local mode: local paths -> downloads -> fixtures.
     Local,
 }
 
@@ -52,7 +52,7 @@ const DATASET_ENV_VARS: &[(&str, &str)] = &[
 
 /// Look up a dataset by short name, following the priority cascade.
 ///
-/// In local mode: custom paths (.env) -> downloads -> fixtures.
+/// In local mode: local paths (.env) -> downloads -> fixtures.
 /// In CI mode: fixtures only.
 pub fn get_dataset(name: &str) -> Result<PathBuf, DatasetError> {
     config::load_config();
@@ -67,8 +67,8 @@ pub fn get_dataset(name: &str) -> Result<PathBuf, DatasetError> {
                 return Ok(path);
             }
 
-            // 2. Check custom dataset paths
-            if let Some(path) = get_custom_dataset(name) {
+            // 2. Check local dataset paths
+            if let Some(path) = get_local_dataset(name) {
                 return Ok(path);
             }
 
@@ -103,18 +103,18 @@ fn get_env_override(name: &str) -> Option<PathBuf> {
     None
 }
 
-/// Check custom dataset paths from MRRC_CUSTOM_DATASET and MRRC_CUSTOM_DIR.
-fn get_custom_dataset(name: &str) -> Option<PathBuf> {
-    // Check MRRC_CUSTOM_DATASET - a single file path
-    if let Ok(path_str) = env::var("MRRC_CUSTOM_DATASET") {
+/// Check local dataset paths from MRRC_LOCAL_DATASET and MRRC_LOCAL_DIR.
+fn get_local_dataset(name: &str) -> Option<PathBuf> {
+    // Check MRRC_LOCAL_DATASET - a single file path
+    if let Ok(path_str) = env::var("MRRC_LOCAL_DATASET") {
         let path = PathBuf::from(&path_str);
         if path.exists() && path_matches_name(&path, name) {
             return Some(path);
         }
     }
 
-    // Check MRRC_CUSTOM_DIR - a directory that may contain subdirectories
-    if let Ok(dir_str) = env::var("MRRC_CUSTOM_DIR") {
+    // Check MRRC_LOCAL_DIR - a directory that may contain subdirectories
+    if let Ok(dir_str) = env::var("MRRC_LOCAL_DIR") {
         let dir = PathBuf::from(&dir_str).join(name);
         if let Some(mrc) = find_mrc_file(&dir) {
             return Some(mrc);

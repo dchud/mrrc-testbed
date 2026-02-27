@@ -22,7 +22,7 @@ This project is in **early planning/setup**. The testbed-proposal.md contains th
 - **Rust core** (primary): `crates/mrrc_testbed/tests/` — stress, malformed record discovery, encoding, concurrency
 - **Python bindings** (compatibility): `suites/` — pymarc API compat, encoding through bindings
 
-**Dataset priority cascade in local mode:** custom paths (`.env`) → downloaded (`data/downloads/`) → fixtures (`data/fixtures/`)
+**Dataset priority cascade in local mode:** local paths (`.env`) → downloaded (`data/downloads/`) → fixtures (`data/fixtures/`)
 
 **Two-stage discovery pipeline:** Tests output JSON to `results/discoveries/` (gitignored, ephemeral) → `import_run.py` converts to YAML in `state/discoveries/` (committed, source of truth)
 
@@ -69,7 +69,7 @@ uv run pytest suites/ -v                # verbose Python output
 - `scripts/` — CLI tools (fixture curation, dataset download, state import)
 - `data/fixtures/` — Committed test records with `manifest.json` provenance
 - `data/downloads/` — Gitignored large public datasets
-- `data/custom/` — Gitignored BYOD data
+- `data/local/` — Gitignored BYOD data
 - `state/` — Discovery and run YAML files (committed)
 - `results/` — Gitignored per-run output
 
@@ -78,5 +78,5 @@ uv run pytest suites/ -v                # verbose Python output
 - Tests requiring local mode: mark with `#[ignore]` (Rust) or `@pytest.mark.local` (Python)
 - Every committed fixture record must have provenance in its `manifest.json`
 - Discovery YAML in `state/discoveries/` is the canonical record; JSON in `results/` is ephemeral
-- Never commit downloaded public data, `.env` files, or `data/custom/` content
+- Never commit downloaded public data, `.env` files, or `data/local/` content
 - mrrc is a **git dependency** in Cargo.toml (pinned to commit/tag) and a **pyproject.toml dependency** for Python

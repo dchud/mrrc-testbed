@@ -6,7 +6,7 @@ from mrrc_testbed.config import get_test_mode, is_local_mode, project_root
 
 FIXTURES_DIR: Path = project_root() / "data" / "fixtures"
 DOWNLOADS_DIR: Path = project_root() / "data" / "downloads"
-CUSTOM_DIR: Path = project_root() / "data" / "custom"
+LOCAL_DIR: Path = project_root() / "data" / "local"
 
 # Mapping from dataset short names to their env var names
 _DATASET_ENV_VARS: dict[str, str] = {
@@ -31,20 +31,20 @@ def _get_env_override(name: str) -> Optional[Path]:
     return None
 
 
-def _get_custom_dataset_path(name: str) -> Optional[Path]:
-    # Check MRRC_CUSTOM_DATASET for a direct file path.
+def _get_local_dataset_path(name: str) -> Optional[Path]:
+    # Check MRRC_LOCAL_DATASET for a direct file path.
     # Only return it if the filename contains the dataset name, matching
-    # the Rust behavior in datasets.rs::get_custom_dataset.
-    custom_file = os.environ.get("MRRC_CUSTOM_DATASET")
-    if custom_file:
-        p = Path(custom_file)
+    # the Rust behavior in datasets.rs::get_local_dataset.
+    local_file = os.environ.get("MRRC_LOCAL_DATASET")
+    if local_file:
+        p = Path(local_file)
         if p.is_file() and name in p.stem:
             return p
 
-    # Check MRRC_CUSTOM_DIR for a directory containing .mrc files
-    custom_dir = os.environ.get("MRRC_CUSTOM_DIR")
-    if custom_dir:
-        d = Path(custom_dir) / name
+    # Check MRRC_LOCAL_DIR for a directory containing .mrc files
+    local_dir = os.environ.get("MRRC_LOCAL_DIR")
+    if local_dir:
+        d = Path(local_dir) / name
         if d.is_dir():
             mrc_files = sorted(d.glob("*.mrc"))
             if mrc_files:
@@ -77,12 +77,12 @@ def _get_fixture_path(name: str) -> Optional[Path]:
 
 def get_dataset(name: str = "default") -> Path:
     if is_local_mode():
-        # Priority cascade: env override → custom → downloads → fixtures
+        # Priority cascade: env override → local → downloads → fixtures
         path = _get_env_override(name)
         if path:
             return path
 
-        path = _get_custom_dataset_path(name)
+        path = _get_local_dataset_path(name)
         if path:
             return path
 

@@ -12,7 +12,7 @@ use std::path::{Path, PathBuf};
 
 /// Panic with a descriptive message if the current test mode is not Local.
 ///
-/// Call this at the start of any test that requires downloaded or custom datasets.
+/// Call this at the start of any test that requires downloaded or local datasets.
 /// In CI mode the test will fail immediately with a clear explanation rather than
 /// producing confusing "dataset not found" errors.
 pub fn require_local_mode() {
@@ -34,7 +34,7 @@ pub fn require_dataset(name: &str) -> PathBuf {
     datasets::get_dataset(name).unwrap_or_else(|e| {
         panic!(
             "Required dataset '{name}' not available: {e}\n\
-             In local mode, ensure the dataset is downloaded or a custom path is set in .env."
+             In local mode, ensure the dataset is downloaded or a local path is set in .env."
         );
     })
 }

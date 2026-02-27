@@ -10,7 +10,7 @@ setup:
 # Run all CI-mode tests (fixtures only)
 test: test-rust test-python
 
-# Run all tests in local mode (downloads + custom data)
+# Run all tests in local mode (downloads + local data)
 test-local:
     MRRC_TEST_MODE=local cargo test -- --include-ignored
     MRRC_TEST_MODE=local uv run pytest suites/; status=$?; if [ $status -eq 5 ]; then exit 0; else exit $status; fi

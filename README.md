@@ -72,14 +72,14 @@ Set environment variables in `.env` to point at your own MARC files:
 # Override a specific dataset name
 MRRC_WATSON=/path/to/my/watson.mrc
 
-# Or set a custom directory (subdirectories should match dataset names)
-MRRC_CUSTOM_DIR=/path/to/my/marc/data
+# Or set a local directory (subdirectories should match dataset names)
+MRRC_LOCAL_DIR=/path/to/my/marc/data
 
-# Or point to a single custom file
-MRRC_CUSTOM_DATASET=/path/to/any/file.mrc
+# Or point to a single local file
+MRRC_LOCAL_DATASET=/path/to/any/file.mrc
 ```
 
-The dataset priority cascade in local mode is: env override -> custom path -> downloads -> fixtures.
+The dataset priority cascade in local mode is: env override -> local path -> downloads -> fixtures.
 
 ## Discovery workflow
 
@@ -188,7 +188,7 @@ suites/                  Python test suites (pymarc compat, encoding, discovery)
 scripts/                 CLI tools (download, validate, import, curate)
 data/fixtures/           Committed test records with manifest.json provenance
 data/downloads/          Gitignored large public datasets
-data/custom/             Gitignored BYOD data
+data/local/              Gitignored BYOD data
 state/                   Discovery and run YAML files (committed)
 results/                 Gitignored per-run output
 ```

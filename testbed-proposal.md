@@ -65,7 +65,7 @@ A single canonical repository that accumulates discoveries over time:
 
 Users can run the testbed privately against their own data without sharing:
 - Fork the repo or use it standalone
-- Configure custom data paths in `.env`
+- Configure local data paths in `.env`
 - Run tests repeatedly over time
 - Keep discoveries local (gitignored `results/` directory)
 - No obligation to contribute back
@@ -90,7 +90,7 @@ mrrc-testbed/
 ├── data/
 │   ├── README.md               # Data sources, licenses, download instructions
 │   ├── downloads/              # .gitignored - large datasets go here
-│   ├── custom/                 # .gitignored - user's own datasets (BYOD)
+│   ├── local/                  # .gitignored - user's own datasets (BYOD)
 │   ├── fixtures/               # Committed - small curated samples (~10MB total)
 │   │   ├── bibliographic/      # Sample bibliographic records
 │   │   ├── authority/          # Sample authority records
@@ -184,40 +184,40 @@ Large public datasets (LOC, Internet Archive, etc.) are **never** committed to g
 | Category | Location | In Git? | Purpose |
 |----------|----------|---------|---------|
 | **Downloaded** | `data/downloads/` | No | Large public datasets for thorough local testing |
-| **Custom (BYOD)** | `data/custom/` | No | User's own MARC files for local testing |
+| **Local (BYOD)** | `data/local/` | No | User's own MARC files for local testing |
 | **Fixtures** | `data/fixtures/` | Yes | Small curated samples for CI and quick tests |
 | **Synthetic** | `data/synthetic/` | Yes | Generated records for specific test scenarios |
 
 ### Bring Your Own Dataset (BYOD)
 
-Users can test mrrc against their own MARC data in local mode. Custom datasets are just another data source available when running locally — no separate mode needed.
+Users can test mrrc against their own MARC data in local mode. Local datasets are just another data source available when running locally — no separate mode needed.
 
 ```bash
-# Place your MARC files in the custom directory
-cp /path/to/my_library.mrc data/custom/
+# Place your MARC files in the local directory
+cp /path/to/my_library.mrc data/local/
 
 # Or configure paths in .env
-echo "MRRC_CUSTOM_DATASET=/path/to/my_library.mrc" >> .env
+echo "MRRC_LOCAL_DATASET=/path/to/my_library.mrc" >> .env
 
-# Run tests in local mode (picks up custom data automatically)
+# Run tests in local mode (picks up local data automatically)
 MRRC_TEST_MODE=local uv run pytest suites/
 MRRC_TEST_MODE=local cargo test
 ```
 
-**Custom dataset configuration:**
+**Local dataset configuration:**
 
 ```bash
 # .env
-# Point to individual custom files
-MRRC_CUSTOM_DATASET=/path/to/my_records.mrc
-MRRC_CUSTOM_AUTHORITY=/path/to/my_authorities.mrc
+# Point to individual local files
+MRRC_LOCAL_DATASET=/path/to/my_records.mrc
+MRRC_LOCAL_AUTHORITY=/path/to/my_authorities.mrc
 
 # Or point to a directory containing multiple .mrc files
-MRRC_CUSTOM_DIR=/path/to/my_marc_collection/
+MRRC_LOCAL_DIR=/path/to/my_marc_collection/
 
-# Custom dataset metadata (optional, for reporting)
-MRRC_CUSTOM_NAME="My Library Catalog"
-MRRC_CUSTOM_RECORD_COUNT=500000
+# Local dataset metadata (optional, for reporting)
+MRRC_LOCAL_NAME="My Library Catalog"
+MRRC_LOCAL_RECORD_COUNT=500000
 ```
 
 The dataset abstraction layer resolves data sources in local mode with a priority cascade:
@@ -230,7 +230,7 @@ def get_dataset(name: str = "default"):
     Returns path to dataset based on mode and availability.
 
     In local mode, priority order:
-    1. Custom dataset (if configured in .env)
+    1. Local dataset (if configured in .env)
     2. Downloaded dataset (if available in data/downloads/)
     3. Fixture dataset (always available, fallback)
 
@@ -240,10 +240,10 @@ def get_dataset(name: str = "default"):
     mode = get_test_mode()
 
     if mode == "local":
-        # Check custom paths first (BYOD)
-        custom_path = get_custom_dataset_path(name)
-        if custom_path and custom_path.exists():
-            return custom_path
+        # Check local paths first (BYOD)
+        local_path = get_local_dataset_path(name)
+        if local_path and local_path.exists():
+            return local_path
 
         # Then downloaded public datasets
         download_path = get_download_path(name)
@@ -262,8 +262,8 @@ pub fn get_dataset(name: &str) -> Result<PathBuf, DatasetError> {
 
     match mode {
         TestMode::Local => {
-            // Custom paths first, then downloads, then fixtures
-            get_custom_dataset(name)
+            // Local paths first, then downloads, then fixtures
+            get_local_dataset(name)
                 .or_else(|| get_download_path(name))
                 .or_else(|| get_fixture_path(name))
                 .ok_or_else(|| DatasetError::NotFound(name.to_string()))
@@ -282,7 +282,7 @@ pub fn get_dataset(name: &str) -> Result<PathBuf, DatasetError> {
 # .env.example (committed)
 # Copy to .env and customize (not committed)
 
-# Test mode: "ci" (fixtures only) or "local" (downloads + custom data)
+# Test mode: "ci" (fixtures only) or "local" (downloads + local data)
 MRRC_TEST_MODE=local
 
 # Dataset locations - absolute paths to downloaded data
@@ -295,9 +295,9 @@ MRRC_WATSON=/path/to/watson_library.mrc
 # Or use the downloads directory
 MRRC_DOWNLOADS_DIR=/path/to/mrrc-testbed/data/downloads
 
-# Custom datasets (BYOD) - used in local mode, takes priority over downloads
-MRRC_CUSTOM_DATASET=/path/to/my_records.mrc
-MRRC_CUSTOM_DIR=/path/to/my_collection/
+# Local datasets (BYOD) - used in local mode, takes priority over downloads
+MRRC_LOCAL_DATASET=/path/to/my_records.mrc
+MRRC_LOCAL_DIR=/path/to/my_collection/
 ```
 
 ### `.gitignore` essentials
@@ -309,8 +309,8 @@ MRRC_CUSTOM_DIR=/path/to/my_collection/
 # Downloaded datasets (never commit)
 data/downloads/
 
-# Custom datasets (never commit)
-data/custom/
+# Local datasets (never commit)
+data/local/
 
 # Local test results
 results/
@@ -560,7 +560,7 @@ Fails CI if fixtures are invalid or over size budget.
 ### Local Mode (Developer workstation)
 
 **Characteristics:**
-- Uses full downloaded datasets, plus any custom (BYOD) data configured in `.env`
+- Uses full downloaded datasets, plus any local (BYOD) data configured in `.env`
 - Thorough testing (may take hours for full suite)
 - Run manually before releases or when investigating issues
 - Catches issues that only appear at scale
@@ -580,7 +580,7 @@ Fails CI if fixtures are invalid or over size budget.
 cargo test
 uv run pytest suites/
 
-# Local mode with full datasets (+ custom data if configured)
+# Local mode with full datasets (+ local data if configured)
 MRRC_TEST_MODE=local cargo test
 MRRC_TEST_MODE=local uv run pytest suites/
 
@@ -958,10 +958,10 @@ Each discovery YAML file contains the error details, source dataset, byte offset
 
 **4. Point at your own data (optional):**
 
-Add BYOD paths to `.env` and re-run. No mode change needed — local mode picks up custom paths automatically:
+Add BYOD paths to `.env` and re-run. No mode change needed — local mode picks up local paths automatically:
 
 ```bash
-echo "MRRC_CUSTOM_DATASET=/path/to/my_records.mrc" >> .env
+echo "MRRC_LOCAL_DATASET=/path/to/my_records.mrc" >> .env
 just test-local
 just import
 just discoveries
