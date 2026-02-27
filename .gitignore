@@ -1,0 +1,30 @@
+# Local configuration
+.env
+
+# Downloaded datasets (never commit)
+data/downloads/
+!data/downloads/.gitkeep
+
+# Custom datasets (never commit)
+data/custom/
+!data/custom/.gitkeep
+
+# Local test results
+results/
+!results/.gitkeep
+
+# Rust build artifacts
+target/
+
+# Python artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+*.egg-info/
+
+# uv lock (generated)
+uv.lock
+
+# OS files
+.DS_Store
