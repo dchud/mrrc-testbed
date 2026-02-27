@@ -27,7 +27,7 @@ The mrrc project already has comprehensive test coverage (~21 test files, 177+ t
 
 The testbed tests mrrc at two levels:
 
-1. **Rust core** (primary focus) — Direct testing of the Rust library using `cargo test` with real-world data, stress tests, and property-based testing
+1. **Rust core** (primary focus) — Direct testing of the Rust library using `cargo test` with real-world data and stress tests
 2. **Python bindings** (compatibility focus) — Verifying the Python wrapper works correctly, particularly pymarc API compatibility with latest pymarc release
 
 Rust-level testing is the primary focus because:
@@ -457,7 +457,9 @@ uv run python scripts/curate_fixtures.py \
     {"name": "music", "count": 30, "filter": "leader[6] in ['c', 'd', 'j']"},
     {"name": "pre_1900", "count": 50, "filter": "pub_year < 1900"},
     {"name": "authority_links", "count": 50, "filter": "has_field('100') and subfield_count('100', '0') > 0"},
-    {"name": "complex_subjects", "count": 50, "filter": "field_count('650') > 5"}
+    {"name": "complex_subjects", "count": 50, "filter": "field_count('650') > 5"},
+    {"name": "mixed_scripts", "count": 50, "filter": "has_mixed_scripts_in_245"},
+    {"name": "many_fields", "count": 50, "filter": "field_count > 50"}
   ]
 }
 ```
@@ -721,14 +723,14 @@ uv run python scripts/download_datasets.py --verify
 
 **Purpose:** Verify MARC-8 and UTF-8 handling with real international records.
 
-**Focus:** Real records from international libraries, not synthetic test vectors.
+**Focus:** Real international records from LOC and other available sources, not synthetic test vectors.
 
 **Key tests:**
 | Test | CI | Local | Description |
 |------|-----|-------|-------------|
-| `cjk_roundtrip` | Skip | Full | CJK records from National Diet Library |
-| `cyrillic_roundtrip` | Skip | Full | Cyrillic from Russian State Library |
-| `diacritics_roundtrip` | Skip | Full | European diacritics from DNB |
+| `cjk_roundtrip` | Skip | Full | CJK records from LOC and IA |
+| `cyrillic_roundtrip` | Skip | Full | Cyrillic records from LOC |
+| `diacritics_roundtrip` | Skip | Full | European diacritics from LOC |
 | `mixed_encoding` | Skip | Full | Records mixing MARC-8 and UTF-8 |
 
 **Success criteria:**
@@ -906,7 +908,7 @@ download-verify: uv run python scripts/download_datasets.py --verify
 validate:       uv run python scripts/validate_fixtures.py --strict
 
 # Discovery workflow
-import:         uv run python scripts/import_run.py results/latest/
+import:         uv run python scripts/import_run.py results/discoveries/
 discoveries:    uv run python scripts/import_run.py --list-new
 show ID:        cat state/discoveries/{{ID}}.yaml
 ```
@@ -947,7 +949,7 @@ Discovery run complete:
 Raw JSON output is in `results/discoveries/`. To import into persistent state:
 
 ```bash
-just import                  # reads results/latest/, deduplicates, writes YAML to state/
+just import                  # reads results/discoveries/, deduplicates, writes YAML to state/
 just discoveries             # list new discoveries
 just show disc-2024-02-01-001   # details on a specific discovery
 ```
@@ -1231,14 +1233,11 @@ Three **review gates** separate the phases. A gate is a code review epic that bl
 
 **Phase 1: Repository Scaffold** (epic)
 
-Everything else depends on this. Goal: `just setup && just test` works (even if tests are placeholders).
+Everything else depends on this. Goal: `just setup` builds the empty crate and installs Python deps; `just test` runs placeholder tests. No real implementation — just structure.
 
-- 1.1: Initialize repo structure (Cargo workspace, pyproject.toml, uv.lock)
-- 1.2: Create .gitignore and .env.example [depends on 1.1]
-- 1.3: Implement configuration loading (.env) for Rust and Python [depends on 1.1]
-- 1.4: Implement dataset abstraction with CI/local modes and BYOD [depends on 1.3]
-- 1.5: Create justfile with setup, test, lint, download recipes [depends on 1.1]
-- 1.6: Set up CI workflow skeleton [depends on 1.1, 1.5]
+- 1.1: Initialize repo structure — directory tree, Cargo workspace with empty crate, pyproject.toml, .gitignore, .env.example
+- 1.2: Create justfile with setup, test, lint recipes [depends on 1.1]
+- 1.3: Set up CI workflow skeleton [depends on 1.1, 1.2]
 
 ---
 
@@ -1247,10 +1246,11 @@ Everything else depends on this. Goal: `just setup && just test` works (even if 
 The shared machinery that all test suites use. Two parallel tracks:
 
 - 2a: Rust test harness (sub-epic)
-  - 2a.1: Crate scaffold — lib.rs, config.rs, datasets.rs [depends on 1.3, 1.4]
-  - 2a.2: DiscoveryWriter — discovery.rs [depends on 2a.1]
+  - 2a.1: Configuration and dataset abstraction — config.rs, datasets.rs
+  - 2a.2: Crate entry point and test utilities — lib.rs [depends on 2a.1]
+  - 2a.3: DiscoveryWriter — discovery.rs [depends on 2a.2]
 - 2b: Python test infrastructure (sub-epic)
-  - 2b.1: Python package scaffold — config.py, datasets.py, download.py, compare.py [depends on 1.3, 1.4]
+  - 2b.1: Python package — config.py, datasets.py, download.py, compare.py
   - 2b.2: conftest.py with shared pytest fixtures [depends on 2b.1]
   - 2b.3: download_datasets.py script — CLI for fetching public datasets [depends on 2b.1]
 
@@ -1258,7 +1258,7 @@ Tracks 2a and 2b can proceed in parallel.
 
 ---
 
-> **REVIEW GATE A: Foundation Review** (epic) [blocked by Phase 1, Phase 2]
+> **REVIEW GATE A: Foundation Review** (epic) [blocked by Phase 2]
 >
 > Scope: Repo structure, configuration, dataset abstraction, test harness, DiscoveryWriter, Python infrastructure. Everything built so far.
 >
@@ -1270,41 +1270,41 @@ Tracks 2a and 2b can proceed in parallel.
 
 **Phase 3: Discovery Pipeline** (epic) [blocked by Gate A]
 
-The state management system and import tooling. This defines the persistent data model — getting it wrong here is expensive to fix later.
+The state management system and import tooling. This defines the persistent data model — getting it wrong here is expensive to fix later. Depends on DiscoveryWriter (2a.3) for the JSON format that import_run.py consumes.
 
-- 3.1: Design discovery YAML schema [depends on 2a.2 for JSON format]
-- 3.2: Design run YAML schema [depends on 3.1]
-- 3.3: Implement state.py library module and import_run.py — YAML read/write, sha256 deduplication, JSON → YAML import [depends on 3.1, 3.2]
-- 3.4: Add justfile recipes — import, discoveries, show [depends on 3.3]
+- 3.1: Implement discovery and run YAML schemas
+- 3.2: Implement state.py library module and import_run.py — YAML read/write, sha256 deduplication, JSON → YAML import [depends on 3.1]
+- 3.3: Add justfile recipes — import, discoveries, show [depends on 3.2]
 
 ---
 
 **Phase 4: Test Suites** (epic) [blocked by Gate A]
 
-The actual tests. Two parallel sub-epics, and all items within each sub-epic are independent of each other. Each test module creates its associated synthetic test data in `data/synthetic/` as part of implementation (generator scripts + generated records are committed together).
+The actual tests. Two parallel sub-epics; all items within each are independent of each other. Each test module creates its associated synthetic test data in `data/synthetic/` as part of implementation (generator scripts + generated records are committed together). All Rust tests use the harness from 2a; all Python tests use the infrastructure from 2b.
 
 - 4a: Rust test suites (sub-epic)
-  - 4a.1: stress.rs — memory and scaling [depends on 2a.1, 2a.2]
-  - 4a.2: malformed.rs — error recovery discovery [depends on 2a.1, 2a.2]
-  - 4a.3: discovery.rs — edge case cataloging [depends on 2a.1, 2a.2]
-  - 4a.4: encoding.rs — international character testing [depends on 2a.1, 2a.2]
-  - 4a.5: concurrent.rs — sustained parallel load [depends on 2a.1, 2a.2]
+  - 4a.1: stress.rs — memory and scaling
+  - 4a.2: malformed.rs — error recovery discovery
+  - 4a.3: discovery.rs — edge case cataloging
+  - 4a.4: encoding.rs — international character testing
+  - 4a.5: concurrent.rs — sustained parallel load
 - 4b: Python test suites (sub-epic)
-  - 4b.1: pymarc_compat/ — real script compatibility [depends on 2b.1, 2b.2]
-  - 4b.2: encoding/ — encoding through bindings [depends on 2b.1, 2b.2]
-  - 4b.3: discovery/ — edge case discovery via Python [depends on 2b.1, 2b.2]
+  - 4b.1: pymarc_compat/ — real script compatibility
+  - 4b.2: encoding/ — encoding through bindings
+  - 4b.3: discovery/ — edge case discovery via Python
 
 ---
 
 **Phase 5: Fixture Tooling** (epic) [blocked by Gate A]
 
-Fixture curation, validation, and extraction scripts. These only depend on the dataset abstraction from Phase 1, not on the discovery pipeline or test suites, so they run in parallel with Phases 3 and 4.
+Fixture curation, validation, extraction, and promotion scripts. All scripts use the dataset abstraction from Phase 2. Independent of the discovery pipeline and test suites except for `promote_discovery.py`, which reads discovery YAML.
 
-- 5.1: curate_fixtures.py — initial fixture selection [depends on 1.4]
-- 5.2: validate_fixtures.py — fixture validation [depends on 1.4]
-- 5.3: extract_record.py — record extraction utility [depends on 1.4]
+- 5.1: curate_fixtures.py — initial fixture selection
+- 5.2: validate_fixtures.py — fixture validation
+- 5.3: extract_record.py — record extraction utility
+- 5.4: promote_discovery.py — promote discovery to fixture [depends on 3.1]
 
-**Phases 3, 4, and 5 can all proceed in parallel after Gate A.** Test suites write to ephemeral JSON in `results/` (via DiscoveryWriter). The discovery pipeline reads from there and writes to persistent YAML in `state/`. Fixture tooling is independent of both. All three share the format definitions from Phase 2 but not implementation.
+**Phases 3, 4, and 5 can all proceed in parallel after Gate A.** Test suites write to ephemeral JSON in `results/` (via DiscoveryWriter). The discovery pipeline reads from there and writes to persistent YAML in `state/`. Fixture tooling is independent of both except for 5.4, which depends on the discovery YAML schema from 3.1. All three share the format definitions from Phase 2 but not implementation.
 
 ---
 
@@ -1312,7 +1312,7 @@ Fixture curation, validation, and extraction scripts. These only depend on the d
 >
 > Scope: State management design, import pipeline, all test suites, fixture tooling.
 >
-> Key questions: Does `import_run.py` correctly deduplicate? Do test suites generate useful discoveries and handle all error paths without panics? Does fixture validation catch all integrity issues? Does `just setup && just test` work from a clean clone?
+> Key questions: Does `import_run.py` correctly deduplicate? Do test suites generate useful discoveries and handle all error paths without panics? Does fixture validation catch all integrity issues? Do the components work correctly in isolation?
 >
 > Blocks: Phase 6.
 
@@ -1320,16 +1320,15 @@ Fixture curation, validation, and extraction scripts. These only depend on the d
 
 **Phase 6: Initial Data + End-to-End Validation** (epic) [blocked by Gate B]
 
-Actually run the system against real data, verify the full tester experience, and write the README.
+Actually run the system against real data, verify the full tester experience, and write the README. All prior components are complete; this phase is purely operational (plus the README). Two parallel tracks after 6.1: fixture curation (6.2–6.3) and discovery (6.4–6.5).
 
-- 6.1: Download and verify Watson, IA Lendable, and LOC Books All datasets [depends on 2b.3]
-- 6.2: Run initial fixture curation from LOC [depends on 5.1, 6.1]
-- 6.3: Validate and commit initial fixtures [depends on 5.2, 6.2]
-- 6.4: Implement promote_discovery.py [depends on 3.1, 5.2]
-- 6.5: Run first discovery pass against IA Lendable [depends on 4a.2, 6.1]
-- 6.6: Import results and verify state management [depends on 3.3, 6.5]
-- 6.7: End-to-end walkthrough of full tester workflow [depends on all above]
-- 6.8: Write README.md [depends on 6.7]
+- 6.1: Download and verify Watson, IA Lendable, and LOC Books All datasets
+- 6.2: Run initial fixture curation from LOC [depends on 6.1]
+- 6.3: Validate and commit initial fixtures [depends on 6.2]
+- 6.4: Run first discovery pass against IA Lendable [depends on 6.1]
+- 6.5: Import results and verify state management [depends on 6.4]
+- 6.6: End-to-end walkthrough of full tester workflow [depends on 6.3, 6.5]
+- 6.7: Write README.md [depends on 6.6]
 
 ---
 
@@ -1353,6 +1352,10 @@ Phase 1 (Scaffold)
                                                             └─→ Phase 6 (Initial Data + E2E + README)
                                                                   └─→ GATE C (End-to-End Review)
 ```
+
+### Dependency encoding in beads
+
+Gate epics are the primary dependency mechanism between phases. Individual tasks only need intra-phase dependencies and any cross-phase dependencies within a parallel block (e.g., 5.4 depends on 3.1). Cross-phase task dependencies covered by a gate do not need separate beads links — the plan notes them for context (e.g., "all Rust tests use the harness from 2a") but the gate already enforces the ordering.
 
 ### Review gate protocol
 

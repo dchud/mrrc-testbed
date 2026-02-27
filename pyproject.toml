@@ -3,10 +3,9 @@ name = "mrrc-testbed"
 version = "0.1.0"
 description = "Test harness for exercising mrrc against real-world MARC data at scale"
 requires-python = ">=3.13"
-dependencies = []
-
-# [project.optional-dependencies]
-# mrrc = ["mrrc @ git+https://github.com/dchud/mrrc@v0.6.0"]
+dependencies = [
+    "mrrc>=0.7",
+]
 
 [dependency-groups]
 dev = [
