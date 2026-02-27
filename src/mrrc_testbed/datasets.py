@@ -32,11 +32,13 @@ def _get_env_override(name: str) -> Optional[Path]:
 
 
 def _get_custom_dataset_path(name: str) -> Optional[Path]:
-    # Check MRRC_CUSTOM_DATASET for a direct file path
+    # Check MRRC_CUSTOM_DATASET for a direct file path.
+    # Only return it if the filename contains the dataset name, matching
+    # the Rust behavior in datasets.rs::get_custom_dataset.
     custom_file = os.environ.get("MRRC_CUSTOM_DATASET")
     if custom_file:
         p = Path(custom_file)
-        if p.is_file():
+        if p.is_file() and name in p.stem:
             return p
 
     # Check MRRC_CUSTOM_DIR for a directory containing .mrc files

@@ -16,8 +16,8 @@ from mrrc_testbed.config import project_root
 from mrrc_testbed.state import (
     RECORDS_DIR,
     RUNS_DIR,
-    discovery_exists,
     list_discoveries,
+    load_known_hashes,
     save_discovery,
     save_run,
 )
@@ -182,18 +182,19 @@ def import_results(input_dir: Path) -> int:
     # Generate run ID
     run_id = generate_run_id()
 
-    # Process discoveries with dedup
+    # Load known hashes once for O(1) dedup lookups.
+    known_hashes = load_known_hashes()
+
+    # Process discoveries with dedup (across runs + within batch).
     new_count = 0
-    dup_count = 0
     discovery_ids: list[str] = []
     first_context: dict = {}
 
     for raw in all_raw:
         sha256 = raw.get("record", {}).get("sha256", "")
 
-        # Dedup check
-        if sha256 and discovery_exists(sha256):
-            dup_count += 1
+        # Dedup: skip if already in state or seen earlier in this batch.
+        if sha256 and sha256 in known_hashes:
             continue
 
         # Capture context from first discovery for the run record
@@ -206,6 +207,10 @@ def import_results(input_dir: Path) -> int:
         save_discovery(normalized)
         discovery_ids.append(normalized["discovery_id"])
         new_count += 1
+
+        # Track in batch so later entries in the same batch are deduped.
+        if sha256:
+            known_hashes.add(sha256)
 
     dup_count = total_count - new_count
 

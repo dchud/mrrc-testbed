@@ -159,12 +159,24 @@ def discovery_exists(sha256: str) -> bool:
     Returns:
         True if a discovery with this sha256 already exists.
     """
+    return sha256 in load_known_hashes()
+
+
+def load_known_hashes() -> set[str]:
+    """Load all sha256 hashes from existing discovery YAML files.
+
+    Returns a set for O(1) membership testing. Call once per import batch
+    rather than per-discovery to avoid O(N*M) performance.
+    """
+    hashes: set[str] = set()
+    if not DISCOVERIES_DIR.is_dir():
+        return hashes
     for path in DISCOVERIES_DIR.glob("*.yaml"):
         with open(path) as f:
             data = yaml.safe_load(f)
         if data is None:
             continue
-        record = data.get("record", {})
-        if record.get("sha256") == sha256:
-            return True
-    return False
+        sha = data.get("record", {}).get("sha256")
+        if sha:
+            hashes.add(sha)
+    return hashes
