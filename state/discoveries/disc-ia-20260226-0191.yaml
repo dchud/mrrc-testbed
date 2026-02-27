@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0191
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: ea6fde6f2bcc040c81d81076976d1ec8e77291f88d55ed22446a28aa6ab08d4b
+  control_number: starwarstalesofb00ande
+  source_dataset: ia_lendable
+  source_offset: 112380737
+  extracted_file: state/records/ia_lendable_0191.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1095 bytes, got 1095'
+  mrrc_error: 'Invalid record: Truncated record: expected 1095 bytes, got 1095'

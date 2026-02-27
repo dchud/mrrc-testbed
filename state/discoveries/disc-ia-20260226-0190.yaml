@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0190
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 797e5e8e051b1287bf28add5cd6b93682b2fbf89d03c20c566eca4f3eeae057e
+  control_number: spiritknowsnohan00reev
+  source_dataset: ia_lendable
+  source_offset: 111461771
+  extracted_file: state/records/ia_lendable_0190.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 950 bytes, got 950'
+  mrrc_error: 'Invalid record: Truncated record: expected 950 bytes, got 950'

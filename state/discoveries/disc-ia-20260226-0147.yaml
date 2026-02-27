@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0147
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 92094b1c38fb5daf45ac8d875ba003e343d7933cb69e8e6ad38952872ea8aa83
+  control_number: nobelprizelibrar13nobe
+  source_dataset: ia_lendable
+  source_offset: 85284029
+  extracted_file: state/records/ia_lendable_0147.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1366 bytes, got 1366'
+  mrrc_error: 'Invalid record: Truncated record: expected 1366 bytes, got 1366'

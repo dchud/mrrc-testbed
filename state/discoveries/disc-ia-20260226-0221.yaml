@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0221
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: cc3ce5cd149d2ee675f74806e5c3218a7618dd3327d16cd2840a5f24ab7d7e72
+  control_number: whathappenswhen00chri
+  source_dataset: ia_lendable
+  source_offset: 128170676
+  extracted_file: state/records/ia_lendable_0221.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 812 bytes, got 812'
+  mrrc_error: 'Invalid record: Truncated record: expected 812 bytes, got 812'

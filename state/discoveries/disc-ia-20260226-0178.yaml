@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0178
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: d55833fe9292832d3882370b335bfce94d150210776e550b251a21df912eecef
+  control_number: savvyshopperyour00good
+  source_dataset: ia_lendable
+  source_offset: 104434898
+  extracted_file: state/records/ia_lendable_0178.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 935 bytes, got 935'
+  mrrc_error: 'Invalid record: Truncated record: expected 935 bytes, got 935'

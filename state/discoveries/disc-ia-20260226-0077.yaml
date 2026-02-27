@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0077
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: b520ca0ebc4520463847bdb844773d5cca221336053f515402b6a425041527a6
+  control_number: fourwindsofheave00high
+  source_dataset: ia_lendable
+  source_offset: 44116828
+  extracted_file: state/records/ia_lendable_0077.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 760 bytes, got 760'
+  mrrc_error: 'Invalid record: Truncated record: expected 760 bytes, got 760'

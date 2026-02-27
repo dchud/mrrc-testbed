@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0225
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: a71f18f9123fcd35eb6f9814231fc7af6da878f0d619e6225a401eef1b1266fd
+  control_number: womanculturesoci00rosa
+  source_dataset: ia_lendable
+  source_offset: 131254680
+  extracted_file: state/records/ia_lendable_0225.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 969 bytes, got 969'
+  mrrc_error: 'Invalid record: Truncated record: expected 969 bytes, got 969'

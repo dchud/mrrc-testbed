@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0029
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 38dd9c2c86d37af8d694bb81212277b9eb31912c4df89c329938461e7ba9ec28
+  control_number: cliffordgetsjob00brid
+  source_dataset: ia_lendable
+  source_offset: 22346171
+  extracted_file: state/records/ia_lendable_0029.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 803 bytes, got 803'
+  mrrc_error: 'Invalid record: Truncated record: expected 803 bytes, got 803'

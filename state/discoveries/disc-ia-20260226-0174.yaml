@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0174
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: b54dcdf9fb388aa04c7035ac77c7adeba1ed175f71191a017a5e3d3e2e98d964
+  control_number: resiliencediscov00flac
+  source_dataset: ia_lendable
+  source_offset: 101062942
+  extracted_file: state/records/ia_lendable_0174.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 977 bytes, got 977'
+  mrrc_error: 'Invalid record: Truncated record: expected 977 bytes, got 977'

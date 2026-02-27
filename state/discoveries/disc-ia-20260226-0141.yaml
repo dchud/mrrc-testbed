@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0141
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 1a395fae47f2407fb588f676c461e736e060fdf3da71437b1125f74d990bb98b
+  control_number: multiplyingdisci00moor
+  source_dataset: ia_lendable
+  source_offset: 81028526
+  extracted_file: state/records/ia_lendable_0141.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 955 bytes, got 955'
+  mrrc_error: 'Invalid record: Truncated record: expected 955 bytes, got 955'

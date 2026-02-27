@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0197
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 462ba4082a92ecd67d597aaa4d37fe9b2e39fb219aa5e153fc9c0dc22eeb743c
+  control_number: stepstoprayerpow00kimm
+  source_dataset: ia_lendable
+  source_offset: 112785682
+  extracted_file: state/records/ia_lendable_0197.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 780 bytes, got 780'
+  mrrc_error: 'Invalid record: Truncated record: expected 780 bytes, got 780'

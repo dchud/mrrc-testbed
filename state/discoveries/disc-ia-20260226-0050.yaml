@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0050
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 61292fb0854052b275cfc2b315d40ec3a28412efdda7b4f8b68340c1b4327aeb
+  control_number: discoveryoftombo00cart
+  source_dataset: ia_lendable
+  source_offset: 31969338
+  extracted_file: state/records/ia_lendable_0050.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1318 bytes, got 1318'
+  mrrc_error: 'Invalid record: Truncated record: expected 1318 bytes, got 1318'

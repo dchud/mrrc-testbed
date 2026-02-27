@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0169
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 142d5fb5e716c5a0012498123b821b8db833d8176cfddf6598ca5dfd5b0c395f
+  control_number: reaction00mcau
+  source_dataset: ia_lendable
+  source_offset: 98841516
+  extracted_file: state/records/ia_lendable_0169.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 724 bytes, got 724'
+  mrrc_error: 'Invalid record: Truncated record: expected 724 bytes, got 724'

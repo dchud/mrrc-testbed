@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0082
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: df5aa11d8cac57603598456ec1f0d2fff97f8e5fb3bbd7a29a2f5117645b87b4
+  control_number: fugitiveaffairno00gate
+  source_dataset: ia_lendable
+  source_offset: 45335244
+  extracted_file: state/records/ia_lendable_0082.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 687 bytes, got 687'
+  mrrc_error: 'Invalid record: Truncated record: expected 687 bytes, got 687'

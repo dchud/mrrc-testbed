@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0149
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: c19ec3582cced32e9bd418183bb95b0319fce14bfbc6ca6b9881183bcd79bd99
+  control_number: northwesttrees00arno
+  source_dataset: ia_lendable
+  source_offset: 85798134
+  extracted_file: state/records/ia_lendable_0149.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 924 bytes, got 924'
+  mrrc_error: 'Invalid record: Truncated record: expected 924 bytes, got 924'

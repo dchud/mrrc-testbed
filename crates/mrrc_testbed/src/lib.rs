@@ -39,6 +39,34 @@ pub fn require_dataset(name: &str) -> PathBuf {
     })
 }
 
+/// Collect all `.mrc` files from all available datasets.
+///
+/// Tries each dataset name in `names`, collecting `.mrc` files from each.
+/// If a dataset returns a single file, includes that file.
+/// If it returns a directory, includes all `.mrc` files in the directory.
+/// Silently skips datasets that are not available.
+pub fn collect_dataset_files(names: &[&str]) -> Vec<PathBuf> {
+    let mut files = Vec::new();
+    for name in names {
+        if let Ok(path) = datasets::get_dataset(name) {
+            let scan_dir = if path.is_file() {
+                path.parent().unwrap().to_path_buf()
+            } else {
+                path.clone()
+            };
+            let mut mrc_files = iter_mrc_files(&scan_dir);
+            if mrc_files.is_empty() && path.is_file() {
+                mrc_files.push(path);
+            }
+            files.extend(mrc_files);
+        }
+    }
+    files
+}
+
+/// The standard set of dataset names to scan in local mode.
+pub const DATASET_NAMES: &[&str] = &["watson", "ia_lendable", "loc_books"];
+
 /// Collect all `.mrc` files in a directory (non-recursive).
 ///
 /// Returns an empty `Vec` if the directory does not exist or cannot be read.

@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0093
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: d58c2fad07dead16daa4894fd7cf65bc95097991ab3f2d98651399819eb3358c
+  control_number: greatfakebooknov00bour
+  source_dataset: ia_lendable
+  source_offset: 49910709
+  extracted_file: state/records/ia_lendable_0093.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 775 bytes, got 775'
+  mrrc_error: 'Invalid record: Truncated record: expected 775 bytes, got 775'

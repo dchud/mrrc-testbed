@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0125
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 1e1ad0c823a8c6180fa90982b715b906fbd8a7c22a950f313f1e6f9f0a84a99b
+  control_number: livingbibleencyc08newy
+  source_dataset: ia_lendable
+  source_offset: 71116107
+  extracted_file: state/records/ia_lendable_0125.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 648 bytes, got 648'
+  mrrc_error: 'Invalid record: Truncated record: expected 648 bytes, got 648'

@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0048
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: e9fc0cb7022557bf8fdc399a658a420a96730f1e46d4677eb53283126d526345
+  control_number: dinneragainstclo00kamm
+  source_dataset: ia_lendable
+  source_offset: 31530787
+  extracted_file: state/records/ia_lendable_0048.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 804 bytes, got 804'
+  mrrc_error: 'Invalid record: Truncated record: expected 804 bytes, got 804'

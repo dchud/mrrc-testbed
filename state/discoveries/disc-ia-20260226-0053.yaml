@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0053
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 528b8d063c642e8b0ef1ac0d831dca97b566e994bad3fba1e58c63ccfaf5c879
+  control_number: downhomeamericas00varn
+  source_dataset: ia_lendable
+  source_offset: 33282466
+  extracted_file: state/records/ia_lendable_0053.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1004 bytes, got 1004'
+  mrrc_error: 'Invalid record: Truncated record: expected 1004 bytes, got 1004'

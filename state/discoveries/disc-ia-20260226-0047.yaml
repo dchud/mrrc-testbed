@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0047
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 296d9f01fb2e1bfcc392553d6cf009f8cbc9c0f7c6df298cb1431a1351a3fae5
+  control_number: digitalinterfaci00carr
+  source_dataset: ia_lendable
+  source_offset: 31464266
+  extracted_file: state/records/ia_lendable_0047.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1017 bytes, got 1017'
+  mrrc_error: 'Invalid record: Truncated record: expected 1017 bytes, got 1017'

@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0079
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 84a03ecdef41270fa6134be7d0c87657a94269d9772711f5e670f5d03a770eec
+  control_number: friendshipskills00conw
+  source_dataset: ia_lendable
+  source_offset: 44785866
+  extracted_file: state/records/ia_lendable_0079.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 938 bytes, got 938'
+  mrrc_error: 'Invalid record: Truncated record: expected 938 bytes, got 938'

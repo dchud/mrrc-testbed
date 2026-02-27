@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0196
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: dc87cddc5a218093ef9d97a65ef5b3d955c80ec972e43fe46c1bc4256d87d896
+  control_number: steppenwo00hess
+  source_dataset: ia_lendable
+  source_offset: 112757146
+  extracted_file: state/records/ia_lendable_0196.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1248 bytes, got 1248'
+  mrrc_error: 'Invalid record: Truncated record: expected 1248 bytes, got 1248'

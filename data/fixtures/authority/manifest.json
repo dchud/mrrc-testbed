@@ -1,0 +1,1058 @@
+{
+  "source": "Library of Congress Authority Files (SRU)",
+  "source_url": "https://www.loc.gov/standards/sru/resources/lcServers.html",
+  "download_date": "2026-02-26",
+  "license": "Public Domain (US Government Work)",
+  "records": [
+    {
+      "index": 0,
+      "control_number": "n  00000491 ",
+      "source_offset": 0,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 1,
+      "control_number": "n  00000492 ",
+      "source_offset": 308,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 2,
+      "control_number": "n  00000893 ",
+      "source_offset": 709,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 3,
+      "control_number": "n  00000992 ",
+      "source_offset": 1152,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 4,
+      "control_number": "n  00001915 ",
+      "source_offset": 1467,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 5,
+      "control_number": "n  00002106 ",
+      "source_offset": 1864,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 6,
+      "control_number": "n  00002553 ",
+      "source_offset": 2821,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 7,
+      "control_number": "n  00003346 ",
+      "source_offset": 3267,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 8,
+      "control_number": "n  00003382 ",
+      "source_offset": 3801,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 9,
+      "control_number": "n  00003562 ",
+      "source_offset": 4890,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 10,
+      "control_number": "n  00003910 ",
+      "source_offset": 5393,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 11,
+      "control_number": "n  00003986 ",
+      "source_offset": 5717,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 12,
+      "control_number": "n  00004137 ",
+      "source_offset": 6139,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 13,
+      "control_number": "n  00004501 ",
+      "source_offset": 6559,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 14,
+      "control_number": "n  00004567 ",
+      "source_offset": 8100,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 15,
+      "control_number": "n  00005435 ",
+      "source_offset": 8611,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 16,
+      "control_number": "n  00007554 ",
+      "source_offset": 9131,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 17,
+      "control_number": "n  00007631 ",
+      "source_offset": 9576,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 18,
+      "control_number": "n  00007732 ",
+      "source_offset": 10117,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 19,
+      "control_number": "n  00007869 ",
+      "source_offset": 10634,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 20,
+      "control_number": "n  00008092 ",
+      "source_offset": 11232,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 21,
+      "control_number": "n  00008585 ",
+      "source_offset": 11553,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 22,
+      "control_number": "n  00009125 ",
+      "source_offset": 11940,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 23,
+      "control_number": "n  00009221 ",
+      "source_offset": 12315,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 24,
+      "control_number": "n  00009779 ",
+      "source_offset": 12708,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 25,
+      "control_number": "n  00009793 ",
+      "source_offset": 13362,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 26,
+      "control_number": "n  00010192 ",
+      "source_offset": 13812,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 27,
+      "control_number": "n  00010680 ",
+      "source_offset": 14255,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 28,
+      "control_number": "n  00010745 ",
+      "source_offset": 14685,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 29,
+      "control_number": "n  00011170 ",
+      "source_offset": 16014,
+      "selection_reason": "targeted:personal_names_a",
+      "notes": null
+    },
+    {
+      "index": 30,
+      "control_number": "n  00000571 ",
+      "source_offset": 16456,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 31,
+      "control_number": "n  00000922 ",
+      "source_offset": 17512,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 32,
+      "control_number": "n  00001194 ",
+      "source_offset": 17878,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 33,
+      "control_number": "n  00001263 ",
+      "source_offset": 18322,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 34,
+      "control_number": "n  00001265 ",
+      "source_offset": 18932,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 35,
+      "control_number": "n  00001711 ",
+      "source_offset": 19446,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 36,
+      "control_number": "n  00001751 ",
+      "source_offset": 20190,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 37,
+      "control_number": "n  00002612 ",
+      "source_offset": 20689,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 38,
+      "control_number": "n  00003575 ",
+      "source_offset": 21142,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 39,
+      "control_number": "n  00003695 ",
+      "source_offset": 21555,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 40,
+      "control_number": "n  00003837 ",
+      "source_offset": 22979,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 41,
+      "control_number": "n  00005273 ",
+      "source_offset": 23302,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 42,
+      "control_number": "n  00007696 ",
+      "source_offset": 23655,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 43,
+      "control_number": "n  00008009 ",
+      "source_offset": 24030,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 44,
+      "control_number": "n  00008042 ",
+      "source_offset": 24535,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 45,
+      "control_number": "n  00008220 ",
+      "source_offset": 25571,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 46,
+      "control_number": "n  00008341 ",
+      "source_offset": 26050,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 47,
+      "control_number": "n  00009084 ",
+      "source_offset": 26382,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 48,
+      "control_number": "n  00010013 ",
+      "source_offset": 26815,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 49,
+      "control_number": "n  00011024 ",
+      "source_offset": 27146,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 50,
+      "control_number": "n  00011626 ",
+      "source_offset": 27493,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 51,
+      "control_number": "n  00013069 ",
+      "source_offset": 28054,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 52,
+      "control_number": "n  00013828 ",
+      "source_offset": 28567,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 53,
+      "control_number": "n  00015318 ",
+      "source_offset": 29059,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 54,
+      "control_number": "n  00015382 ",
+      "source_offset": 29444,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 55,
+      "control_number": "n  00016230 ",
+      "source_offset": 29831,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 56,
+      "control_number": "n  00016618 ",
+      "source_offset": 30168,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 57,
+      "control_number": "n  00022506 ",
+      "source_offset": 30535,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 58,
+      "control_number": "n  00023257 ",
+      "source_offset": 31042,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 59,
+      "control_number": "n  00023284 ",
+      "source_offset": 31492,
+      "selection_reason": "targeted:personal_names_b",
+      "notes": null
+    },
+    {
+      "index": 60,
+      "control_number": "n  00000342 ",
+      "source_offset": 31941,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 61,
+      "control_number": "n  00000505 ",
+      "source_offset": 34640,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 62,
+      "control_number": "n  00001100 ",
+      "source_offset": 35201,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 63,
+      "control_number": "n  00001559 ",
+      "source_offset": 35629,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 64,
+      "control_number": "n  00001811 ",
+      "source_offset": 37342,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 65,
+      "control_number": "n  00002211 ",
+      "source_offset": 37886,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 66,
+      "control_number": "n  00002235 ",
+      "source_offset": 38449,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 67,
+      "control_number": "n  00002542 ",
+      "source_offset": 40188,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 68,
+      "control_number": "n  00002635 ",
+      "source_offset": 41013,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 69,
+      "control_number": "n  00002636 ",
+      "source_offset": 41835,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 70,
+      "control_number": "n  00002901 ",
+      "source_offset": 42760,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 71,
+      "control_number": "n  00002903 ",
+      "source_offset": 43710,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 72,
+      "control_number": "n  00002915 ",
+      "source_offset": 45845,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 73,
+      "control_number": "n  00002999 ",
+      "source_offset": 46298,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 74,
+      "control_number": "n  00003150 ",
+      "source_offset": 46743,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 75,
+      "control_number": "n  00003444 ",
+      "source_offset": 48382,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 76,
+      "control_number": "n  00003679 ",
+      "source_offset": 49212,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 77,
+      "control_number": "n  00004240 ",
+      "source_offset": 49947,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 78,
+      "control_number": "n  00005053 ",
+      "source_offset": 51674,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 79,
+      "control_number": "n  00006041 ",
+      "source_offset": 52110,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 80,
+      "control_number": "n  00006168 ",
+      "source_offset": 54670,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 81,
+      "control_number": "n  00006296 ",
+      "source_offset": 55994,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 82,
+      "control_number": "n  00006647 ",
+      "source_offset": 56640,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 83,
+      "control_number": "n  00006889 ",
+      "source_offset": 57648,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 84,
+      "control_number": "n  00006913 ",
+      "source_offset": 58266,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 85,
+      "control_number": "n  00007056 ",
+      "source_offset": 58941,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 86,
+      "control_number": "n  00007283 ",
+      "source_offset": 60023,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 87,
+      "control_number": "n  00007597 ",
+      "source_offset": 63189,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 88,
+      "control_number": "n  00007600 ",
+      "source_offset": 63934,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 89,
+      "control_number": "n  00007902 ",
+      "source_offset": 64432,
+      "selection_reason": "targeted:corporate_names",
+      "notes": null
+    },
+    {
+      "index": 90,
+      "control_number": "n  00002538 ",
+      "source_offset": 66648,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 91,
+      "control_number": "n  00003462 ",
+      "source_offset": 68168,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 92,
+      "control_number": "n  00004504 ",
+      "source_offset": 68827,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 93,
+      "control_number": "n  00009894 ",
+      "source_offset": 69931,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 94,
+      "control_number": "n  00010194 ",
+      "source_offset": 71542,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 95,
+      "control_number": "n  00010232 ",
+      "source_offset": 72198,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 96,
+      "control_number": "n  00011989 ",
+      "source_offset": 75215,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 97,
+      "control_number": "n  00013329 ",
+      "source_offset": 75661,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 98,
+      "control_number": "n  00020504 ",
+      "source_offset": 76108,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 99,
+      "control_number": "n  00020507 ",
+      "source_offset": 77477,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 100,
+      "control_number": "n  00021326 ",
+      "source_offset": 78851,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 101,
+      "control_number": "n  00021353 ",
+      "source_offset": 79805,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 102,
+      "control_number": "n  00022348 ",
+      "source_offset": 80172,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 103,
+      "control_number": "n  00022355 ",
+      "source_offset": 81204,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 104,
+      "control_number": "n  00022365 ",
+      "source_offset": 82416,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 105,
+      "control_number": "n  00027897 ",
+      "source_offset": 82800,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 106,
+      "control_number": "n  00027898 ",
+      "source_offset": 83477,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 107,
+      "control_number": "n  00028892 ",
+      "source_offset": 84065,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 108,
+      "control_number": "n  00028893 ",
+      "source_offset": 84494,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 109,
+      "control_number": "n  00030233 ",
+      "source_offset": 84915,
+      "selection_reason": "targeted:geographic_names",
+      "notes": null
+    },
+    {
+      "index": 110,
+      "control_number": "n  00000168 ",
+      "source_offset": 86099,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 111,
+      "control_number": "n  00000682 ",
+      "source_offset": 86513,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 112,
+      "control_number": "n  00001485 ",
+      "source_offset": 87053,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 113,
+      "control_number": "n  00001842 ",
+      "source_offset": 87625,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 114,
+      "control_number": "n  00001971 ",
+      "source_offset": 88622,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 115,
+      "control_number": "n  00003056 ",
+      "source_offset": 89491,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 116,
+      "control_number": "n  00007755 ",
+      "source_offset": 89923,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 117,
+      "control_number": "n  00007984 ",
+      "source_offset": 90311,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 118,
+      "control_number": "n  00008002 ",
+      "source_offset": 90737,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 119,
+      "control_number": "n  00010396 ",
+      "source_offset": 91149,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 120,
+      "control_number": "n  00010398 ",
+      "source_offset": 91627,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 121,
+      "control_number": "n  00012357 ",
+      "source_offset": 92075,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 122,
+      "control_number": "n  00012938 ",
+      "source_offset": 92525,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 123,
+      "control_number": "n  00012941 ",
+      "source_offset": 92968,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 124,
+      "control_number": "n  00013272 ",
+      "source_offset": 93558,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 125,
+      "control_number": "n  00013959 ",
+      "source_offset": 93887,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 126,
+      "control_number": "n  00016821 ",
+      "source_offset": 94265,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 127,
+      "control_number": "n  00016995 ",
+      "source_offset": 94631,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 128,
+      "control_number": "n  00020890 ",
+      "source_offset": 95006,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 129,
+      "control_number": "n  00022232 ",
+      "source_offset": 95449,
+      "selection_reason": "targeted:personal_names_c",
+      "notes": null
+    },
+    {
+      "index": 130,
+      "control_number": "n  00000043 ",
+      "source_offset": 96044,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 131,
+      "control_number": "n  00003024 ",
+      "source_offset": 96412,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 132,
+      "control_number": "n  00004257 ",
+      "source_offset": 96761,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 133,
+      "control_number": "n  00005822 ",
+      "source_offset": 97224,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 134,
+      "control_number": "n  00006112 ",
+      "source_offset": 97905,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 135,
+      "control_number": "n  00007927 ",
+      "source_offset": 98296,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 136,
+      "control_number": "n  00008061 ",
+      "source_offset": 98616,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 137,
+      "control_number": "n  00012857 ",
+      "source_offset": 99351,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 138,
+      "control_number": "n  00021211 ",
+      "source_offset": 99675,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 139,
+      "control_number": "n  00021537 ",
+      "source_offset": 100194,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 140,
+      "control_number": "n  00024070 ",
+      "source_offset": 100843,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 141,
+      "control_number": "n  00025232 ",
+      "source_offset": 101307,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 142,
+      "control_number": "n  00025303 ",
+      "source_offset": 101656,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 143,
+      "control_number": "n  00026621 ",
+      "source_offset": 102065,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 144,
+      "control_number": "n  00027532 ",
+      "source_offset": 102671,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 145,
+      "control_number": "n  00027565 ",
+      "source_offset": 103047,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 146,
+      "control_number": "n  00027707 ",
+      "source_offset": 103452,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 147,
+      "control_number": "n  00027708 ",
+      "source_offset": 103837,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 148,
+      "control_number": "n  00028447 ",
+      "source_offset": 104236,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    },
+    {
+      "index": 149,
+      "control_number": "n  00028805 ",
+      "source_offset": 104800,
+      "selection_reason": "targeted:personal_names_d",
+      "notes": null
+    }
+  ]
+}

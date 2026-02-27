@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0227
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: c476ac6da403bad529cbf8235b5dda78d3d4a126bc0cab3aaefec6c29c4ebd06
+  control_number: woodprojectsforh00hild
+  source_dataset: ia_lendable
+  source_offset: 132033490
+  extracted_file: state/records/ia_lendable_0227.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 966 bytes, got 966'
+  mrrc_error: 'Invalid record: Truncated record: expected 966 bytes, got 966'

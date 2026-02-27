@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0130
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: e9c7f98b1eb7ae2f431a63ac5d8dbeae8e8bf6cd1797e1ca08475080559b2bf2
+  control_number: managementoforg00hers
+  source_dataset: ia_lendable
+  source_offset: 74207101
+  extracted_file: state/records/ia_lendable_0130.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1028 bytes, got 1028'
+  mrrc_error: 'Invalid record: Truncated record: expected 1028 bytes, got 1028'

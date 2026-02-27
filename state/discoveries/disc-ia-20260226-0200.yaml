@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0200
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 8e365f59fc29e8f2f7a77a20a36754cd77b0060a5e81108a6ddd2207f71836c8
+  control_number: storyofcommonmar00sava
+  source_dataset: ia_lendable
+  source_offset: 113289065
+  extracted_file: state/records/ia_lendable_0200.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1012 bytes, got 1012'
+  mrrc_error: 'Invalid record: Truncated record: expected 1012 bytes, got 1012'

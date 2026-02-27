@@ -72,13 +72,10 @@ fn scan_file_records(
 fn unusual_field_combinations() {
     mrrc_testbed::require_local_mode();
 
-    // Try Watson first, then LOC books.
-    let dataset_path = mrrc_testbed::require_dataset("watson");
-    let mrc_files = mrrc_testbed::iter_mrc_files(&dataset_path);
+    let mrc_files = mrrc_testbed::collect_dataset_files(mrrc_testbed::DATASET_NAMES);
     assert!(
         !mrc_files.is_empty(),
-        "No .mrc files found in dataset directory: {}",
-        dataset_path.display()
+        "No .mrc files found for any available dataset"
     );
 
     let mut total_records: u64 = 0;
@@ -166,12 +163,10 @@ fn unusual_field_combinations() {
 fn extreme_values() {
     mrrc_testbed::require_local_mode();
 
-    let dataset_path = mrrc_testbed::require_dataset("watson");
-    let mrc_files = mrrc_testbed::iter_mrc_files(&dataset_path);
+    let mrc_files = mrrc_testbed::collect_dataset_files(mrrc_testbed::DATASET_NAMES);
     assert!(
         !mrc_files.is_empty(),
-        "No .mrc files found in dataset directory: {}",
-        dataset_path.display()
+        "No .mrc files found for any available dataset"
     );
 
     let mut writer = DiscoveryWriter::new("discovery.rs", "extreme_values");
@@ -301,12 +296,10 @@ fn extreme_values() {
 fn encoding_edge_cases_discovery() {
     mrrc_testbed::require_local_mode();
 
-    let dataset_path = mrrc_testbed::require_dataset("watson");
-    let mrc_files = mrrc_testbed::iter_mrc_files(&dataset_path);
+    let mrc_files = mrrc_testbed::collect_dataset_files(mrrc_testbed::DATASET_NAMES);
     assert!(
         !mrc_files.is_empty(),
-        "No .mrc files found in dataset directory: {}",
-        dataset_path.display()
+        "No .mrc files found for any available dataset"
     );
 
     let mut writer = DiscoveryWriter::new("discovery.rs", "encoding_edge_cases");

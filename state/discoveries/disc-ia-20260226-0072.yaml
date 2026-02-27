@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0072
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 6c1d8346e4c907cc497a4fa5a88aa1b7f3e4313f7dcc98d3b0b788d054787be9
+  control_number: firstaviators00pren
+  source_dataset: ia_lendable
+  source_offset: 41985362
+  extracted_file: state/records/ia_lendable_0072.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 981 bytes, got 981'
+  mrrc_error: 'Invalid record: Truncated record: expected 981 bytes, got 981'

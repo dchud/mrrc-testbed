@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0208
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 4d2584364159c693bf7a1cb4e681049c6a1b228f7d089e09119611e0d6031e58
+  control_number: threehell00hell
+  source_dataset: ia_lendable
+  source_offset: 118879570
+  extracted_file: state/records/ia_lendable_0208.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1196 bytes, got 1196'
+  mrrc_error: 'Invalid record: Truncated record: expected 1196 bytes, got 1196'

@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0142
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 3d8c47d25cfc48628685ce874e4dad43a65386c902d34e2613b947cd995882bb
+  control_number: murderoflawrence00eden
+  source_dataset: ia_lendable
+  source_offset: 81208381
+  extracted_file: state/records/ia_lendable_0142.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 885 bytes, got 885'
+  mrrc_error: 'Invalid record: Truncated record: expected 885 bytes, got 885'

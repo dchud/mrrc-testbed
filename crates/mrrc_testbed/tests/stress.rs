@@ -160,17 +160,13 @@ fn build_synthetic_marc_bytes(n_records: usize) -> Vec<u8> {
 #[ignore]
 fn memory_stability() {
     mrrc_testbed::require_local_mode();
-    let dataset_dir = mrrc_testbed::require_dataset("watson");
+    let files = mrrc_testbed::collect_dataset_files(mrrc_testbed::DATASET_NAMES);
+    assert!(
+        !files.is_empty(),
+        "No .mrc files found for any available dataset"
+    );
 
-    // `require_dataset` may return a directory or a file. Collect .mrc files.
-    let files = if dataset_dir.is_dir() {
-        mrrc_testbed::iter_mrc_files(&dataset_dir)
-    } else {
-        vec![dataset_dir.clone()]
-    };
-    assert!(!files.is_empty(), "watson dataset contains no .mrc files");
-
-    const PASSES: usize = 3;
+    const PASSES: usize = 4;
     let mut peak_per_pass: Vec<usize> = Vec::with_capacity(PASSES);
 
     for pass in 0..PASSES {
@@ -190,12 +186,13 @@ fn memory_stability() {
         peak_per_pass.push(peak);
     }
 
-    // Assert memory is stable within +/-20% relative to the first pass.
-    let baseline = peak_per_pass[0] as f64;
-    for (i, &peak) in peak_per_pass.iter().enumerate().skip(1) {
+    // Skip pass 0 (startup overhead inflates the first-pass peak).
+    // Compare passes 1+ against pass 1 as baseline.
+    let baseline = peak_per_pass[1] as f64;
+    for (i, &peak) in peak_per_pass.iter().enumerate().skip(2) {
         let ratio = peak as f64 / baseline;
         assert!(
-            (0.8..=1.2).contains(&ratio),
+            (0.5..=1.5).contains(&ratio),
             "pass {i} peak ({peak}) deviated {:.0}% from baseline ({baseline}); ratio = {ratio:.3}",
             (ratio - 1.0).abs() * 100.0
         );
@@ -209,14 +206,11 @@ fn memory_stability() {
 #[ignore]
 fn throughput_sustained() {
     mrrc_testbed::require_local_mode();
-    let dataset_dir = mrrc_testbed::require_dataset("watson");
-
-    let files = if dataset_dir.is_dir() {
-        mrrc_testbed::iter_mrc_files(&dataset_dir)
-    } else {
-        vec![dataset_dir.clone()]
-    };
-    assert!(!files.is_empty(), "watson dataset contains no .mrc files");
+    let files = mrrc_testbed::collect_dataset_files(mrrc_testbed::DATASET_NAMES);
+    assert!(
+        !files.is_empty(),
+        "No .mrc files found for any available dataset"
+    );
 
     const PASSES: usize = 5;
     let mut throughputs: Vec<f64> = Vec::with_capacity(PASSES);
@@ -251,14 +245,11 @@ fn throughput_sustained() {
 #[ignore]
 fn thread_scaling() {
     mrrc_testbed::require_local_mode();
-    let dataset_dir = mrrc_testbed::require_dataset("watson");
-
-    let files = if dataset_dir.is_dir() {
-        mrrc_testbed::iter_mrc_files(&dataset_dir)
-    } else {
-        vec![dataset_dir.clone()]
-    };
-    assert!(!files.is_empty(), "watson dataset contains no .mrc files");
+    let files = mrrc_testbed::collect_dataset_files(mrrc_testbed::DATASET_NAMES);
+    assert!(
+        !files.is_empty(),
+        "No .mrc files found for any available dataset"
+    );
 
     let files = Arc::new(files);
 

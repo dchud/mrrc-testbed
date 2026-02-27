@@ -34,7 +34,7 @@ DATASET_REGISTRY: dict[str, dict[str, Any]] = {
         "url": "https://archive.org/details/marc_lendable_books",
         "download_url": (
             "https://archive.org/download/marc_lendable_books/"
-            "marc_lendable_books.mrc"
+            "all_meta.mrc"
         ),
         "download_method": "direct",
         "description": "Internet Archive Lendable",

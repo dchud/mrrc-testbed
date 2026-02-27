@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0209
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 8ddc2749ecd8c274d99821b7491a7149660f77b1ea34fff968ecd600eae61b56
+  control_number: timeofreckoning00wage
+  source_dataset: ia_lendable
+  source_offset: 119435269
+  extracted_file: state/records/ia_lendable_0209.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 738 bytes, got 738'
+  mrrc_error: 'Invalid record: Truncated record: expected 738 bytes, got 738'

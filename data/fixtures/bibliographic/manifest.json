@@ -1,356 +1,2708 @@
 {
-  "source": "Watson Library MMA Publications",
-  "source_url": "https://github.com/Thomas-J-Watson-Library/Marc-Record-Sets",
+  "source": "Library of Congress Online Catalog (SRU)",
+  "source_url": "https://www.loc.gov/standards/sru/resources/lcServers.html",
   "download_date": "2026-02-26",
   "license": "Public Domain (US Government Work)",
   "records": [
     {
       "index": 0,
-      "control_number": "193472203",
-      "source_offset": 124952,
-      "selection_reason": "random_sample",
+      "control_number": "20593163",
+      "source_offset": 0,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 1,
-      "control_number": "193474521",
-      "source_offset": 161241,
-      "selection_reason": "random_sample",
+      "control_number": "16901760",
+      "source_offset": 2411,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 2,
-      "control_number": null,
-      "source_offset": 513021,
-      "selection_reason": "random_sample",
+      "control_number": "17737997",
+      "source_offset": 3881,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 3,
-      "control_number": "1241708945",
-      "source_offset": 670280,
-      "selection_reason": "random_sample",
+      "control_number": "5828610",
+      "source_offset": 5305,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 4,
-      "control_number": "1381476122",
-      "source_offset": 759584,
-      "selection_reason": "random_sample",
+      "control_number": "5829353",
+      "source_offset": 6702,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 5,
-      "control_number": "894283685",
-      "source_offset": 1157125,
-      "selection_reason": "random_sample",
+      "control_number": "19114282",
+      "source_offset": 7368,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 6,
-      "control_number": "930453758",
-      "source_offset": 1587814,
-      "selection_reason": "random_sample",
+      "control_number": "5813357",
+      "source_offset": 8964,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 7,
-      "control_number": "895136901",
-      "source_offset": 2072220,
-      "selection_reason": "random_sample",
+      "control_number": "3463306",
+      "source_offset": 9997,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 8,
-      "control_number": "659034461",
-      "source_offset": 2318125,
-      "selection_reason": "random_sample",
+      "control_number": "12149616",
+      "source_offset": 10997,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 9,
-      "control_number": "568754980",
-      "source_offset": 2710019,
-      "selection_reason": "random_sample",
+      "control_number": "12244415",
+      "source_offset": 12848,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 10,
-      "control_number": "1201264702",
-      "source_offset": 2774027,
-      "selection_reason": "random_sample",
+      "control_number": "5813541",
+      "source_offset": 14305,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 11,
-      "control_number": "1201263479",
-      "source_offset": 3227328,
-      "selection_reason": "random_sample",
+      "control_number": "4404326",
+      "source_offset": 15434,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 12,
-      "control_number": "1201263791",
-      "source_offset": 3358618,
-      "selection_reason": "random_sample",
+      "control_number": "5816923",
+      "source_offset": 16498,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 13,
-      "control_number": "895134703",
-      "source_offset": 4175204,
-      "selection_reason": "random_sample",
+      "control_number": "271486",
+      "source_offset": 17621,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 14,
-      "control_number": "1285971146",
-      "source_offset": 4241201,
-      "selection_reason": "random_sample",
+      "control_number": "16898353",
+      "source_offset": 19379,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 15,
-      "control_number": "856650289",
-      "source_offset": 4245358,
-      "selection_reason": "random_sample",
+      "control_number": "5548604",
+      "source_offset": 21434,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 16,
-      "control_number": "556774387",
-      "source_offset": 4774331,
-      "selection_reason": "random_sample",
+      "control_number": "20507274",
+      "source_offset": 23160,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 17,
-      "control_number": "1090145824",
-      "source_offset": 5075932,
-      "selection_reason": "random_sample",
+      "control_number": "5824201",
+      "source_offset": 24293,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 18,
-      "control_number": "681288129",
-      "source_offset": 5191520,
-      "selection_reason": "random_sample",
+      "control_number": "5846248",
+      "source_offset": 25681,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 19,
-      "control_number": "895136851",
-      "source_offset": 5427688,
-      "selection_reason": "random_sample",
+      "control_number": "13585563",
+      "source_offset": 27041,
+      "selection_reason": "targeted:atlas_maps",
       "notes": null
     },
     {
       "index": 20,
-      "control_number": "895136808",
-      "source_offset": 5457100,
-      "selection_reason": "random_sample",
+      "control_number": "10470328",
+      "source_offset": 28621,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 21,
-      "control_number": "895136642",
-      "source_offset": 5462112,
-      "selection_reason": "random_sample",
+      "control_number": "6692735",
+      "source_offset": 29751,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 22,
-      "control_number": "930453754",
-      "source_offset": 5482914,
-      "selection_reason": "random_sample",
+      "control_number": "9971028",
+      "source_offset": 30794,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 23,
-      "control_number": "895137219",
-      "source_offset": 5583809,
-      "selection_reason": "random_sample",
+      "control_number": "6750868",
+      "source_offset": 31886,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 24,
-      "control_number": "895134982",
-      "source_offset": 5618322,
-      "selection_reason": "random_sample",
+      "control_number": "6282739",
+      "source_offset": 32584,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 25,
-      "control_number": "870715162",
-      "source_offset": 5638343,
-      "selection_reason": "random_sample",
+      "control_number": "7619715",
+      "source_offset": 33287,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 26,
-      "control_number": "895134980",
-      "source_offset": 5762234,
-      "selection_reason": "random_sample",
+      "control_number": "12061371",
+      "source_offset": 34111,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 27,
-      "control_number": "930453682",
-      "source_offset": 5869521,
-      "selection_reason": "random_sample",
+      "control_number": "10509583",
+      "source_offset": 36516,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 28,
-      "control_number": "1411720444",
-      "source_offset": 5978170,
-      "selection_reason": "random_sample",
+      "control_number": "8590404",
+      "source_offset": 37259,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 29,
-      "control_number": "1411717984",
-      "source_offset": 6139951,
-      "selection_reason": "random_sample",
+      "control_number": "6474996",
+      "source_offset": 38396,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 30,
-      "control_number": "1411719750",
-      "source_offset": 6293941,
-      "selection_reason": "random_sample",
+      "control_number": "10001909",
+      "source_offset": 39721,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 31,
-      "control_number": "499559347",
-      "source_offset": 6313133,
-      "selection_reason": "random_sample",
+      "control_number": "7487313",
+      "source_offset": 40582,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 32,
-      "control_number": "1500476376",
-      "source_offset": 6551772,
-      "selection_reason": "random_sample",
+      "control_number": "8128596",
+      "source_offset": 41404,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 33,
-      "control_number": "85220438",
-      "source_offset": 6675649,
-      "selection_reason": "random_sample",
+      "control_number": "9971075",
+      "source_offset": 42266,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 34,
-      "control_number": "200853968",
-      "source_offset": 6775468,
-      "selection_reason": "random_sample",
+      "control_number": "6758070",
+      "source_offset": 43329,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 35,
-      "control_number": "123488817",
-      "source_offset": 6872121,
-      "selection_reason": "random_sample",
+      "control_number": "10037074",
+      "source_offset": 44152,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 36,
-      "control_number": "809157680",
-      "source_offset": 7012037,
-      "selection_reason": "random_sample",
+      "control_number": "7687352",
+      "source_offset": 44907,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 37,
-      "control_number": "811595750",
-      "source_offset": 7058105,
-      "selection_reason": "random_sample",
+      "control_number": "6295203",
+      "source_offset": 45686,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 38,
-      "control_number": "864697672",
-      "source_offset": 7105898,
-      "selection_reason": "random_sample",
+      "control_number": "7220337",
+      "source_offset": 46406,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 39,
-      "control_number": "823576980",
-      "source_offset": 7175853,
-      "selection_reason": "random_sample",
+      "control_number": "8156884",
+      "source_offset": 47205,
+      "selection_reason": "targeted:music_scores",
       "notes": null
     },
     {
       "index": 40,
-      "control_number": "823577003",
-      "source_offset": 7199951,
-      "selection_reason": "random_sample",
+      "control_number": "20344741",
+      "source_offset": 48153,
+      "selection_reason": "targeted:cjk_content",
       "notes": null
     },
     {
       "index": 41,
-      "control_number": "829059232",
-      "source_offset": 7234249,
-      "selection_reason": "random_sample",
+      "control_number": "5951334",
+      "source_offset": 49694,
+      "selection_reason": "targeted:cjk_content",
       "notes": null
     },
     {
       "index": 42,
-      "control_number": "841453350",
-      "source_offset": 7481437,
-      "selection_reason": "random_sample",
+      "control_number": "18700326",
+      "source_offset": 50579,
+      "selection_reason": "targeted:cjk_content",
       "notes": null
     },
     {
       "index": 43,
-      "control_number": "846549831",
-      "source_offset": 7485523,
-      "selection_reason": "random_sample",
+      "control_number": "11283322",
+      "source_offset": 52360,
+      "selection_reason": "targeted:cjk_content",
       "notes": null
     },
     {
       "index": 44,
-      "control_number": "851557745",
-      "source_offset": 7594889,
-      "selection_reason": "random_sample",
+      "control_number": "22218592",
+      "source_offset": 54212,
+      "selection_reason": "targeted:cjk_content",
       "notes": null
     },
     {
       "index": 45,
-      "control_number": "851557760",
-      "source_offset": 7612287,
-      "selection_reason": "random_sample",
+      "control_number": "15188025",
+      "source_offset": 55319,
+      "selection_reason": "targeted:cjk_content",
       "notes": null
     },
     {
       "index": 46,
-      "control_number": "851557796",
-      "source_offset": 7636189,
-      "selection_reason": "random_sample",
+      "control_number": "8931784",
+      "source_offset": 56659,
+      "selection_reason": "targeted:cjk_content",
       "notes": null
     },
     {
       "index": 47,
-      "control_number": "1153938265",
-      "source_offset": 7788253,
-      "selection_reason": "random_sample",
+      "control_number": "6981583",
+      "source_offset": 57531,
+      "selection_reason": "targeted:cjk_content",
       "notes": null
     },
     {
       "index": 48,
-      "control_number": "1155201497",
-      "source_offset": 7871903,
-      "selection_reason": "random_sample",
+      "control_number": "214219",
+      "source_offset": 58310,
+      "selection_reason": "targeted:cjk_content",
       "notes": null
     },
     {
       "index": 49,
-      "control_number": "739048371",
-      "source_offset": 8077100,
+      "control_number": "3066222",
+      "source_offset": 59732,
+      "selection_reason": "targeted:cjk_content",
+      "notes": null
+    },
+    {
+      "index": 50,
+      "control_number": "7022502",
+      "source_offset": 61241,
+      "selection_reason": "targeted:cjk_content",
+      "notes": null
+    },
+    {
+      "index": 51,
+      "control_number": "5781383",
+      "source_offset": 61984,
+      "selection_reason": "targeted:cjk_content",
+      "notes": null
+    },
+    {
+      "index": 52,
+      "control_number": "3343623",
+      "source_offset": 65153,
+      "selection_reason": "targeted:cjk_content",
+      "notes": null
+    },
+    {
+      "index": 53,
+      "control_number": "7138588",
+      "source_offset": 66384,
+      "selection_reason": "targeted:cjk_content",
+      "notes": null
+    },
+    {
+      "index": 54,
+      "control_number": "16674365",
+      "source_offset": 67318,
+      "selection_reason": "targeted:cjk_content",
+      "notes": null
+    },
+    {
+      "index": 55,
+      "control_number": "4900345",
+      "source_offset": 68682,
+      "selection_reason": "targeted:cjk_content",
+      "notes": null
+    },
+    {
+      "index": 56,
+      "control_number": "10085911",
+      "source_offset": 69924,
+      "selection_reason": "targeted:cjk_content",
+      "notes": null
+    },
+    {
+      "index": 57,
+      "control_number": "7556358",
+      "source_offset": 71032,
+      "selection_reason": "targeted:cjk_content",
+      "notes": null
+    },
+    {
+      "index": 58,
+      "control_number": "8805209",
+      "source_offset": 71926,
+      "selection_reason": "targeted:cjk_content",
+      "notes": null
+    },
+    {
+      "index": 59,
+      "control_number": "5741546",
+      "source_offset": 72819,
+      "selection_reason": "targeted:cjk_content",
+      "notes": null
+    },
+    {
+      "index": 60,
+      "control_number": "2200699",
+      "source_offset": 73940,
+      "selection_reason": "targeted:cyrillic_content",
+      "notes": null
+    },
+    {
+      "index": 61,
+      "control_number": "4016947",
+      "source_offset": 75213,
+      "selection_reason": "targeted:cyrillic_content",
+      "notes": null
+    },
+    {
+      "index": 62,
+      "control_number": "8646622",
+      "source_offset": 77073,
+      "selection_reason": "targeted:cyrillic_content",
+      "notes": null
+    },
+    {
+      "index": 63,
+      "control_number": "7408440",
+      "source_offset": 77991,
+      "selection_reason": "targeted:cyrillic_content",
+      "notes": null
+    },
+    {
+      "index": 64,
+      "control_number": "9524175",
+      "source_offset": 78908,
+      "selection_reason": "targeted:cyrillic_content",
+      "notes": null
+    },
+    {
+      "index": 65,
+      "control_number": "11331700",
+      "source_offset": 79808,
+      "selection_reason": "targeted:cyrillic_content",
+      "notes": null
+    },
+    {
+      "index": 66,
+      "control_number": "1456699",
+      "source_offset": 81567,
+      "selection_reason": "targeted:cyrillic_content",
+      "notes": null
+    },
+    {
+      "index": 67,
+      "control_number": "6782393",
+      "source_offset": 82558,
+      "selection_reason": "targeted:cyrillic_content",
+      "notes": null
+    },
+    {
+      "index": 68,
+      "control_number": "18758361",
+      "source_offset": 83448,
+      "selection_reason": "targeted:cyrillic_content",
+      "notes": null
+    },
+    {
+      "index": 69,
+      "control_number": "4931271",
+      "source_offset": 84662,
+      "selection_reason": "targeted:cyrillic_content",
+      "notes": null
+    },
+    {
+      "index": 70,
+      "control_number": "11703477",
+      "source_offset": 86338,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 71,
+      "control_number": "24126960",
+      "source_offset": 87509,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 72,
+      "control_number": "9560198",
+      "source_offset": 89966,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 73,
+      "control_number": "3343363",
+      "source_offset": 90702,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 74,
+      "control_number": "23433661",
+      "source_offset": 91819,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 75,
+      "control_number": "11325206",
+      "source_offset": 93021,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 76,
+      "control_number": "19443478",
+      "source_offset": 94076,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 77,
+      "control_number": "6605246",
+      "source_offset": 96091,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 78,
+      "control_number": "7677655",
+      "source_offset": 97338,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 79,
+      "control_number": "10804081",
+      "source_offset": 98135,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 80,
+      "control_number": "5707850",
+      "source_offset": 98964,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 81,
+      "control_number": "12490892",
+      "source_offset": 100244,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 82,
+      "control_number": "8305700",
+      "source_offset": 101907,
+      "selection_reason": "targeted:arabic_content",
+      "notes": null
+    },
+    {
+      "index": 83,
+      "control_number": "2123225",
+      "source_offset": 102941,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 84,
+      "control_number": "11039496",
+      "source_offset": 104607,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 85,
+      "control_number": "11040013",
+      "source_offset": 105225,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 86,
+      "control_number": "21730054",
+      "source_offset": 105868,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 87,
+      "control_number": "7040552",
+      "source_offset": 107686,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 88,
+      "control_number": "6012167",
+      "source_offset": 108843,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 89,
+      "control_number": "11251655",
+      "source_offset": 109834,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 90,
+      "control_number": "2172883",
+      "source_offset": 112288,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 91,
+      "control_number": "9830305",
+      "source_offset": 113430,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 92,
+      "control_number": "23784979",
+      "source_offset": 114461,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 93,
+      "control_number": "2667299",
+      "source_offset": 115323,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 94,
+      "control_number": "10740694",
+      "source_offset": 116310,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 95,
+      "control_number": "10778716",
+      "source_offset": 117358,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 96,
+      "control_number": "10728348",
+      "source_offset": 118176,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 97,
+      "control_number": "11228370",
+      "source_offset": 120697,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 98,
+      "control_number": "7965331",
+      "source_offset": 128138,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 99,
+      "control_number": "7196991",
+      "source_offset": 129052,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 100,
+      "control_number": "11493860",
+      "source_offset": 129816,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 101,
+      "control_number": "11039492",
+      "source_offset": 132265,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 102,
+      "control_number": "14132076",
+      "source_offset": 132895,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 103,
+      "control_number": "6929061",
+      "source_offset": 134544,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 104,
+      "control_number": "12895474",
+      "source_offset": 135471,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 105,
+      "control_number": "19470988",
+      "source_offset": 137907,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 106,
+      "control_number": "4786161",
+      "source_offset": 139143,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 107,
+      "control_number": "4570183",
+      "source_offset": 140434,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 108,
+      "control_number": "16916933",
+      "source_offset": 141526,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 109,
+      "control_number": "14622159",
+      "source_offset": 143052,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 110,
+      "control_number": "19822602",
+      "source_offset": 144578,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 111,
+      "control_number": "8363789",
+      "source_offset": 147916,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 112,
+      "control_number": "8739474",
+      "source_offset": 148739,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 113,
+      "control_number": "10603574",
+      "source_offset": 149556,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 114,
+      "control_number": "10547145",
+      "source_offset": 150188,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 115,
+      "control_number": "11167639",
+      "source_offset": 150919,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 116,
+      "control_number": "21538951",
+      "source_offset": 153507,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 117,
+      "control_number": "19831648",
+      "source_offset": 155782,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 118,
+      "control_number": "11166577",
+      "source_offset": 159216,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 119,
+      "control_number": "21436122",
+      "source_offset": 162025,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 120,
+      "control_number": "22199388",
+      "source_offset": 162938,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 121,
+      "control_number": "11395963",
+      "source_offset": 164086,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 122,
+      "control_number": "14555206",
+      "source_offset": 166674,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 123,
+      "control_number": "10741486",
+      "source_offset": 167859,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 124,
+      "control_number": "20158470",
+      "source_offset": 168678,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 125,
+      "control_number": "12225642",
+      "source_offset": 170796,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 126,
+      "control_number": "758876",
+      "source_offset": 172402,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 127,
+      "control_number": "1791434",
+      "source_offset": 173625,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 128,
+      "control_number": "17713483",
+      "source_offset": 174730,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 129,
+      "control_number": "11170349",
+      "source_offset": 176124,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 130,
+      "control_number": "11170359",
+      "source_offset": 179263,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 131,
+      "control_number": "11195036",
+      "source_offset": 181934,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 132,
+      "control_number": "9925755",
+      "source_offset": 183892,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 133,
+      "control_number": "1226688",
+      "source_offset": 184945,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 134,
+      "control_number": "2682912",
+      "source_offset": 186121,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 135,
+      "control_number": "6002995",
+      "source_offset": 187550,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 136,
+      "control_number": "15531509",
+      "source_offset": 188661,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 137,
+      "control_number": "11460354",
+      "source_offset": 192112,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 138,
+      "control_number": "11244838",
+      "source_offset": 194131,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 139,
+      "control_number": "17462137",
+      "source_offset": 197227,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 140,
+      "control_number": "11429018",
+      "source_offset": 198455,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 141,
+      "control_number": "11409522",
+      "source_offset": 200328,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 142,
+      "control_number": "8830322",
+      "source_offset": 203779,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 143,
+      "control_number": "16962687",
+      "source_offset": 204780,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 144,
+      "control_number": "1241241",
+      "source_offset": 207105,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 145,
+      "control_number": "7013886",
+      "source_offset": 208563,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 146,
+      "control_number": "13318827",
+      "source_offset": 209609,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 147,
+      "control_number": "6612527",
+      "source_offset": 211047,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 148,
+      "control_number": "6452703",
+      "source_offset": 212033,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 149,
+      "control_number": "6508867",
+      "source_offset": 213005,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 150,
+      "control_number": "6500390",
+      "source_offset": 213889,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 151,
+      "control_number": "11738340",
+      "source_offset": 214819,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 152,
+      "control_number": "11201948",
+      "source_offset": 215520,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 153,
+      "control_number": "11213513",
+      "source_offset": 217070,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 154,
+      "control_number": "11210586",
+      "source_offset": 218770,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 155,
+      "control_number": "10816017",
+      "source_offset": 222731,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 156,
+      "control_number": "10566022",
+      "source_offset": 223901,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 157,
+      "control_number": "14298045",
+      "source_offset": 224694,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 158,
+      "control_number": "2219565",
+      "source_offset": 226127,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 159,
+      "control_number": "4688811",
+      "source_offset": 227182,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 160,
+      "control_number": "9832391",
+      "source_offset": 228396,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 161,
+      "control_number": "10918556",
+      "source_offset": 229338,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 162,
+      "control_number": "20124376",
+      "source_offset": 230083,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 163,
+      "control_number": "20124471",
+      "source_offset": 232066,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 164,
+      "control_number": "22828135",
+      "source_offset": 234092,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 165,
+      "control_number": "7784023",
+      "source_offset": 234955,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 166,
+      "control_number": "22509821",
+      "source_offset": 235877,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 167,
+      "control_number": "21478965",
+      "source_offset": 236811,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 168,
+      "control_number": "4090578",
+      "source_offset": 238203,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 169,
+      "control_number": "9866638",
+      "source_offset": 239188,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 170,
+      "control_number": "5917718",
+      "source_offset": 239937,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 171,
+      "control_number": "7115963",
+      "source_offset": 240980,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 172,
+      "control_number": "8757741",
+      "source_offset": 242096,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 173,
+      "control_number": "8906245",
+      "source_offset": 242820,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 174,
+      "control_number": "2664527",
+      "source_offset": 243718,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 175,
+      "control_number": "3130233",
+      "source_offset": 244666,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 176,
+      "control_number": "9636295",
+      "source_offset": 245619,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 177,
+      "control_number": "8237163",
+      "source_offset": 246366,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 178,
+      "control_number": "6588708",
+      "source_offset": 247209,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 179,
+      "control_number": "11335149",
+      "source_offset": 248077,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 180,
+      "control_number": "8256994",
+      "source_offset": 249439,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 181,
+      "control_number": "6536441",
+      "source_offset": 250346,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 182,
+      "control_number": "750569",
+      "source_offset": 251044,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 183,
+      "control_number": "3605523",
+      "source_offset": 252267,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 184,
+      "control_number": "2455964",
+      "source_offset": 253178,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 185,
+      "control_number": "4971384",
+      "source_offset": 255118,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 186,
+      "control_number": "13768827",
+      "source_offset": 256340,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 187,
+      "control_number": "5589804",
+      "source_offset": 258067,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 188,
+      "control_number": "6378840",
+      "source_offset": 259767,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 189,
+      "control_number": "13507343",
+      "source_offset": 260760,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 190,
+      "control_number": "2187568",
+      "source_offset": 262054,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 191,
+      "control_number": "8872927",
+      "source_offset": 263017,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 192,
+      "control_number": "2073023",
+      "source_offset": 264084,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 193,
+      "control_number": "13507182",
+      "source_offset": 265287,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 194,
+      "control_number": "11914273",
+      "source_offset": 266494,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 195,
+      "control_number": "14082529",
+      "source_offset": 268066,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 196,
+      "control_number": "20133296",
+      "source_offset": 270418,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 197,
+      "control_number": "18639698",
+      "source_offset": 274433,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 198,
+      "control_number": "15367745",
+      "source_offset": 276204,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 199,
+      "control_number": "15129213",
+      "source_offset": 277023,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 200,
+      "control_number": "10952398",
+      "source_offset": 279861,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 201,
+      "control_number": "4128809",
+      "source_offset": 280703,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 202,
+      "control_number": "11315491",
+      "source_offset": 281854,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 203,
+      "control_number": "10661692",
+      "source_offset": 284687,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 204,
+      "control_number": "7968905",
+      "source_offset": 285294,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 205,
+      "control_number": "13485514",
+      "source_offset": 286310,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 206,
+      "control_number": "8445533",
+      "source_offset": 287612,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 207,
+      "control_number": "14526462",
+      "source_offset": 288739,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 208,
+      "control_number": "3129840",
+      "source_offset": 290096,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 209,
+      "control_number": "16556420",
+      "source_offset": 291028,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 210,
+      "control_number": "5881390",
+      "source_offset": 292719,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 211,
+      "control_number": "15788967",
+      "source_offset": 294291,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 212,
+      "control_number": "7020387",
+      "source_offset": 296219,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 213,
+      "control_number": "11493292",
+      "source_offset": 297110,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 214,
+      "control_number": "10291825",
+      "source_offset": 299132,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 215,
+      "control_number": "335065",
+      "source_offset": 300174,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 216,
+      "control_number": "23885327",
+      "source_offset": 301208,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 217,
+      "control_number": "11493293",
+      "source_offset": 302023,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 218,
+      "control_number": "851105",
+      "source_offset": 304038,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 219,
+      "control_number": "10920634",
+      "source_offset": 305390,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 220,
+      "control_number": "21017126",
+      "source_offset": 305993,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 221,
+      "control_number": "8436478",
+      "source_offset": 306987,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 222,
+      "control_number": "11137002",
+      "source_offset": 308094,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 223,
+      "control_number": "6143586",
+      "source_offset": 313207,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 224,
+      "control_number": "9775574",
+      "source_offset": 314179,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 225,
+      "control_number": "18504236",
+      "source_offset": 315395,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 226,
+      "control_number": "6957702",
+      "source_offset": 318033,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 227,
+      "control_number": "9310049",
+      "source_offset": 319141,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 228,
+      "control_number": "14914675",
+      "source_offset": 320076,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 229,
+      "control_number": "11190422",
+      "source_offset": 321068,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 230,
+      "control_number": "12602661",
+      "source_offset": 324330,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 231,
+      "control_number": "10964951",
+      "source_offset": 327997,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 232,
+      "control_number": "4818685",
+      "source_offset": 328654,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 233,
+      "control_number": "6445681",
+      "source_offset": 329863,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 234,
+      "control_number": "1694973",
+      "source_offset": 331025,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 235,
+      "control_number": "20130157",
+      "source_offset": 332028,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 236,
+      "control_number": "2249995",
+      "source_offset": 334088,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 237,
+      "control_number": "6483346",
+      "source_offset": 335678,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 238,
+      "control_number": "6766117",
+      "source_offset": 336493,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 239,
+      "control_number": "11215720",
+      "source_offset": 337228,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 240,
+      "control_number": "11138988",
+      "source_offset": 338905,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 241,
+      "control_number": "5578739",
+      "source_offset": 343388,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 242,
+      "control_number": "3601257",
+      "source_offset": 345108,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 243,
+      "control_number": "841415",
+      "source_offset": 346066,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 244,
+      "control_number": "15453460",
+      "source_offset": 346959,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 245,
+      "control_number": "1260200",
+      "source_offset": 348601,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 246,
+      "control_number": "4361406",
+      "source_offset": 349773,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 247,
+      "control_number": "2206845",
+      "source_offset": 350839,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 248,
+      "control_number": "14386392",
+      "source_offset": 351812,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 249,
+      "control_number": "10751102",
+      "source_offset": 354291,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 250,
+      "control_number": "11898602",
+      "source_offset": 355175,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 251,
+      "control_number": "13734822",
+      "source_offset": 357931,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 252,
+      "control_number": "14012022",
+      "source_offset": 359292,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 253,
+      "control_number": "4528911",
+      "source_offset": 361141,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 254,
+      "control_number": "14954661",
+      "source_offset": 362121,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 255,
+      "control_number": "22692292",
+      "source_offset": 363419,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 256,
+      "control_number": "3961614",
+      "source_offset": 364902,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 257,
+      "control_number": "20497983",
+      "source_offset": 366219,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 258,
+      "control_number": "19005652",
+      "source_offset": 367321,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 259,
+      "control_number": "17322342",
+      "source_offset": 369256,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 260,
+      "control_number": "14947470",
+      "source_offset": 370840,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 261,
+      "control_number": "481333",
+      "source_offset": 372392,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 262,
+      "control_number": "2894435",
+      "source_offset": 374000,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 263,
+      "control_number": "in00024341322",
+      "source_offset": 375358,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 264,
+      "control_number": "19989604",
+      "source_offset": 377114,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 265,
+      "control_number": "16491278",
+      "source_offset": 377680,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 266,
+      "control_number": "12282703",
+      "source_offset": 378954,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 267,
+      "control_number": "21890765",
+      "source_offset": 380475,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 268,
+      "control_number": "1100080",
+      "source_offset": 382721,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 269,
+      "control_number": "18317740",
+      "source_offset": 384046,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 270,
+      "control_number": "11943505",
+      "source_offset": 386036,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 271,
+      "control_number": "2975992",
+      "source_offset": 387321,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 272,
+      "control_number": "11818733",
+      "source_offset": 389082,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 273,
+      "control_number": "13446750",
+      "source_offset": 390156,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 274,
+      "control_number": "13230515",
+      "source_offset": 392627,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 275,
+      "control_number": "2652216",
+      "source_offset": 394484,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 276,
+      "control_number": "7836221",
+      "source_offset": 395972,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 277,
+      "control_number": "8217229",
+      "source_offset": 397267,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 278,
+      "control_number": "7027322",
+      "source_offset": 398251,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 279,
+      "control_number": "7504633",
+      "source_offset": 399216,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 280,
+      "control_number": "8401",
+      "source_offset": 399965,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 281,
+      "control_number": "9735033",
+      "source_offset": 400703,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 282,
+      "control_number": "7415767",
+      "source_offset": 401496,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 283,
+      "control_number": "10104494",
+      "source_offset": 402304,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 284,
+      "control_number": "320964",
+      "source_offset": 403097,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 285,
+      "control_number": "9792035",
+      "source_offset": 404103,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 286,
+      "control_number": "8702401",
+      "source_offset": 405057,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 287,
+      "control_number": "8443021",
+      "source_offset": 405838,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 288,
+      "control_number": "7079254",
+      "source_offset": 406858,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 289,
+      "control_number": "7524367",
+      "source_offset": 407875,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 290,
+      "control_number": "7797260",
+      "source_offset": 408724,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 291,
+      "control_number": "7065757",
+      "source_offset": 409505,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 292,
+      "control_number": "6430440",
+      "source_offset": 410430,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 293,
+      "control_number": "7436607",
+      "source_offset": 411375,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 294,
+      "control_number": "8351347",
+      "source_offset": 412276,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 295,
+      "control_number": "10478558",
+      "source_offset": 413054,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 296,
+      "control_number": "9299137",
+      "source_offset": 413739,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 297,
+      "control_number": "8927919",
+      "source_offset": 414711,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 298,
+      "control_number": "6994938",
+      "source_offset": 415580,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 299,
+      "control_number": "8190042",
+      "source_offset": 416366,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 300,
+      "control_number": "6430303",
+      "source_offset": 417207,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 301,
+      "control_number": "9750762",
+      "source_offset": 418020,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 302,
+      "control_number": "8792058",
+      "source_offset": 418964,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 303,
+      "control_number": "8362358",
+      "source_offset": 419785,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 304,
+      "control_number": "7027543",
+      "source_offset": 420755,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 305,
+      "control_number": "9646787",
+      "source_offset": 421699,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 306,
+      "control_number": "8004778",
+      "source_offset": 422481,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 307,
+      "control_number": "11168704",
+      "source_offset": 423394,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 308,
+      "control_number": "9773361",
+      "source_offset": 426181,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 309,
+      "control_number": "5870828",
+      "source_offset": 426990,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 310,
+      "control_number": "7976586",
+      "source_offset": 427959,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 311,
+      "control_number": "8405928",
+      "source_offset": 428752,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 312,
+      "control_number": "7920367",
+      "source_offset": 429677,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 313,
+      "control_number": "8244135",
+      "source_offset": 430465,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 314,
+      "control_number": "5952630",
+      "source_offset": 431208,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 315,
+      "control_number": "701772",
+      "source_offset": 432029,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 316,
+      "control_number": "18288570",
+      "source_offset": 433946,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 317,
+      "control_number": "17424058",
+      "source_offset": 436833,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 318,
+      "control_number": "6325615",
+      "source_offset": 438806,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 319,
+      "control_number": "3451115",
+      "source_offset": 439600,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 320,
+      "control_number": "5857152",
+      "source_offset": 441064,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 321,
+      "control_number": "7736161",
+      "source_offset": 441834,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 322,
+      "control_number": "7970628",
+      "source_offset": 442628,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 323,
+      "control_number": "10950519",
+      "source_offset": 443558,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 324,
+      "control_number": "22132025",
+      "source_offset": 444317,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 325,
+      "control_number": "6315652",
+      "source_offset": 447739,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 326,
+      "control_number": "6875682",
+      "source_offset": 448664,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 327,
+      "control_number": "4104343",
+      "source_offset": 449817,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 328,
+      "control_number": "9739058",
+      "source_offset": 450678,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 329,
+      "control_number": "6875358",
+      "source_offset": 451635,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 330,
+      "control_number": "1097427",
+      "source_offset": 452985,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 331,
+      "control_number": "2997243",
+      "source_offset": 454481,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 332,
+      "control_number": "5946811",
+      "source_offset": 455999,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 333,
+      "control_number": "7403957",
+      "source_offset": 456974,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 334,
+      "control_number": "5946271",
+      "source_offset": 457765,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 335,
+      "control_number": "8333512",
+      "source_offset": 459229,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 336,
+      "control_number": "9236916",
+      "source_offset": 460189,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 337,
+      "control_number": "9298479",
+      "source_offset": 461098,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 338,
+      "control_number": "10384701",
+      "source_offset": 461972,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 339,
+      "control_number": "11326839",
+      "source_offset": 462727,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 340,
+      "control_number": "18711543",
+      "source_offset": 464720,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 341,
+      "control_number": "5901724",
+      "source_offset": 466070,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 342,
+      "control_number": "9411334",
+      "source_offset": 466927,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 343,
+      "control_number": "3139150",
+      "source_offset": 467899,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 344,
+      "control_number": "2685164",
+      "source_offset": 468911,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 345,
+      "control_number": "6454254",
+      "source_offset": 469896,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 346,
+      "control_number": "14532856",
+      "source_offset": 470900,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 347,
+      "control_number": "6096233",
+      "source_offset": 472046,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 348,
+      "control_number": "6396681",
+      "source_offset": 472863,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 349,
+      "control_number": "5760565",
+      "source_offset": 473938,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 350,
+      "control_number": "268695",
+      "source_offset": 475070,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 351,
+      "control_number": "1254044",
+      "source_offset": 477922,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 352,
+      "control_number": "19090144",
+      "source_offset": 479006,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 353,
+      "control_number": "3433335",
+      "source_offset": 480388,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 354,
+      "control_number": "4537954",
+      "source_offset": 481985,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 355,
+      "control_number": "19193063",
+      "source_offset": 482934,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 356,
+      "control_number": "18931162",
+      "source_offset": 484589,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 357,
+      "control_number": "18886822",
+      "source_offset": 485848,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 358,
+      "control_number": "231852",
+      "source_offset": 487145,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 359,
+      "control_number": "18932963",
+      "source_offset": 488543,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 360,
+      "control_number": "19033216",
+      "source_offset": 489888,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 361,
+      "control_number": "19027168",
+      "source_offset": 491236,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 362,
+      "control_number": "19051180",
+      "source_offset": 492584,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 363,
+      "control_number": "19051229",
+      "source_offset": 494079,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 364,
+      "control_number": "19033181",
+      "source_offset": 495385,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 365,
+      "control_number": "8543674",
+      "source_offset": 496662,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 366,
+      "control_number": "7883126",
+      "source_offset": 498126,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 367,
+      "control_number": "7204292",
+      "source_offset": 499261,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 368,
+      "control_number": "6267816",
+      "source_offset": 499988,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 369,
+      "control_number": "7206093",
+      "source_offset": 500728,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 370,
+      "control_number": "6483751",
+      "source_offset": 501408,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 371,
+      "control_number": "19025565",
+      "source_offset": 502405,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 372,
+      "control_number": "11197059",
+      "source_offset": 505745,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 373,
+      "control_number": "18285316",
+      "source_offset": 509512,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 374,
+      "control_number": "1256163",
+      "source_offset": 511392,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 375,
+      "control_number": "10016133",
+      "source_offset": 512429,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 376,
+      "control_number": "11277530",
+      "source_offset": 513116,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 377,
+      "control_number": "8463425",
+      "source_offset": 515011,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 378,
+      "control_number": "16092575",
+      "source_offset": 515806,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 379,
+      "control_number": "3617939",
+      "source_offset": 516648,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 380,
+      "control_number": "1003827",
+      "source_offset": 517641,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 381,
+      "control_number": "8393051",
+      "source_offset": 519169,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 382,
+      "control_number": "9348839",
+      "source_offset": 520120,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 383,
+      "control_number": "18457593",
+      "source_offset": 521069,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 384,
+      "control_number": "7907875",
+      "source_offset": 522510,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 385,
+      "control_number": "14547969",
+      "source_offset": 523561,
       "selection_reason": "random_sample",
       "notes": null
     }

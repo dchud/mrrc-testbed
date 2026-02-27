@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0226
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: bb4feca40f986924bc7f7d3dcba6cc82c92c6fcee31fe51ef83279334069d8d8
+  control_number: womenpublicinter00bern
+  source_dataset: ia_lendable
+  source_offset: 131734665
+  extracted_file: state/records/ia_lendable_0226.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1304 bytes, got 1304'
+  mrrc_error: 'Invalid record: Truncated record: expected 1304 bytes, got 1304'

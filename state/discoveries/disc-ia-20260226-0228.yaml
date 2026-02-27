@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0228
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 516ce59ba97eb168904f487cbad51c85b002ee3a056b57ae8224a2c542464cf3
+  control_number: worldbookcomplet02worl
+  source_dataset: ia_lendable
+  source_offset: 132537770
+  extracted_file: state/records/ia_lendable_0228.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 996 bytes, got 996'
+  mrrc_error: 'Invalid record: Truncated record: expected 996 bytes, got 996'

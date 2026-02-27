@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0028
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 28f5593e8928eb1068bceaf0451675c9be4a125c50c80acd6ec0e15ec884a860
+  control_number: chinupmomverses00doug
+  source_dataset: ia_lendable
+  source_offset: 21037173
+  extracted_file: state/records/ia_lendable_0028.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 737 bytes, got 737'
+  mrrc_error: 'Invalid record: Truncated record: expected 737 bytes, got 737'

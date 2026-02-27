@@ -1,146 +1,356 @@
 {
-  "source": "Watson Library CCT PDFs",
-  "source_url": "https://github.com/Thomas-J-Watson-Library/Marc-Record-Sets",
+  "source": "Internet Archive Lendable Books",
+  "source_url": "https://archive.org/details/marc_lendable_books",
   "download_date": "2026-02-26",
   "license": "Public Domain (US Government Work)",
   "records": [
     {
       "index": 0,
-      "control_number": "865509262",
-      "source_offset": 151672,
+      "control_number": "1000californiapl00guddrich",
+      "source_offset": 12250,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 1,
-      "control_number": "936626447",
-      "source_offset": 1200275,
+      "control_number": "1000sofhelpfulhi00newy",
+      "source_offset": 22076,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 2,
-      "control_number": "768968710",
-      "source_offset": 1525439,
+      "control_number": "1001floralmotifs00graf",
+      "source_offset": 28737,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 3,
-      "control_number": "1011035488",
-      "source_offset": 1582564,
+      "control_number": "1001waystosavepl00vall",
+      "source_offset": 57343,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 4,
-      "control_number": "1031279239",
-      "source_offset": 1731979,
+      "control_number": "100dastardlylitt00wein",
+      "source_offset": 75339,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 5,
-      "control_number": "1032567231",
-      "source_offset": 1766786,
+      "control_number": "100deliciousways00bood",
+      "source_offset": 76649,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 6,
-      "control_number": "1121186712",
-      "source_offset": 1878351,
+      "control_number": "100mostaskedques00myerrich",
+      "source_offset": 110098,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 7,
-      "control_number": "1157208908",
-      "source_offset": 2896234,
+      "control_number": "100mostpopularyo00drew",
+      "source_offset": 111326,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 8,
-      "control_number": "1157293727",
-      "source_offset": 2959356,
+      "control_number": "100oldtimerosesf00swen",
+      "source_offset": 114091,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 9,
-      "control_number": "1160197029",
-      "source_offset": 3096379,
+      "control_number": "100yearsagopictu00warn",
+      "source_offset": 133109,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 10,
-      "control_number": "1176280887",
-      "source_offset": 3514996,
+      "control_number": "100yearsoffootba00bron",
+      "source_offset": 136525,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 11,
-      "control_number": "1183027858",
-      "source_offset": 3778236,
+      "control_number": "100yearsofsolitu00senn",
+      "source_offset": 138079,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 12,
-      "control_number": "1187155827",
-      "source_offset": 3997895,
+      "control_number": "101sciencetricks00rich",
+      "source_offset": 203012,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 13,
-      "control_number": "1191844415",
-      "source_offset": 4119262,
+      "control_number": "101supersportsjo00stam",
+      "source_offset": 212161,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 14,
-      "control_number": "1196341148",
-      "source_offset": 4328142,
+      "control_number": "101usefulnotaryt00nati",
+      "source_offset": 223599,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 15,
-      "control_number": "1200507461",
-      "source_offset": 4557797,
+      "control_number": "101waystosaymerr00malo",
+      "source_offset": 237668,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 16,
-      "control_number": "1206358176",
-      "source_offset": 4641385,
+      "control_number": "10satsplusadvice00coll",
+      "source_offset": 286216,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 17,
-      "control_number": "1233213563",
-      "source_offset": 4862310,
+      "control_number": "12commandmentsof00good",
+      "source_offset": 317662,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 18,
-      "control_number": "1240268057",
-      "source_offset": 5168729,
+      "control_number": "13thgenabortretr00howe",
+      "source_offset": 344856,
       "selection_reason": "random_sample",
       "notes": null
     },
     {
       "index": 19,
-      "control_number": "1246634430",
-      "source_offset": 5462693,
+      "control_number": "13thjurornovelescl00lesc",
+      "source_offset": 346467,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 20,
+      "control_number": "184businessesany00reve",
+      "source_offset": 397429,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 21,
+      "control_number": "1900191002time",
+      "source_offset": 403378,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 22,
+      "control_number": "1968metropolitan00zimm",
+      "source_offset": 430406,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 23,
+      "control_number": "1981britannicabo00daum",
+      "source_offset": 484569,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 24,
+      "control_number": "198500burg",
+      "source_offset": 494417,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 25,
+      "control_number": "1986guinnessbook00boeh",
+      "source_offset": 501774,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 26,
+      "control_number": "198800lamm",
+      "source_offset": 509740,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 27,
+      "control_number": "1993greencoinboo00frie",
+      "source_offset": 551051,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 28,
+      "control_number": "1993worldbookyea00worl",
+      "source_offset": 557293,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 29,
+      "control_number": "1997annualbookof04amer",
+      "source_offset": 578077,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 30,
+      "control_number": "1john00cole",
+      "source_offset": 600727,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 31,
+      "control_number": "2020visionshealt00bezo",
+      "source_offset": 637753,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 32,
+      "control_number": "20thcenturyartso00newy",
+      "source_offset": 651951,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 33,
+      "control_number": "20thcenturytypew00less",
+      "source_offset": 665078,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 34,
+      "control_number": "3500goodquotesfo00lieb",
+      "source_offset": 771826,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 35,
+      "control_number": "365greatthingsab00bixl",
+      "source_offset": 784323,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 36,
+      "control_number": "3dialoguesbetwee00berk",
+      "source_offset": 809723,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 37,
+      "control_number": "3dplanetworldass00kuno",
+      "source_offset": 811612,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 38,
+      "control_number": "400tricksyoucand00thur",
+      "source_offset": 828206,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 39,
+      "control_number": "47creativehomest08kinn",
+      "source_offset": 851784,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 40,
+      "control_number": "501spanishverbsf00kend",
+      "source_offset": 890466,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 41,
+      "control_number": "50cardgamesforch00quin",
+      "source_offset": 900730,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 42,
+      "control_number": "50fabulousplaces00rose",
+      "source_offset": 902646,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 43,
+      "control_number": "50yeardashfeelin00gree",
+      "source_offset": 941622,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 44,
+      "control_number": "5440orfightstory00youn",
+      "source_offset": 955818,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 45,
+      "control_number": "5thofjulyplay00wils",
+      "source_offset": 971270,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 46,
+      "control_number": "6fingersoftimeot00laff",
+      "source_offset": 994746,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 47,
+      "control_number": "7daystosuccessin00bram",
+      "source_offset": 1024022,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 48,
+      "control_number": "7december1941air00arak",
+      "source_offset": 1024939,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 49,
+      "control_number": "7thavebog00bogn",
+      "source_offset": 1031476,
       "selection_reason": "random_sample",
       "notes": null
     }

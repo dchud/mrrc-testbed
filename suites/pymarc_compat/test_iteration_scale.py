@@ -36,7 +36,17 @@ class TestParallelParse:
 
     def test_parallel_parse(self) -> None:
         dataset_path = get_test_dataset("watson")
-        records = mrrc.parse_batch_parallel(str(dataset_path))
+        buffer = dataset_path.read_bytes()
+        # Find record boundaries by scanning for record terminator (0x1D)
+        boundaries = []
+        offset = 0
+        for i, b in enumerate(buffer):
+            if b == 0x1D:
+                length = i - offset + 1
+                boundaries.append((offset, length))
+                offset = i + 1
+        assert len(boundaries) > 0, "No record boundaries found"
+        records = mrrc.parse_batch_parallel(boundaries, buffer)
         assert len(records) > 0, "parse_batch_parallel returned no records"
 
 

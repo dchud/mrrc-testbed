@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0136
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 636dd0415a46c68b7a6f770aca3d9f3ffbadb005f6e0e75b0fa26d265660e2e2
+  control_number: modernastronomy00oste
+  source_dataset: ia_lendable
+  source_offset: 78998783
+  extracted_file: state/records/ia_lendable_0136.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 776 bytes, got 776'
+  mrrc_error: 'Invalid record: Truncated record: expected 776 bytes, got 776'

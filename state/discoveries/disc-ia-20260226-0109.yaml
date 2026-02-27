@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0109
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 7f6a2431923801e9b1d71f2d140e7e52e8f707562dd46f44300799d25192df86
+  control_number: innertraditionso00gray
+  source_dataset: ia_lendable
+  source_offset: 60443068
+  extracted_file: state/records/ia_lendable_0109.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 777 bytes, got 777'
+  mrrc_error: 'Invalid record: Truncated record: expected 777 bytes, got 777'

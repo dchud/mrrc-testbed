@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0062
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: e4fe83148945af9de7b5464c466ca7e92cc1551c45757b6bb8b7f2ba599a7f14
+  control_number: especiallyformor00mill
+  source_dataset: ia_lendable
+  source_offset: 37752404
+  extracted_file: state/records/ia_lendable_0062.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1045 bytes, got 1045'
+  mrrc_error: 'Invalid record: Truncated record: expected 1045 bytes, got 1045'

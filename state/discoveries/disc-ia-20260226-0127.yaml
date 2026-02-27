@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0127
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 481658fe3850981ebe091fe82092c845003650b343735b0106f1f5d7b4727270
+  control_number: lordofmarketplac00rush
+  source_dataset: ia_lendable
+  source_offset: 71910972
+  extracted_file: state/records/ia_lendable_0127.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 858 bytes, got 858'
+  mrrc_error: 'Invalid record: Truncated record: expected 858 bytes, got 858'

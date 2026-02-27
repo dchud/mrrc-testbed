@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0220
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 8e2fe83b6f8bee57f535d32900ba65a9cf4a0e9a85fab7477e74630161d15de9
+  control_number: westernjuniorlea00sera
+  source_dataset: ia_lendable
+  source_offset: 127848998
+  extracted_file: state/records/ia_lendable_0220.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 895 bytes, got 895'
+  mrrc_error: 'Invalid record: Truncated record: expected 895 bytes, got 895'

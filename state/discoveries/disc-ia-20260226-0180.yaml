@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0180
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 5f353646448a7b68f109c7f99764831774842563a211d10ee5bfba70431702fe
+  control_number: secretosdelacien00kerr
+  source_dataset: ia_lendable
+  source_offset: 105842371
+  extracted_file: state/records/ia_lendable_0180.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1201 bytes, got 1201'
+  mrrc_error: 'Invalid record: Truncated record: expected 1201 bytes, got 1201'

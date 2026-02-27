@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0005
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 3c1904bb86ffc910c912c98541de231d15ce5d4f05203de00d6b11a9173633c5
+  control_number: americanbusiness00mcgi
+  source_dataset: ia_lendable
+  source_offset: 4277319
+  extracted_file: state/records/ia_lendable_0005.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 991 bytes, got 991'
+  mrrc_error: 'Invalid record: Truncated record: expected 991 bytes, got 991'

@@ -98,11 +98,10 @@ fn read_all_records(path: &std::path::Path) -> Vec<(String, String)> {
 #[ignore]
 fn sustained_parallel_read() {
     mrrc_testbed::require_local_mode();
-    let dataset_dir = mrrc_testbed::require_dataset("watson");
-    let files = mrrc_testbed::iter_mrc_files(&dataset_dir);
+    let files = mrrc_testbed::collect_dataset_files(mrrc_testbed::DATASET_NAMES);
     assert!(
         !files.is_empty(),
-        "No .mrc files found in the watson dataset"
+        "No .mrc files found for any available dataset"
     );
     let target_file = Arc::new(files[0].clone());
 
@@ -167,11 +166,10 @@ fn sustained_parallel_read() {
 #[ignore]
 fn producer_consumer_stress() {
     mrrc_testbed::require_local_mode();
-    let dataset_dir = mrrc_testbed::require_dataset("watson");
-    let files = mrrc_testbed::iter_mrc_files(&dataset_dir);
+    let files = mrrc_testbed::collect_dataset_files(mrrc_testbed::DATASET_NAMES);
     assert!(
         !files.is_empty(),
-        "No .mrc files found in the watson dataset"
+        "No .mrc files found for any available dataset"
     );
     let target_file = &files[0];
 

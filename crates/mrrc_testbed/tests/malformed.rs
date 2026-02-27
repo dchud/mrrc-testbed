@@ -20,7 +20,6 @@
 
 use std::io::Cursor;
 use std::panic;
-use std::path::PathBuf;
 
 use mrrc::{MarcReader, RecoveryMode};
 use mrrc_testbed::discovery::DiscoveryWriter;
@@ -154,21 +153,10 @@ fn helpers_produce_valid_records() {
 fn discover_malformed_patterns() {
     mrrc_testbed::require_local_mode();
 
-    // Try watson first, then ia_lendable
-    let dataset_path = mrrc_testbed::require_dataset("watson");
-    let mrc_files = mrrc_testbed::iter_mrc_files(&dataset_path);
-
-    // If the dataset path is a file rather than a directory, use it directly
-    let files_to_scan: Vec<PathBuf> = if mrc_files.is_empty() && dataset_path.is_file() {
-        vec![dataset_path.clone()]
-    } else {
-        mrc_files
-    };
-
+    let files_to_scan = mrrc_testbed::collect_dataset_files(mrrc_testbed::DATASET_NAMES);
     assert!(
         !files_to_scan.is_empty(),
-        "No .mrc files found for dataset at {}",
-        dataset_path.display()
+        "No .mrc files found for any available dataset"
     );
 
     let mut writer = DiscoveryWriter::new("malformed", "discover_malformed_patterns");

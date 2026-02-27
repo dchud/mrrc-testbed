@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0016
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 9170b2ac5f664ed6167dde6f74fabf6d14e208c1c733519b334e54c6118bbaad
+  control_number: becomingcatholic00kill
+  source_dataset: ia_lendable
+  source_offset: 10767239
+  extracted_file: state/records/ia_lendable_0016.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 993 bytes, got 993'
+  mrrc_error: 'Invalid record: Truncated record: expected 993 bytes, got 993'

@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0112
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 8c1732ab6f178c928267353d81637ae7b18af827b9fb24c2fe3e1a5c2883e178
+  control_number: israelsbibleland00robi
+  source_dataset: ia_lendable
+  source_offset: 62727302
+  extracted_file: state/records/ia_lendable_0112.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1132 bytes, got 1132'
+  mrrc_error: 'Invalid record: Truncated record: expected 1132 bytes, got 1132'

@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0054
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 302bb64557c957ee9d22a071d9c73bf3700b30cc4a0fd41f4a62cf6148a7f56a
+  control_number: echoesmemoirsofa00kost
+  source_dataset: ia_lendable
+  source_offset: 34772965
+  extracted_file: state/records/ia_lendable_0054.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 1021 bytes, got 1021'
+  mrrc_error: 'Invalid record: Truncated record: expected 1021 bytes, got 1021'

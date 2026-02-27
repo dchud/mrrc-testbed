@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0201
+discovered_at: '2026-02-26T23:38:24'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: ef0e7edb97e6a21136b8dc2d3eabc7f74dda076ade7ebb0a91267d82ede096d0
+  control_number: storyofstarspang00mill
+  source_dataset: ia_lendable
+  source_offset: 113477947
+  extracted_file: state/records/ia_lendable_0201.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 942 bytes, got 942'
+  mrrc_error: 'Invalid record: Truncated record: expected 942 bytes, got 942'

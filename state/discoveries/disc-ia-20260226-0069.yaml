@@ -1,0 +1,16 @@
+discovery_id: disc-ia-20260226-0069
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: 1a0d978153cba8a78a9d52b4eb7b33ef29460849e3086b292f9d23e37c17063c
+  control_number: facingdeathlifea00grah
+  source_dataset: ia_lendable
+  source_offset: 39526852
+  extracted_file: state/records/ia_lendable_0069.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 877 bytes, got 877'
+  mrrc_error: 'Invalid record: Truncated record: expected 877 bytes, got 877'
