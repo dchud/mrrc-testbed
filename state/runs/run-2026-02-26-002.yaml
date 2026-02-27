@@ -1,0 +1,13 @@
+run_id: run-2026-02-26-002
+started_at: '2026-02-27T04:49:45.149224+00:00'
+completed_at: '2026-02-27T04:49:45.149224+00:00'
+environment:
+  mrrc_version: unknown
+  rust_version: ''
+  os: macos-aarch64
+results:
+  total_records: 707
+  new_discoveries: 1
+  duplicates_skipped: 706
+discovery_ids:
+- disc-2026-02-27-001

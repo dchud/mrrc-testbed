@@ -1,0 +1,16 @@
+discovery_id: disc-2026-02-27-001
+discovered_at: '2026-02-27T04:47:12.402330+00:00'
+discovered_in_run: run-2026-02-26-002
+mrrc_version: unknown
+test_suite: discovery.rs
+test_name: encoding_edge_cases
+record:
+  sha256: 2460729a0675a28b83a604e93c54b2262e2e0b6b8c2c0f49206a81a4bb6dfc05
+  control_number: unknown
+  source_dataset: ia_lendable
+  source_offset: 1040077
+  extracted_file: state/records/disc-2026-02-27-001.mrc
+error:
+  category: malformed_record
+  message: 'Invalid leader: Invalid numeric field: ''291ca'''
+  mrrc_error: 'InvalidLeader("Invalid numeric field: ''291ca''")'
