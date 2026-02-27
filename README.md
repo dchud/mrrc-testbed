@@ -1,0 +1,194 @@
+# mrrc-testbed
+
+A test harness for the [mrrc](https://github.com/dchud/mrrc) MARC record processor. Discovers bugs that curated unit test fixtures miss by running mrrc against real-world MARC data at scale.
+
+## What this tests
+
+The testbed exercises mrrc across two dimensions:
+
+- **Rust core tests**: stress testing, malformed record handling, encoding roundtrips, concurrency, and edge case discovery against large datasets
+- **Python binding tests**: pymarc API compatibility, encoding through bindings, iteration at scale
+
+Two test modes control which data is used:
+
+- **CI mode** (default): Runs against committed fixture records only (~680 KB in `data/fixtures/`). Fast, deterministic, no downloads required.
+- **Local mode** (`MRRC_TEST_MODE=local`): Runs against downloaded public datasets and optional bring-your-own data. Thorough, may take minutes.
+
+## Setup
+
+```bash
+git clone https://github.com/dchud/mrrc-testbed.git
+cd mrrc-testbed
+just setup    # cargo build, uv sync, copy .env.example -> .env
+```
+
+Prerequisites: Rust (current edition), Python 3.13+, [uv](https://docs.astral.sh/uv/), [just](https://github.com/casey/just).
+
+## Running tests
+
+### CI mode (fixtures only)
+
+```bash
+just test          # run all Rust + Python tests
+just test-rust     # Rust only
+just test-python   # Python only
+```
+
+### Local mode (full datasets)
+
+```bash
+just test-local    # all suites against downloaded data
+just test-stress   # stress tests only (with verbose output)
+just bench         # same as test-stress (alias)
+```
+
+Local-mode tests are marked `#[ignore]` in Rust and `@pytest.mark.local` in Python. They are automatically included when running `just test-local`.
+
+## Downloading datasets
+
+```bash
+just download watson        # ~20 MB, 11 files, good starting point
+just download ia_lendable   # ~129 MB, Internet Archive lendable books
+just download-verify        # check integrity of all downloaded datasets
+```
+
+Available datasets:
+
+| Name | Size | Description |
+|------|------|-------------|
+| `watson` | ~20 MB | Watson MARC test collection (11 .mrc files) |
+| `ia_lendable` | ~129 MB | Internet Archive lendable books metadata |
+| `loc_books` | ~15 GB | Library of Congress Books All (deferred) |
+| `loc_names` | ~1.5 GB | Library of Congress Name Authority File |
+| `loc_subjects` | ~1 GB | Library of Congress Subject Authority File |
+
+Downloads go to `data/downloads/` (gitignored).
+
+## Bring your own data (BYOD)
+
+Set environment variables in `.env` to point at your own MARC files:
+
+```bash
+# Override a specific dataset name
+MRRC_WATSON=/path/to/my/watson.mrc
+
+# Or set a custom directory (subdirectories should match dataset names)
+MRRC_CUSTOM_DIR=/path/to/my/marc/data
+
+# Or point to a single custom file
+MRRC_CUSTOM_DATASET=/path/to/any/file.mrc
+```
+
+The dataset priority cascade in local mode is: env override -> custom path -> downloads -> fixtures.
+
+## Discovery workflow
+
+Local-mode tests automatically scan for parsing errors and unusual records. The results flow through a two-stage pipeline:
+
+**Stage 1: Test output** (ephemeral)
+Tests write JSON to `results/discoveries/` (gitignored). This happens automatically during `just test-local`.
+
+**Stage 2: Import to state** (persistent)
+```bash
+just import        # deduplicate and convert to YAML in state/
+just discoveries   # list all discoveries
+just show disc-ia-20260226-0001   # view details of a specific discovery
+```
+
+The import step deduplicates by SHA-256 hash of the raw record bytes, so re-running tests and re-importing is safe.
+
+## Justfile recipe reference
+
+| Recipe | Description |
+|--------|-------------|
+| `just setup` | Build Rust, install Python deps, create `.env` |
+| `just test` | CI-mode tests (Rust + Python, fixtures only) |
+| `just test-local` | Local-mode tests (all datasets) |
+| `just test-rust` | Rust CI-mode tests only |
+| `just test-python` | Python CI-mode tests only |
+| `just test-stress` | Stress tests with verbose output |
+| `just bench` | Alias for `test-stress` |
+| `just lint` | Check formatting and linting (cargo fmt, clippy, ruff) |
+| `just fmt` | Auto-fix formatting |
+| `just download NAME` | Download a specific dataset |
+| `just download-verify` | Verify all downloaded datasets |
+| `just validate` | Validate committed fixtures and manifests |
+| `just import` | Import test results to persistent state |
+| `just discoveries` | List all discoveries |
+| `just show ID` | Show details of a specific discovery |
+
+## Discovery YAML format
+
+Each discovery in `state/discoveries/` is a YAML file:
+
+```yaml
+discovery_id: disc-ia-20260226-0001
+discovered_at: '2026-02-26T23:38:23'
+discovered_in_run: run-2026-02-26-001
+mrrc_version: 0.1.0
+test_suite: ia_lendable_discovery
+test_name: full_scan
+record:
+  sha256: f334f844...
+  control_number: 8087primer00palm
+  source_dataset: ia_lendable
+  source_offset: 1039123
+  extracted_file: state/records/ia_lendable_0001.mrc
+error:
+  category: truncated_record
+  message: 'Invalid record: Truncated record: expected 930 bytes, got 930'
+  mrrc_error: 'Invalid record: Truncated record: expected 930 bytes, got 930'
+```
+
+## Run YAML format
+
+Each import creates a run record in `state/runs/`:
+
+```yaml
+run_id: run-2026-02-26-001
+started_at: '2026-02-27T04:41:01'
+completed_at: '2026-02-27T04:41:01'
+environment:
+  mrrc_version: 0.1.0
+results:
+  total_records: 233
+  new_discoveries: 233
+  duplicates_skipped: 0
+discovery_ids:
+  - disc-ia-20260226-0001
+  - disc-ia-20260226-0002
+  # ...
+```
+
+## Fixture manifest format
+
+Each fixture directory contains a `manifest.json` with provenance for every committed record:
+
+```json
+[
+  {
+    "control_number": "2004436158",
+    "source": "LOC Catalog SRU",
+    "query": "bath.title=\"history\" and dc.date=\"2003\"",
+    "retrieved_at": "2026-02-27T00:15:42",
+    "record_index": 0,
+    "sha256": "a1b2c3d4..."
+  }
+]
+```
+
+Validate fixture integrity with `just validate`.
+
+## Project structure
+
+```
+crates/mrrc_testbed/     Rust test harness (lib + integration tests)
+src/mrrc_testbed/        Python package (config, datasets, state, discovery)
+suites/                  Python test suites (pymarc compat, encoding, discovery)
+scripts/                 CLI tools (download, validate, import, curate)
+data/fixtures/           Committed test records with manifest.json provenance
+data/downloads/          Gitignored large public datasets
+data/custom/             Gitignored BYOD data
+state/                   Discovery and run YAML files (committed)
+results/                 Gitignored per-run output
+```
