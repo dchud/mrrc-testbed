@@ -65,3 +65,7 @@ discoveries:
 # Show details of a specific discovery
 show ID:
     cat state/discoveries/{{ID}}.yaml
+
+# Regenerate synthetic test data in data/synthetic/
+generate-synthetic:
+    cd data/synthetic/generators && uv run python generate_all.py
