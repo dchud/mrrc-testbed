@@ -12,8 +12,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `MRRC_CUSTOM_*` → `MRRC_LOCAL_*` env vars, function names updated in Rust
   and Python
 
+### Fixed
+
+- `promote_discovery.py` now uses `extracted_file` field from discovery YAML
+  instead of constructing the path from the discovery ID, fixing lookups for
+  records with non-standard filenames
+
 ### Added
 
+- `scripts/set_mrrc_source.py` — switch mrrc dependency between local checkout
+  and released packages (`just use-local-mrrc`, `just use-released-mrrc`,
+  `just mrrc-status`)
+- `scripts/report_issue.py` — file GitHub issues on dchud/mrrc from discovery
+  YAML via `gh` CLI (`just report`)
+- Rewrote README "Verifying mrrc fixes" section with streamlined 5-step
+  workflow using the new recipes
 - Synthetic test data generators for malformed records and encoding edge cases,
   with committed `.mrc` output in `data/synthetic/`
 

@@ -89,7 +89,11 @@ def main() -> int:
     error_message = error_info.get("message")
 
     # 2. Find the extracted record file.
-    record_path = RECORDS_DIR / f"{discovery_id}.mrc"
+    extracted = record_info.get("extracted_file")
+    if extracted:
+        record_path = project_root() / extracted
+    else:
+        record_path = RECORDS_DIR / f"{discovery_id}.mrc"
     if not record_path.exists():
         print(
             f"ERROR: Record file not found: {record_path}",

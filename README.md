@@ -22,7 +22,7 @@ cd mrrc-testbed
 just setup    # cargo build, uv sync, copy .env.example -> .env
 ```
 
-Prerequisites: Rust (current edition), Python 3.13+, [uv](https://docs.astral.sh/uv/), [just](https://github.com/casey/just).
+Prerequisites: Rust (current edition), Python 3.13+, [uv](https://docs.astral.sh/uv/), [just](https://github.com/casey/just). Optional: [gh](https://cli.github.com/) (for `just report`).
 
 ## Running tests
 
@@ -97,6 +97,99 @@ just show disc-ia-20260226-0001   # view details of a specific discovery
 
 The import step deduplicates by SHA-256 hash of the raw record bytes, so re-running tests and re-importing is safe.
 
+## Verifying mrrc fixes
+
+When the testbed discovers a bug, this is the full cycle from discovery
+through fix verification to permanent regression test.
+
+### 1. Identify the problematic record
+
+After a local-mode test run, import and review discoveries:
+
+```bash
+just import
+just discoveries
+```
+
+Output:
+
+```
+ID                        Date         Category           Dataset       Control#
+disc-ia-20260226-0042     2026-02-26   truncated_record   ia_lendable   ocm12345678
+disc-2026-02-27-001       2026-02-27   malformed_record   ia_lendable   unknown
+...
+```
+
+Each row is a distinct problematic record. View full details with:
+
+```bash
+just show disc-ia-20260226-0042
+```
+
+The discovery YAML includes the error message, source dataset, byte offset,
+and path to an extracted copy of the record in `state/records/`.
+
+### 2. File the issue
+
+```bash
+just report disc-ia-20260226-0042
+```
+
+This creates a GitHub issue on `dchud/mrrc` with the error details, source
+dataset, reproduction info, and a link back to the testbed discovery.
+Copy the issue URL for the promote step later.
+
+### 3. Point testbed at the fix
+
+Once there's a fix in your local mrrc checkout (any branch):
+
+```bash
+just use-local-mrrc ../mrrc
+```
+
+This patches both the Rust and Python dependencies and confirms the switch:
+
+```
+mrrc source: local (/Users/you/mrrc)
+  Rust:   mrrc v0.7.3
+  Python: mrrc 0.7.3 (/Users/you/mrrc)
+```
+
+Check the current state at any time with:
+
+```bash
+just mrrc-status
+```
+
+### 4. Promote the discovery and verify the fix
+
+```bash
+just promote disc-ia-20260226-0042
+just test
+```
+
+The promote step copies the extracted record into `data/fixtures/edge_cases/`,
+making it a permanent regression test. CI tests validate all fixtures parse
+cleanly — if the fix works, tests pass.
+
+Optionally link the mrrc issue for provenance:
+
+```bash
+just promote disc-ia-20260226-0042 edge_cases --issue=https://github.com/dchud/mrrc/issues/42
+```
+
+### 5. Revert to released mrrc
+
+After the fix ships in a new mrrc release, update the version pins in
+`Cargo.toml` and `pyproject.toml`, then switch back:
+
+```bash
+just use-released-mrrc
+just test
+```
+
+The promoted fixture stays permanently as a regression test.
+
 ## Justfile recipe reference
 
 | Recipe | Description |
@@ -116,6 +209,11 @@ The import step deduplicates by SHA-256 hash of the raw record bytes, so re-runn
 | `just import` | Import test results to persistent state |
 | `just discoveries` | List all discoveries |
 | `just show ID` | Show details of a specific discovery |
+| `just promote ID [FIXTURE]` | Promote discovery to fixture (default: `edge_cases`) |
+| `just report ID` | File an mrrc issue from a discovery (requires `gh`) |
+| `just use-local-mrrc [PATH]` | Point testbed at a local mrrc checkout |
+| `just use-released-mrrc` | Revert to released mrrc from crates.io / PyPI |
+| `just mrrc-status` | Show which mrrc version is active |
 
 ## Discovery YAML format
 

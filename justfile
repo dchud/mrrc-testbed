@@ -66,6 +66,26 @@ discoveries:
 show ID:
     cat state/discoveries/{{ID}}.yaml
 
+# Promote a discovery to a committed fixture
+promote ID FIXTURE="edge_cases" *ARGS="":
+    uv run python scripts/promote_discovery.py {{ID}} --fixture={{FIXTURE}} {{ARGS}}
+
+# Point testbed at a local mrrc checkout for verification
+use-local-mrrc PATH="../mrrc":
+    uv run python scripts/set_mrrc_source.py local {{PATH}}
+
+# Revert to released mrrc from crates.io / PyPI
+use-released-mrrc:
+    uv run python scripts/set_mrrc_source.py released
+
+# Show which mrrc version is active (released vs local)
+mrrc-status:
+    uv run python scripts/set_mrrc_source.py status
+
+# File an mrrc issue from a discovery
+report ID:
+    uv run python scripts/report_issue.py {{ID}}
+
 # Regenerate synthetic test data in data/synthetic/
 generate-synthetic:
     cd data/synthetic/generators && uv run python generate_all.py
