@@ -269,9 +269,13 @@ def test_discover_unusual_leaders(
         results_dir=results_dir,
     )
 
-    valid_record_status = set(mrrc.Leader.RECORD_STATUS_VALUES.keys())
-    valid_record_type = set(mrrc.Leader.RECORD_TYPE_VALUES.keys())
-    valid_bib_level = set(mrrc.Leader.BIBLIOGRAPHIC_LEVEL_VALUES.keys())
+    # Standard MARC 21 leader values per LC specification.
+    valid_record_status = {"a", "c", "d", "n", "p"}
+    valid_record_type = {
+        "a", "c", "d", "e", "f", "g", "i", "j", "k", "m",
+        "o", "p", "r", "t",
+    }
+    valid_bib_level = {"a", "b", "c", "d", "i", "m", "s"}
 
     stats: dict[str, dict[str, int]] = {
         "record_status": {},

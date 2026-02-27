@@ -1,0 +1,358 @@
+{
+  "source": "Watson Library MMA Publications",
+  "source_url": "https://github.com/Thomas-J-Watson-Library/Marc-Record-Sets",
+  "download_date": "2026-02-26",
+  "license": "Public Domain (US Government Work)",
+  "records": [
+    {
+      "index": 0,
+      "control_number": "193472203",
+      "source_offset": 124952,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 1,
+      "control_number": "193474521",
+      "source_offset": 161241,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 2,
+      "control_number": null,
+      "source_offset": 513021,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 3,
+      "control_number": "1241708945",
+      "source_offset": 670280,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 4,
+      "control_number": "1381476122",
+      "source_offset": 759584,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 5,
+      "control_number": "894283685",
+      "source_offset": 1157125,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 6,
+      "control_number": "930453758",
+      "source_offset": 1587814,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 7,
+      "control_number": "895136901",
+      "source_offset": 2072220,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 8,
+      "control_number": "659034461",
+      "source_offset": 2318125,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 9,
+      "control_number": "568754980",
+      "source_offset": 2710019,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 10,
+      "control_number": "1201264702",
+      "source_offset": 2774027,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 11,
+      "control_number": "1201263479",
+      "source_offset": 3227328,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 12,
+      "control_number": "1201263791",
+      "source_offset": 3358618,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 13,
+      "control_number": "895134703",
+      "source_offset": 4175204,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 14,
+      "control_number": "1285971146",
+      "source_offset": 4241201,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 15,
+      "control_number": "856650289",
+      "source_offset": 4245358,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 16,
+      "control_number": "556774387",
+      "source_offset": 4774331,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 17,
+      "control_number": "1090145824",
+      "source_offset": 5075932,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 18,
+      "control_number": "681288129",
+      "source_offset": 5191520,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 19,
+      "control_number": "895136851",
+      "source_offset": 5427688,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 20,
+      "control_number": "895136808",
+      "source_offset": 5457100,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 21,
+      "control_number": "895136642",
+      "source_offset": 5462112,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 22,
+      "control_number": "930453754",
+      "source_offset": 5482914,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 23,
+      "control_number": "895137219",
+      "source_offset": 5583809,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 24,
+      "control_number": "895134982",
+      "source_offset": 5618322,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 25,
+      "control_number": "870715162",
+      "source_offset": 5638343,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 26,
+      "control_number": "895134980",
+      "source_offset": 5762234,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 27,
+      "control_number": "930453682",
+      "source_offset": 5869521,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 28,
+      "control_number": "1411720444",
+      "source_offset": 5978170,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 29,
+      "control_number": "1411717984",
+      "source_offset": 6139951,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 30,
+      "control_number": "1411719750",
+      "source_offset": 6293941,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 31,
+      "control_number": "499559347",
+      "source_offset": 6313133,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 32,
+      "control_number": "1500476376",
+      "source_offset": 6551772,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 33,
+      "control_number": "85220438",
+      "source_offset": 6675649,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 34,
+      "control_number": "200853968",
+      "source_offset": 6775468,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 35,
+      "control_number": "123488817",
+      "source_offset": 6872121,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 36,
+      "control_number": "809157680",
+      "source_offset": 7012037,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 37,
+      "control_number": "811595750",
+      "source_offset": 7058105,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 38,
+      "control_number": "864697672",
+      "source_offset": 7105898,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 39,
+      "control_number": "823576980",
+      "source_offset": 7175853,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 40,
+      "control_number": "823577003",
+      "source_offset": 7199951,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 41,
+      "control_number": "829059232",
+      "source_offset": 7234249,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 42,
+      "control_number": "841453350",
+      "source_offset": 7481437,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 43,
+      "control_number": "846549831",
+      "source_offset": 7485523,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 44,
+      "control_number": "851557745",
+      "source_offset": 7594889,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 45,
+      "control_number": "851557760",
+      "source_offset": 7612287,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 46,
+      "control_number": "851557796",
+      "source_offset": 7636189,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 47,
+      "control_number": "1153938265",
+      "source_offset": 7788253,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 48,
+      "control_number": "1155201497",
+      "source_offset": 7871903,
+      "selection_reason": "random_sample",
+      "notes": null
+    },
+    {
+      "index": 49,
+      "control_number": "739048371",
+      "source_offset": 8077100,
+      "selection_reason": "random_sample",
+      "notes": null
+    }
+  ]
+}

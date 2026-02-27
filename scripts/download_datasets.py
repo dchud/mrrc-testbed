@@ -4,7 +4,12 @@ import argparse
 import sys
 
 from mrrc_testbed.config import project_root
-from mrrc_testbed.download import DATASET_REGISTRY, list_datasets
+from mrrc_testbed.download import (
+    DATASET_REGISTRY,
+    download_dataset,
+    list_datasets,
+    verify_download,
+)
 
 
 def print_dataset_table() -> None:
@@ -43,13 +48,28 @@ def download_one(name: str) -> int:
         print(f"Available datasets: {', '.join(DATASET_REGISTRY)}")
         return 1
 
-    downloads_dir = project_root() / "data" / "downloads" / name
-    print(f"Downloading {name} to {downloads_dir}/...")
-    print(
-        "ERROR: Download not yet implemented. "
-        "See testbed-proposal.md for manual download instructions."
-    )
-    return 1
+    print(f"Downloading {name}...")
+    try:
+        download_dataset(name)
+    except NotImplementedError as e:
+        print(f"  {e}")
+        return 1
+    except Exception as e:
+        print(f"ERROR: Download failed: {e}", file=sys.stderr)
+        return 1
+
+    print("  Done. Verifying...")
+    if verify_download(name):
+        downloads_dir = project_root() / "data" / "downloads" / name
+        mrc_files = list(downloads_dir.glob("*.mrc"))
+        total_size = sum(f.stat().st_size for f in mrc_files)
+        size_mb = total_size / (1024 * 1024)
+        print(f"  Verified: {len(mrc_files)} .mrc file(s), {size_mb:.1f} MB")
+    else:
+        print("  WARNING: Verification failed — no .mrc files found.")
+        return 1
+
+    return 0
 
 
 def download_all() -> int:

@@ -65,7 +65,9 @@ class TestMemoryStableIteration:
             if len(sample) < sample_size:
                 titles = record.get_fields("245")
                 if titles:
-                    sample.append(str(titles[0]))
+                    subs = titles[0].subfields()
+                    text = " ".join(sf.value for sf in subs) if subs else ""
+                    sample.append(text)
 
         assert count > 100, (
             f"Expected > 100 records in watson dataset, got {count}"
