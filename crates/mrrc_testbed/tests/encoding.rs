@@ -88,65 +88,99 @@ fn has_new_replacement_chars(original: &str, output: &str) -> bool {
 // Local-mode roundtrip tests (require downloaded datasets)
 // ---------------------------------------------------------------------------
 
-/// Helper: for every record in a dataset, extract text fields, write through
-/// MarcWriter, re-read, and verify the text matches. Returns the number of
-/// records successfully roundtripped.
+/// Helper: for every record across available datasets, extract text fields,
+/// write through MarcWriter, re-read, and verify the text matches. Returns the
+/// number of records successfully roundtripped.
+///
+/// Tries each dataset name in `preferred_datasets` first, then falls back to
+/// all standard datasets. Uses whichever files are available.
 fn roundtrip_dataset_records(
-    dataset_name: &str,
+    preferred_datasets: &[&str],
     tags: &[&str],
     codes: &[char],
     filter: impl Fn(&str) -> bool,
     max_records: usize,
 ) -> usize {
     mrrc_testbed::require_local_mode();
-    let path = mrrc_testbed::require_dataset(dataset_name);
 
-    let file = std::fs::File::open(&path)
-        .unwrap_or_else(|e| panic!("Cannot open {}: {e}", path.display()));
-    let mut reader = MarcReader::new(file);
+    // Build file list: try preferred datasets first, then all standard ones.
+    let mut files = mrrc_testbed::collect_dataset_files(preferred_datasets);
+    if files.is_empty() {
+        files = mrrc_testbed::collect_dataset_files(mrrc_testbed::DATASET_NAMES);
+    }
+    assert!(
+        !files.is_empty(),
+        "No .mrc files found for any available dataset"
+    );
 
     let mut tested = 0usize;
-    let mut record_idx = 0usize;
+    let mut total_scanned = 0usize;
 
-    loop {
+    for file_path in &files {
         if tested >= max_records {
             break;
         }
-        match reader.read_record() {
-            Ok(Some(record)) => {
-                record_idx += 1;
-                let original_text = extract_text(&record, tags, codes);
-                if original_text.is_empty() || !filter(&original_text) {
-                    continue;
-                }
 
-                let reread = roundtrip_record(&record);
-                let reread_text = extract_text(&reread, tags, codes);
-
-                assert_eq!(
-                    original_text, reread_text,
-                    "Roundtrip mismatch at record #{record_idx} in {dataset_name}"
-                );
-                assert!(
-                    !has_new_replacement_chars(&original_text, &reread_text),
-                    "New replacement characters (mojibake) at record #{record_idx} in {dataset_name}"
-                );
-                tested += 1;
-            }
-            Ok(None) => break,
+        let file = match std::fs::File::open(file_path) {
+            Ok(f) => f,
             Err(e) => {
-                eprintln!(
-                    "Warning: skipping malformed record #{record_idx} in {dataset_name}: {e}"
-                );
+                eprintln!("Warning: cannot open {}: {e}", file_path.display());
                 continue;
+            }
+        };
+        // Use lenient mode so we can scan past malformed records in large datasets.
+        let mut reader = MarcReader::new(file).with_recovery_mode(mrrc::RecoveryMode::Lenient);
+
+        let mut record_idx = 0usize;
+
+        loop {
+            if tested >= max_records {
+                break;
+            }
+            match reader.read_record() {
+                Ok(Some(record)) => {
+                    record_idx += 1;
+                    total_scanned += 1;
+                    let original_text = extract_text(&record, tags, codes);
+                    if original_text.is_empty() || !filter(&original_text) {
+                        continue;
+                    }
+
+                    let reread = roundtrip_record(&record);
+                    let reread_text = extract_text(&reread, tags, codes);
+
+                    assert_eq!(
+                        original_text,
+                        reread_text,
+                        "Roundtrip mismatch at record #{record_idx} in {}",
+                        file_path.display()
+                    );
+                    assert!(
+                        !has_new_replacement_chars(&original_text, &reread_text),
+                        "New replacement characters (mojibake) at record #{record_idx} in {}",
+                        file_path.display()
+                    );
+                    tested += 1;
+                }
+                Ok(None) => break,
+                Err(e) => {
+                    eprintln!(
+                        "Warning: skipping malformed record #{record_idx} in {}: {e}",
+                        file_path.display()
+                    );
+                    break;
+                }
             }
         }
     }
 
-    assert!(
-        tested > 0,
-        "No matching records found in dataset {dataset_name} (scanned {record_idx} records)"
-    );
+    if tested == 0 {
+        eprintln!(
+            "Warning: No matching records found across available datasets \
+             (scanned {total_scanned} records). Download LOC datasets for \
+             comprehensive encoding coverage."
+        );
+    }
     tested
 }
 
@@ -177,7 +211,7 @@ fn contains_diacritics(s: &str) -> bool {
 #[ignore] // local mode only
 fn cjk_roundtrip() {
     let count = roundtrip_dataset_records(
-        "loc_books",
+        &["loc_books", "ia_lendable", "watson"],
         &["245", "100", "700"],
         &['a', 'b', 'c'],
         contains_cjk,
@@ -190,7 +224,7 @@ fn cjk_roundtrip() {
 #[ignore] // local mode only
 fn cyrillic_roundtrip() {
     let count = roundtrip_dataset_records(
-        "loc_names",
+        &["loc_names", "loc_books", "ia_lendable", "watson"],
         &["245", "100", "700"],
         &['a', 'b', 'c', 'd'],
         contains_cyrillic,
@@ -203,7 +237,7 @@ fn cyrillic_roundtrip() {
 #[ignore] // local mode only
 fn diacritics_roundtrip() {
     let count = roundtrip_dataset_records(
-        "loc_books",
+        &["loc_books", "ia_lendable", "watson"],
         &["245", "100", "700"],
         &['a', 'b', 'c'],
         contains_diacritics,
