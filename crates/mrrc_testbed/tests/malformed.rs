@@ -7,16 +7,11 @@
 //! CI tests verify that mrrc does not panic on any input and produces useful error
 //! messages. Local-mode tests use DiscoveryWriter to catalog new error patterns.
 //!
-//! ## Known upstream issues (mrrc 0.7.3)
+//! ## Resolved upstream issues
 //!
-//! The following inputs cause arithmetic overflow panics in mrrc's reader.rs:
-//! - `record_length < 24`: subtraction overflow at `record_length - 24`
-//! - `base_address < 24`: subtraction overflow at `base_address - 24`
-//!
-//! These are documented in the `upstream_subtraction_overflow_panics` test and
-//! tracked as discoveries. The `no_panics_on_any_input` test excludes inputs
-//! known to trigger these panics so that CI remains green while we track the
-//! upstream fix.
+//! - **mrrc 0.7.3**: arithmetic overflow panics on malformed leaders with
+//!   `record_length < 24` or `base_address < 24` (GitHub issue #32). Fixed on
+//!   mrrc main; inputs now included in `no_panics_on_any_input`.
 
 use std::io::Cursor;
 use std::panic;
@@ -237,79 +232,6 @@ fn discover_malformed_patterns() {
 }
 
 // ---------------------------------------------------------------------------
-// Known upstream panics -- document and verify they still exist
-// ---------------------------------------------------------------------------
-
-/// Document known upstream arithmetic overflow panics in mrrc 0.7.3.
-///
-/// mrrc's `MarcReader::read_record` computes `record_length - 24` and
-/// `base_address - 24` without overflow checks. When a malformed leader
-/// contains values < 24 for either field, this causes a panic.
-///
-/// This test verifies the panics still occur (so we know when upstream
-/// fixes them) and documents the specific inputs that trigger them.
-#[test]
-fn upstream_subtraction_overflow_panics() {
-    // Inputs that trigger `record_length - 24` overflow
-    let overflow_inputs: Vec<(&str, Vec<u8>)> = vec![
-        // record_length = 0
-        ("record_length_zero", b"00000nam  2200025   4500".to_vec()),
-        // record_length = 10 (< 24)
-        ("record_length_10", b"00010nam  2200010   4500".to_vec()),
-        // record_length = 23 (one less than leader size)
-        ("record_length_23", b"00023nam  2200023   4500".to_vec()),
-    ];
-
-    // Inputs that trigger `base_address - 24` overflow (base_address < 24)
-    let base_overflow_inputs: Vec<(&str, Vec<u8>)> = vec![
-        // base_address = 0
-        ("base_address_zero", {
-            // record_length = 25 (>= 24, so first subtraction is fine)
-            // base_address = 0 (< 24, triggers second overflow)
-            let leader = format!("{:05}nam  22{:05}   4500", 25, 0);
-            let mut v = Vec::new();
-            v.extend_from_slice(leader.as_bytes());
-            v.push(RECORD_TERMINATOR);
-            v
-        }),
-        // base_address = 10
-        ("base_address_10", {
-            let leader = format!("{:05}nam  22{:05}   4500", 30, 10);
-            let mut v = Vec::new();
-            v.extend_from_slice(leader.as_bytes());
-            // Pad to match claimed record_length - 24 = 6 more bytes
-            v.extend_from_slice(b"123456");
-            v
-        }),
-    ];
-
-    let mut panics_found = 0;
-    let mut panics_gone = 0;
-
-    for (name, input) in overflow_inputs.iter().chain(base_overflow_inputs.iter()) {
-        let result = try_read_all(input, RecoveryMode::Strict);
-        if result.is_err() {
-            panics_found += 1;
-            println!(
-                "  KNOWN UPSTREAM PANIC: '{name}' still panics (mrrc 0.7.3 subtraction overflow)"
-            );
-        } else {
-            panics_gone += 1;
-            println!("  FIXED: '{name}' no longer panics -- upstream may have fixed this");
-        }
-    }
-
-    println!();
-    println!("=== Upstream Panic Status ===");
-    println!("  Still panicking:  {panics_found}");
-    println!("  Fixed:            {panics_gone}");
-
-    // Do NOT assert -- this test documents the issue without blocking CI.
-    // When all panics are gone, we can remove this test and move the inputs
-    // into no_panics_on_any_input.
-}
-
-// ---------------------------------------------------------------------------
 // 2. no_panics_on_any_input -- CI-safe fuzz-style test
 // ---------------------------------------------------------------------------
 
@@ -317,13 +239,28 @@ fn upstream_subtraction_overflow_panics() {
 ///
 /// This is a CI-safe test that generates synthetic garbage and verifies mrrc
 /// handles it gracefully (returning Err or Ok(None)) rather than panicking.
-///
-/// Inputs known to trigger upstream panics (subtraction overflow when
-/// record_length or base_address < 24) are excluded here and documented
-/// separately in `upstream_subtraction_overflow_panics`.
 #[test]
 fn no_panics_on_any_input() {
     let malformed_inputs: Vec<(&str, Vec<u8>)> = vec![
+        // -- Leaders with record_length < 24 (previously caused overflow, fixed in mrrc #32) --
+        ("record_length_zero", b"00000nam  2200025   4500".to_vec()),
+        ("record_length_10", b"00010nam  2200010   4500".to_vec()),
+        ("record_length_23", b"00023nam  2200023   4500".to_vec()),
+        // -- Leaders with base_address < 24 (previously caused overflow, fixed in mrrc #32) --
+        ("base_address_zero", {
+            let leader = format!("{:05}nam  22{:05}   4500", 25, 0);
+            let mut v = Vec::new();
+            v.extend_from_slice(leader.as_bytes());
+            v.push(RECORD_TERMINATOR);
+            v
+        }),
+        ("base_address_10", {
+            let leader = format!("{:05}nam  22{:05}   4500", 30, 10);
+            let mut v = Vec::new();
+            v.extend_from_slice(leader.as_bytes());
+            v.extend_from_slice(b"123456");
+            v
+        }),
         // -- Empty / minimal inputs --
         ("empty", vec![]),
         ("single_byte_zero", vec![0x00]),
