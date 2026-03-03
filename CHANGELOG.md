@@ -20,9 +20,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- Git hooks: pre-commit (lint/format + beads flush) and pre-push (lint + tests
+  with known-failure filtering). Install with `just install-hooks`.
+- `state/known-failures.yaml` — allow-list for expected upstream test failures,
+  scoped by `mrrc_source` (released/local/any) so failures tied to a released
+  mrrc version don't suppress tests against a local checkout with the fix
+- `scripts/check_known_failures.py` — check, list, add, and update known
+  failures (`just known-failures`, `just check-known-failures`,
+  `just add-known-failure`)
+- CI workflow updated with known-failure filtering in rust and python jobs
+- Property-based testing with proptest (Rust) and Hypothesis (Python):
+  `arb_record()` and supporting strategies generate structurally valid MARC
+  records; binary round-trip and serialization properties verified
+- Hypothesis CI/local profiles: 200 examples in CI, 10,000 in local mode
+  (`HYPOTHESIS_PROFILE=local`)
+- `just test-properties` and `just test-properties-local` recipes
+- `scripts/compare.py` record comparison utilities (`compare_records`,
+  `diff_summary`)
+- pymarc added as dev dependency for future cross-library comparison
 - `scripts/set_mrrc_source.py` — switch mrrc dependency between local checkout
   and released packages (`just use-local-mrrc`, `just use-released-mrrc`,
-  `just mrrc-status`)
+  `just mrrc-status`). Now prints a reminder to check known-failures after
+  source switch.
 - `scripts/report_issue.py` — file GitHub issues on dchud/mrrc from discovery
   YAML via `gh` CLI (`just report`)
 - Rewrote README "Verifying mrrc fixes" section with streamlined 5-step
