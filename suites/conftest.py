@@ -1,5 +1,6 @@
 """Shared pytest fixtures and helpers for mrrc-testbed test suites."""
 
+import os
 from pathlib import Path
 
 import pytest
@@ -24,7 +25,7 @@ settings.register_profile(
     deadline=None,
     phases=[Phase.explicit, Phase.reuse, Phase.generate, Phase.shrink],
 )
-settings.load_profile("ci")
+settings.load_profile(os.environ.get("HYPOTHESIS_PROFILE", "ci"))
 
 # Re-export the local marker for convenience.
 local = pytest.mark.local

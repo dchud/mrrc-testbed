@@ -23,6 +23,16 @@ test-rust:
 test-python:
     uv run pytest suites/; status=$?; if [ $status -eq 5 ]; then exit 0; else exit $status; fi
 
+# Run property-based tests (CI mode — 256 Rust cases, 200 Hypothesis cases)
+test-properties:
+    cargo test --test properties
+    uv run pytest suites/properties/ -v
+
+# Run property-based tests (local mode — higher case counts)
+test-properties-local:
+    MRRC_TEST_MODE=local cargo test --test properties -- --include-ignored
+    HYPOTHESIS_PROFILE=local MRRC_TEST_MODE=local uv run pytest suites/properties/ -v
+
 # Run stress tests only (local mode)
 test-stress:
     MRRC_TEST_MODE=local cargo test stress -- --include-ignored --nocapture
