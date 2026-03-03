@@ -28,3 +28,6 @@ uv.lock
 
 # OS files
 .DS_Store
+
+# Abacus
+.abacus/
