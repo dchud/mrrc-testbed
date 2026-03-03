@@ -29,5 +29,8 @@ uv.lock
 # OS files
 .DS_Store
 
+# Hypothesis cache
+.hypothesis/
+
 # Abacus
 .abacus/
