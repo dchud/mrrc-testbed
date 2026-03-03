@@ -3,9 +3,28 @@
 from pathlib import Path
 
 import pytest
+from hypothesis import HealthCheck, Phase, settings
 
 from mrrc_testbed.config import get_test_mode, is_local_mode, load_config
 from mrrc_testbed.datasets import DOWNLOADS_DIR, FIXTURES_DIR, get_dataset
+
+# ---------------------------------------------------------------------------
+# Hypothesis profiles
+# ---------------------------------------------------------------------------
+
+settings.register_profile(
+    "ci",
+    max_examples=200,
+    deadline=500,
+    suppress_health_check=[HealthCheck.too_slow],
+)
+settings.register_profile(
+    "local",
+    max_examples=10_000,
+    deadline=None,
+    phases=[Phase.explicit, Phase.reuse, Phase.generate, Phase.shrink],
+)
+settings.load_profile("ci")
 
 # Re-export the local marker for convenience.
 local = pytest.mark.local
