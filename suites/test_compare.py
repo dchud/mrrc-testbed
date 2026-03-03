@@ -1,10 +1,8 @@
 """Tests for mrrc_testbed.compare record comparison utilities."""
 
 import mrrc
-import pytest
 
 from mrrc_testbed.compare import compare_records, diff_summary
-
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -16,7 +14,7 @@ def _make_record(
     control_fields: list[tuple[str, str]] | None = None,
     fields: list[mrrc.Field] | None = None,
 ) -> mrrc.Record:
-    """Build a Record with optional leader modifications, control fields, and data fields."""
+    """Build a Record with optional leader mods, control fields, and fields."""
     rec = mrrc.Record()
     if leader_mods:
         leader = rec.leader()

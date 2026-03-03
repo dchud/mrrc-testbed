@@ -174,7 +174,10 @@ def diff_summary(comparison: dict) -> str:
         elif fd["type"] == "only_in_b":
             lines.append(f"  Field {fd['index']} ({fd['tag']}): only in record B")
         elif fd["type"] == "changed":
-            tag = fd["tag_a"] if fd["tag_a"] == fd["tag_b"] else f"{fd['tag_a']}/{fd['tag_b']}"
+            if fd["tag_a"] == fd["tag_b"]:
+                tag = fd["tag_a"]
+            else:
+                tag = f"{fd['tag_a']}/{fd['tag_b']}"
             for ind_name, ind_diff in fd.get("indicators", {}).items():
                 lines.append(
                     f"  Field {fd['index']} ({tag}): "
@@ -192,7 +195,8 @@ def diff_summary(comparison: dict) -> str:
                         lines.append(
                             f"  Field {fd['index']} ({tag}): "
                             f"subfield {sd['index']}: "
-                            f"${a['code']}={a['value']!r} vs ${b['code']}={b['value']!r}"
+                            f"${a['code']}={a['value']!r} "
+                            f"vs ${b['code']}={b['value']!r}"
                         )
                 elif sd["type"] == "only_in_a":
                     lines.append(
