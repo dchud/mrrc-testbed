@@ -37,28 +37,62 @@ const SUBFIELD_CODES: &[char] = &[
 // Strategies
 // ---------------------------------------------------------------------------
 
+/// Valid values for leader position 8 (control record type).
+const CONTROL_RECORD_TYPES: &[char] = &[' ', 'a'];
+
+/// Valid values for leader position 9 (character coding scheme).
+const CHARACTER_CODINGS: &[char] = &[' ', 'a']; // ' ' = MARC-8, 'a' = UTF-8
+
+/// Valid values for leader position 17 (encoding level).
+const ENCODING_LEVELS: &[char] = &[' ', '1', '3', '7'];
+
+/// Valid values for leader position 18 (cataloging form).
+const CATALOGING_FORMS: &[char] = &[' ', 'a', 'c', 'i'];
+
+/// Valid values for leader position 19 (multipart level).
+const MULTIPART_LEVELS: &[char] = &[' ', 'a', 'b', 'c'];
+
 /// Generate a valid MARC leader.
+///
+/// Varies all semantically meaningful positions. `record_length` and
+/// `data_base_address` are set to 0 — MarcWriter overwrites them.
 fn arb_leader() -> impl Strategy<Value = Leader> {
     (
         prop::sample::select(RECORD_STATUSES),
         prop::sample::select(RECORD_TYPES),
         prop::sample::select(BIB_LEVELS),
+        prop::sample::select(CHARACTER_CODINGS),
+        prop::sample::select(CONTROL_RECORD_TYPES),
+        prop::sample::select(ENCODING_LEVELS),
+        prop::sample::select(CATALOGING_FORMS),
+        prop::sample::select(MULTIPART_LEVELS),
     )
-        .prop_map(|(status, rec_type, bib_level)| Leader {
-            record_length: 0,
-            record_status: status,
-            record_type: rec_type,
-            bibliographic_level: bib_level,
-            control_record_type: ' ',
-            character_coding: 'a', // UTF-8
-            indicator_count: 2,
-            subfield_code_count: 2,
-            data_base_address: 0,
-            encoding_level: ' ',
-            cataloging_form: ' ',
-            multipart_level: ' ',
-            reserved: "4500".to_string(),
-        })
+        .prop_map(
+            |(
+                status,
+                rec_type,
+                bib_level,
+                character_coding,
+                control_record_type,
+                encoding_level,
+                cataloging_form,
+                multipart_level,
+            )| Leader {
+                record_length: 0,
+                record_status: status,
+                record_type: rec_type,
+                bibliographic_level: bib_level,
+                control_record_type,
+                character_coding,
+                indicator_count: 2,
+                subfield_code_count: 2,
+                data_base_address: 0,
+                encoding_level,
+                cataloging_form,
+                multipart_level,
+                reserved: "4500".to_string(),
+            },
+        )
 }
 
 /// Generate a valid control field tag (001-009).
@@ -142,22 +176,6 @@ fn arb_record() -> impl Strategy<Value = Record> {
 }
 
 // ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-/// Write a record to an in-memory buffer and read it back.
-fn roundtrip(record: &Record) -> Record {
-    let mut buf = Vec::new();
-    {
-        let mut writer = MarcWriter::new(&mut buf);
-        writer.write_record(record).unwrap();
-    }
-    let cursor = Cursor::new(buf);
-    let mut reader = MarcReader::new(cursor);
-    reader.read_record().unwrap().expect("expected one record")
-}
-
-// ---------------------------------------------------------------------------
 // Property tests
 // ---------------------------------------------------------------------------
 
@@ -165,19 +183,33 @@ proptest! {
     /// Any record we can build should serialize and parse back identically.
     #[test]
     fn binary_roundtrip(record in arb_record()) {
-        let parsed = roundtrip(&record);
+        let mut buf = Vec::new();
+        {
+            let mut writer = MarcWriter::new(&mut buf);
+            writer.write_record(&record).unwrap();
+        }
+        let cursor = Cursor::new(&buf);
+        let mut reader = MarcReader::new(cursor);
+        let parsed = reader.read_record().unwrap().expect("expected one record");
 
-        // Leader fields that are semantically meaningful should match.
-        // record_length and data_base_address are recomputed by MarcWriter,
-        // so we compare the fields that carry user data.
+        // Leader: compare all semantically meaningful fields.
+        // record_length and data_base_address are recomputed by MarcWriter.
         let orig = &record.leader;
         let rt = &parsed.leader;
         prop_assert_eq!(orig.record_status, rt.record_status);
         prop_assert_eq!(orig.record_type, rt.record_type);
         prop_assert_eq!(orig.bibliographic_level, rt.bibliographic_level);
+        prop_assert_eq!(orig.control_record_type, rt.control_record_type);
         prop_assert_eq!(orig.character_coding, rt.character_coding);
+        prop_assert_eq!(orig.indicator_count, rt.indicator_count);
+        prop_assert_eq!(orig.subfield_code_count, rt.subfield_code_count);
+        prop_assert_eq!(orig.encoding_level, rt.encoding_level);
+        prop_assert_eq!(orig.cataloging_form, rt.cataloging_form);
+        prop_assert_eq!(orig.multipart_level, rt.multipart_level);
+        prop_assert_eq!(&orig.reserved, &rt.reserved);
 
         // Control fields
+        prop_assert_eq!(record.control_fields.len(), parsed.control_fields.len());
         for (tag, value) in &record.control_fields {
             let rt_value = parsed.get_control_field(tag);
             prop_assert!(
@@ -217,6 +249,10 @@ proptest! {
                 }
             }
         }
+
+        // Verify exactly one record in buffer
+        let next = reader.read_record().unwrap();
+        prop_assert!(next.is_none(), "expected exactly one record in buffer");
     }
 
     /// Serialization should always produce valid bytes (no panic, no error).

@@ -19,6 +19,7 @@ _MARC_DELIMITERS = {"\x1d", "\x1e", "\x1f"}
 _safe_marc_text = st.text(
     alphabet=st.characters(
         exclude_characters="\x00\x1d\x1e\x1f",
+        exclude_categories=("Cs",),  # exclude surrogates (not valid UTF-8)
     ),
     min_size=1,
     max_size=200,
