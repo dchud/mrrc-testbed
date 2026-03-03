@@ -44,6 +44,26 @@ just bench         # same as test-stress (alias)
 
 Local-mode tests are marked `#[ignore]` in Rust and `@pytest.mark.local` in Python. They are automatically included when running `just test-local`.
 
+## Git hooks
+
+Optional pre-commit and pre-push hooks gate commits on lint/format and pushes on tests. Test failures are checked against `state/known-failures.yaml` — known upstream mrrc failures pass through, only unexpected failures block.
+
+```bash
+just install-hooks     # symlink hooks into .git/hooks/
+just uninstall-hooks   # remove the symlinks
+```
+
+The known-failures file is scoped by `mrrc_source` (`released`, `local`, or `any`), so failures tied to a released mrrc version won't suppress the same test when running against a local checkout with the fix.
+
+```bash
+just known-failures              # show current allow-list
+just check-known-failures        # audit for stale entries
+just update-known-failures       # auto-remove stale entries
+just add-known-failure cargo test_name "mrrc #42 — description"
+```
+
+CI enforces the same known-failure checks regardless of hook installation.
+
 ## Downloading datasets
 
 ```bash
@@ -214,6 +234,12 @@ The promoted fixture stays permanently as a regression test.
 | `just use-local-mrrc [PATH]` | Point testbed at a local mrrc checkout |
 | `just use-released-mrrc` | Revert to released mrrc from crates.io / PyPI |
 | `just mrrc-status` | Show which mrrc version is active |
+| `just install-hooks` | Install git hooks (pre-commit lint, pre-push tests) |
+| `just uninstall-hooks` | Remove git hooks |
+| `just known-failures` | Show current known-failures allow-list |
+| `just check-known-failures` | Audit for stale/unexpected known failures |
+| `just update-known-failures` | Auto-remove stale known-failure entries |
+| `just add-known-failure RUNNER TEST_ID REASON` | Add a known failure entry |
 
 ## Discovery YAML format
 

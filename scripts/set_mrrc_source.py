@@ -94,6 +94,8 @@ def cmd_local(path_str: str) -> int:
     print()
     print(f"mrrc source: local ({mrrc_path})")
     _print_versions()
+    print()
+    print("Tip: Run 'just check-known-failures' to verify state/known-failures.yaml")
     return 0
 
 
@@ -126,6 +128,8 @@ def cmd_released() -> int:
     print()
     print("mrrc source: released (crates.io / PyPI)")
     _print_versions()
+    print()
+    print("Tip: Run 'just check-known-failures' to verify state/known-failures.yaml")
     return 0
 
 

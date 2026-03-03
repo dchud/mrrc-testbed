@@ -89,3 +89,30 @@ report ID:
 # Regenerate synthetic test data in data/synthetic/
 generate-synthetic:
     cd data/synthetic/generators && uv run python generate_all.py
+
+# Install git hooks (pre-commit lint + pre-push tests with known-failure filtering)
+install-hooks:
+    ln -sf ../../hooks/pre-commit .git/hooks/pre-commit
+    ln -sf ../../hooks/pre-push .git/hooks/pre-push
+    echo "Git hooks installed."
+
+# Remove git hooks
+uninstall-hooks:
+    rm -f .git/hooks/pre-commit .git/hooks/pre-push
+    echo "Git hooks removed."
+
+# Show current known-failures list
+known-failures:
+    uv run python scripts/check_known_failures.py --list
+
+# Run tests and check for unexpected/stale failures
+check-known-failures:
+    uv run python scripts/check_known_failures.py --update
+
+# Auto-remove stale entries from known-failures (entries that no longer fail)
+update-known-failures:
+    uv run python scripts/check_known_failures.py --update
+
+# Add a known failure entry (auto-fills date + mrrc_source)
+add-known-failure RUNNER TEST_ID REASON:
+    uv run python scripts/check_known_failures.py --add {{TEST_ID}} --runner {{RUNNER}} --reason "{{REASON}}"

@@ -1,0 +1,115 @@
+#!/bin/sh
+#
+# mrrc-testbed pre-push hook
+#
+# Runs lint checks and tests. Test failures are checked against the
+# known-failures allow-list (state/known-failures.yaml). Only unexpected
+# failures block the push.
+#
+# Install: just install-hooks
+# Skip:    git push --no-verify
+# Remove:  just uninstall-hooks
+
+set -e
+
+echo "=== pre-push: lint ==="
+
+# --- Lint checks (fast-fail) ---
+
+if ! cargo fmt --check 2>/dev/null; then
+    echo ""
+    echo "BLOCKED: cargo fmt check failed."
+    echo "Run 'just fmt' to auto-fix formatting."
+    exit 1
+fi
+
+if ! cargo clippy -- -D warnings 2>/dev/null; then
+    echo ""
+    echo "BLOCKED: clippy found warnings."
+    exit 1
+fi
+
+if ! uv run ruff check 2>/dev/null; then
+    echo ""
+    echo "BLOCKED: ruff check failed."
+    echo "Run 'just fmt' to auto-fix."
+    exit 1
+fi
+
+echo "Lint checks passed."
+
+# --- Rust tests ---
+
+echo ""
+echo "=== pre-push: cargo test ==="
+
+CARGO_OUTPUT=$(mktemp)
+CARGO_FAILED=""
+if ! cargo test 2>&1 | tee "$CARGO_OUTPUT"; then
+    # Extract failed test names from cargo's output
+    # cargo test prints a "failures:" section listing test names
+    CARGO_FAILED=$(awk '/^failures:$/,/^$/' "$CARGO_OUTPUT" \
+        | grep -E '^\s+\S' \
+        | sed 's/^[[:space:]]*//' \
+        | tr '\n' ',' \
+        | sed 's/,$//')
+fi
+rm -f "$CARGO_OUTPUT"
+
+# --- Python tests ---
+
+echo ""
+echo "=== pre-push: pytest ==="
+
+PYTEST_OUTPUT=$(mktemp)
+PYTEST_FAILED=""
+PYTEST_EXIT=0
+uv run pytest suites/ -m "not local" 2>&1 | tee "$PYTEST_OUTPUT" || PYTEST_EXIT=$?
+
+if [ "$PYTEST_EXIT" -ne 0 ] && [ "$PYTEST_EXIT" -ne 5 ]; then
+    # Exit code 5 = no tests collected, which is OK
+    # Extract failed test names from pytest output (FAILED lines)
+    PYTEST_FAILED=$(grep '^FAILED ' "$PYTEST_OUTPUT" \
+        | sed 's/^FAILED //' \
+        | sed 's/ -.*//' \
+        | tr '\n' ',' \
+        | sed 's/,$//')
+fi
+rm -f "$PYTEST_OUTPUT"
+
+# --- Check against known failures ---
+
+if [ -z "$CARGO_FAILED" ] && [ -z "$PYTEST_FAILED" ]; then
+    echo ""
+    echo "All tests passed."
+    exit 0
+fi
+
+echo ""
+echo "=== pre-push: checking failures against known-failures list ==="
+
+BLOCKED=0
+
+if [ -n "$CARGO_FAILED" ]; then
+    if ! uv run python scripts/check_known_failures.py \
+        --check --runner cargo --failures "$CARGO_FAILED"; then
+        BLOCKED=1
+    fi
+fi
+
+if [ -n "$PYTEST_FAILED" ]; then
+    if ! uv run python scripts/check_known_failures.py \
+        --check --runner pytest --failures "$PYTEST_FAILED"; then
+        BLOCKED=1
+    fi
+fi
+
+if [ "$BLOCKED" -eq 1 ]; then
+    echo ""
+    echo "BLOCKED: Unexpected test failures detected."
+    echo "Fix the failures, or add them to state/known-failures.yaml:"
+    echo "  just add-known-failure <runner> <test_id> \"reason\""
+    exit 1
+fi
+
+exit 0

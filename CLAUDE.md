@@ -80,3 +80,10 @@ uv run pytest suites/ -v                # verbose Python output
 - Discovery YAML in `state/discoveries/` is the canonical record; JSON in `results/` is ephemeral
 - Never commit downloaded public data, `.env` files, or `data/local/` content
 - mrrc is a **git dependency** in Cargo.toml (pinned to commit/tag) and a **pyproject.toml dependency** for Python
+
+### Git Hooks
+
+- Run `just install-hooks` to opt in to pre-commit (lint) and pre-push (lint + tests) hooks
+- `state/known-failures.yaml` is the allow-list for expected upstream test failures, scoped by `mrrc_source`
+- `just add-known-failure <runner> <test_id> "reason"` to add entries; `just check-known-failures` / `just update-known-failures` for maintenance
+- CI enforces the same known-failure checks regardless of hook installation

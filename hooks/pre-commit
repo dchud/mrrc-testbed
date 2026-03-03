@@ -1,0 +1,83 @@
+#!/bin/sh
+#
+# mrrc-testbed pre-commit hook
+#
+# Checks lint/format, then flushes beads changes.
+# Install: just install-hooks
+# Skip:    git commit --no-verify
+# Remove:  just uninstall-hooks
+
+set -e
+
+echo "=== pre-commit: lint & format ==="
+
+# --- Lint checks ---
+
+if ! cargo fmt --check 2>/dev/null; then
+    echo ""
+    echo "BLOCKED: cargo fmt check failed."
+    echo "Run 'just fmt' to auto-fix formatting."
+    exit 1
+fi
+
+if ! cargo clippy -- -D warnings 2>/dev/null; then
+    echo ""
+    echo "BLOCKED: clippy found warnings."
+    echo "Fix the issues above, then retry."
+    exit 1
+fi
+
+if ! uv run ruff check 2>/dev/null; then
+    echo ""
+    echo "BLOCKED: ruff check failed."
+    echo "Run 'just fmt' to auto-fix, or fix manually."
+    exit 1
+fi
+
+echo "Lint checks passed."
+
+# --- Beads flush ---
+# Flush pending beads changes to .beads/issues.jsonl before commit.
+
+if command -v br >/dev/null 2>&1; then
+    BEADS_CMD="br"
+elif command -v bd >/dev/null 2>&1; then
+    BEADS_CMD="bd"
+else
+    # No beads command available, skip flush
+    exit 0
+fi
+
+BEADS_DIR=""
+if git rev-parse --git-dir >/dev/null 2>&1; then
+    if [ "$(git rev-parse --git-dir)" != "$(git rev-parse --git-common-dir)" ]; then
+        # Worktree: .beads is in main repo root
+        MAIN_REPO_ROOT="$(git rev-parse --git-common-dir)"
+        MAIN_REPO_ROOT="$(dirname "$MAIN_REPO_ROOT")"
+        if [ -d "$MAIN_REPO_ROOT/.beads" ]; then
+            BEADS_DIR="$MAIN_REPO_ROOT/.beads"
+        fi
+    else
+        if [ -d .beads ]; then
+            BEADS_DIR=".beads"
+        fi
+    fi
+fi
+
+if [ -z "$BEADS_DIR" ]; then
+    exit 0
+fi
+
+if ! $BEADS_CMD sync --flush-only >/dev/null 2>&1; then
+    echo "Error: Failed to flush beads changes to JSONL" >&2
+    echo "Run '$BEADS_CMD sync --flush-only' manually to diagnose" >&2
+    exit 1
+fi
+
+if [ -f "$BEADS_DIR/issues.jsonl" ]; then
+    if [ "$(git rev-parse --git-dir)" = "$(git rev-parse --git-common-dir)" ]; then
+        git add "$BEADS_DIR/issues.jsonl" 2>/dev/null || true
+    fi
+fi
+
+exit 0
