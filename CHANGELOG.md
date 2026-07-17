@@ -8,6 +8,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Re-synced the testbed to **mrrc 0.9.1** (from 0.7.x); the suite now builds
+  and is green against both the released package and a local checkout. Bumped
+  pins to Rust `mrrc = "0.9"` and Python `mrrc>=0.9`, so the on-demand local
+  `[patch.crates-io]` written by `just use-local-mrrc` actually applies instead
+  of being silently ignored ("patch not used"). Adapted the Rust and Python
+  suites to mrrc 0.9 API changes: `control_fields` values are now repeatable
+  (`Vec<String>` in Rust; the Python plural `control_fields()` accessor was
+  removed — iterate `fields()` and filter with `is_control_field()`/`.data`),
+  `Record.leader` is now a property in Python, and `EncodingAnalysis` is
+  `#[non_exhaustive]`. Removed the now-stale `no_panics_on_any_input`
+  known-failure entry (mrrc #32 is fixed in 0.9).
 - Renamed "custom" to "local" for BYOD data: `data/custom/` → `data/local/`,
   `MRRC_CUSTOM_*` → `MRRC_LOCAL_*` env vars, function names updated in Rust
   and Python
