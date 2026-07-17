@@ -210,8 +210,8 @@ proptest! {
 
         // Control fields
         prop_assert_eq!(record.control_fields.len(), parsed.control_fields.len());
-        // Control fields are repeatable in mrrc 0.9 (values are Vec<String>);
-        // compare the full value list per tag.
+        // Control fields are repeatable (values are Vec<String>); compare
+        // the full value list per tag.
         for (tag, values) in &record.control_fields {
             let rt_values = parsed.control_fields.get(tag.as_str());
             prop_assert!(

@@ -6,7 +6,6 @@ LEADER_LENGTH = 24
 def _control_fields(record: Any) -> list[tuple[str, str]]:
     """Return (tag, value) tuples for a record's control fields.
 
-    In mrrc 0.9 the plural ``control_fields()`` accessor was removed and
     ``fields()`` yields both control and data fields; control fields are
     identified with ``is_control_field()`` and carry their value on ``.data``.
     Repeated control tags yield one tuple per value.
@@ -105,7 +104,7 @@ def compare_records(record_a: Any, record_b: Any) -> dict:
             "value": val,
         })
 
-    # Data fields (fields() also includes control fields in mrrc 0.9)
+    # Data fields (fields() also includes control fields, so filter them out)
     fields_a = _data_fields(record_a)
     fields_b = _data_fields(record_b)
     field_diffs = []

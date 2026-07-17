@@ -541,8 +541,8 @@ fn error_messages_useful() {
         // Incomplete directory entry
         ErrorCase {
             name: "incomplete directory entry",
-            // 0.9 wording: "invalid directory entry … expected complete 12-byte
-            // directory entry" (no literal "incomplete").
+            // mrrc reports this as "invalid directory entry … expected
+            // complete 12-byte directory entry" (no literal "incomplete").
             input: {
                 let base_address = 33; // 24 + 8 + 1
                 let record_length = base_address + 1;

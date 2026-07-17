@@ -38,7 +38,7 @@ class TestStringTypes:
             pytest.skip("no fixture .mrc files available")
 
         for record in fixture_records:
-            # Check control fields (fields() yields control + data in mrrc 0.9)
+            # Check control fields (fields() yields control + data)
             for field in record.fields():
                 if field.is_control_field():
                     assert isinstance(field.data, str), (
@@ -126,7 +126,7 @@ class TestEncodingQuality:
 
         violations: list[str] = []
         for record in fixture_records:
-            # Check control fields (fields() yields control + data in mrrc 0.9)
+            # Check control fields (fields() yields control + data)
             for field in record.fields():
                 if field.is_control_field() and field.data and "\ufffd" in field.data:
                     violations.append(
