@@ -117,10 +117,7 @@ fn helpers_produce_valid_records() {
         .read_record()
         .expect("valid record should parse without error")
         .expect("should return Some(record)");
-    assert_eq!(
-        record.control_fields.get("001").map(|s| s.as_str()),
-        Some("test001")
-    );
+    assert_eq!(record.get_control_field("001"), Some("test001"));
 
     let data = make_record_with_title("test002", "A Test Title");
     let cursor = Cursor::new(data);
@@ -129,10 +126,7 @@ fn helpers_produce_valid_records() {
         .read_record()
         .expect("valid record should parse without error")
         .expect("should return Some(record)");
-    assert_eq!(
-        record.control_fields.get("001").map(|s| s.as_str()),
-        Some("test002")
-    );
+    assert_eq!(record.get_control_field("001"), Some("test002"));
 }
 
 // ---------------------------------------------------------------------------
@@ -480,7 +474,7 @@ fn error_messages_useful() {
         ErrorCase {
             name: "non-digit record length",
             input: b"ABCDE nam  2200037   4500".to_vec(),
-            expected_fragments: vec!["leader", "invalid"],
+            expected_fragments: vec!["record length", "invalid"],
         },
         // Invalid leader: non-digit indicator count
         ErrorCase {
@@ -498,7 +492,7 @@ fn error_messages_useful() {
         ErrorCase {
             name: "bad base address",
             input: b"00100nam  22ABCDE   4500".to_vec(),
-            expected_fragments: vec!["leader", "invalid"],
+            expected_fragments: vec!["base address", "invalid"],
         },
         // Truncated record data (leader claims more than available)
         ErrorCase {
@@ -547,6 +541,8 @@ fn error_messages_useful() {
         // Incomplete directory entry
         ErrorCase {
             name: "incomplete directory entry",
+            // 0.9 wording: "invalid directory entry … expected complete 12-byte
+            // directory entry" (no literal "incomplete").
             input: {
                 let base_address = 33; // 24 + 8 + 1
                 let record_length = base_address + 1;
@@ -558,7 +554,7 @@ fn error_messages_useful() {
                 v.push(RECORD_TERMINATOR);
                 v
             },
-            expected_fragments: vec!["directory", "incomplete"],
+            expected_fragments: vec!["directory", "invalid"],
         },
     ];
 

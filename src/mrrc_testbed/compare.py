@@ -3,6 +3,22 @@ from typing import Any
 LEADER_LENGTH = 24
 
 
+def _control_fields(record: Any) -> list[tuple[str, str]]:
+    """Return (tag, value) tuples for a record's control fields.
+
+    In mrrc 0.9 the plural ``control_fields()`` accessor was removed and
+    ``fields()`` yields both control and data fields; control fields are
+    identified with ``is_control_field()`` and carry their value on ``.data``.
+    Repeated control tags yield one tuple per value.
+    """
+    return [(f.tag, f.data) for f in record.fields() if f.is_control_field()]
+
+
+def _data_fields(record: Any) -> list:
+    """Return a record's data (non-control) fields."""
+    return [f for f in record.fields() if not f.is_control_field()]
+
+
 def _compare_leader(leader_a, leader_b) -> dict | None:
     """Compare two leaders position by position."""
     diffs = {}
@@ -55,11 +71,11 @@ def compare_records(record_a: Any, record_b: Any) -> dict:
         "control_fields": list — control field diffs
         "fields": list — data field diffs
     """
-    leader_diff = _compare_leader(record_a.leader(), record_b.leader())
+    leader_diff = _compare_leader(record_a.leader, record_b.leader)
 
     # Control fields: list of (tag, value) tuples
-    cf_a = record_a.control_fields()
-    cf_b = record_b.control_fields()
+    cf_a = _control_fields(record_a)
+    cf_b = _control_fields(record_b)
     control_diffs = []
     min_cf = min(len(cf_a), len(cf_b))
     for i in range(min_cf):
@@ -89,9 +105,9 @@ def compare_records(record_a: Any, record_b: Any) -> dict:
             "value": val,
         })
 
-    # Data fields
-    fields_a = record_a.fields()
-    fields_b = record_b.fields()
+    # Data fields (fields() also includes control fields in mrrc 0.9)
+    fields_a = _data_fields(record_a)
+    fields_b = _data_fields(record_b)
     field_diffs = []
     min_f = min(len(fields_a), len(fields_b))
     for i in range(min_f):

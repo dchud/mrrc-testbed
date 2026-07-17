@@ -91,7 +91,7 @@ class TestRecordToDictPattern:
         _skip_if_no_records(sample_records)
         for record in sample_records:
             # Leader access
-            leader = record.leader()
+            leader = record.leader
             assert leader is not None
 
             # Iterate all fields and gather tag -> subfield data
@@ -181,8 +181,8 @@ class TestJsonRoundtrip:
         assert restored is not None
 
         # Leader should survive the round trip
-        orig_leader = record.leader()
-        rest_leader = restored.leader()
+        orig_leader = record.leader
+        rest_leader = restored.leader
         assert orig_leader is not None
         assert rest_leader is not None
         assert orig_leader.record_type == rest_leader.record_type

@@ -395,6 +395,9 @@ fn encoding_edge_cases_discovery() {
                         Ok(EncodingAnalysis::Undetermined) => {
                             // Not actionable; skip.
                         }
+                        // EncodingAnalysis is #[non_exhaustive] in mrrc 0.9; ignore
+                        // any future analysis variants.
+                        Ok(_) => {}
                         Err(e) => {
                             // Encoding analysis itself failed; log as discovery.
                             let raw_start = offset as usize;

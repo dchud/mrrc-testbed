@@ -6,9 +6,4 @@
 #
 # mrrc_source: "released", "local", or "any"
 
-failures:
-  - test_id: no_panics_on_any_input
-    runner: cargo
-    reason: "mrrc #32 — arithmetic overflow on malformed leaders (fixed on main, not in 0.7.3)"
-    added: "2026-03-02"
-    mrrc_source: released
+failures: []
