@@ -109,7 +109,7 @@ install-hooks:
 
 # Remove git hooks
 uninstall-hooks:
-    rm -f .git/hooks/pre-commit .git/hooks/pre-push
+    rm -f .git/hooks/pre-commit .git/hooks/pre-push .git/hooks/post-merge
     echo "Git hooks removed."
 
 # Show current known-failures list
