@@ -23,9 +23,6 @@ __pycache__/
 .venv/
 *.egg-info/
 
-# uv lock (generated)
-uv.lock
-
 # OS files
 .DS_Store
 
