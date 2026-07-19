@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Test harness for exercising mrrc against real-world MARC data at scale"
 requires-python = ">=3.13"
 dependencies = [
-    "mrrc>=0.7",
+    "mrrc>=0.9",
 ]
 
 [dependency-groups]

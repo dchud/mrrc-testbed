@@ -210,13 +210,15 @@ proptest! {
 
         // Control fields
         prop_assert_eq!(record.control_fields.len(), parsed.control_fields.len());
-        for (tag, value) in &record.control_fields {
-            let rt_value = parsed.get_control_field(tag);
+        // Control fields are repeatable (values are Vec<String>); compare
+        // the full value list per tag.
+        for (tag, values) in &record.control_fields {
+            let rt_values = parsed.control_fields.get(tag.as_str());
             prop_assert!(
-                rt_value.is_some(),
+                rt_values.is_some(),
                 "Control field {} missing after roundtrip", tag
             );
-            prop_assert_eq!(value.as_str(), rt_value.unwrap());
+            prop_assert_eq!(values, rt_values.unwrap());
         }
 
         // Data fields: compare tag by tag

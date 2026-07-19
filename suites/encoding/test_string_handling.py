@@ -38,11 +38,12 @@ class TestStringTypes:
             pytest.skip("no fixture .mrc files available")
 
         for record in fixture_records:
-            # Check control fields via record.control_fields()
-            for _tag, value in record.control_fields():
-                assert isinstance(value, str), (
-                    f"Control field value is {type(value)}, expected str"
-                )
+            # Check control fields (fields() yields control + data)
+            for field in record.fields():
+                if field.is_control_field():
+                    assert isinstance(field.data, str), (
+                        f"Control field value is {type(field.data)}, expected str"
+                    )
             # Check data field subfields
             for field in record.fields():
                 subs = field.subfields()
@@ -77,13 +78,13 @@ class TestStringTypes:
     def test_leader_is_accessible(
         self, fixture_records: list[mrrc.Record]
     ) -> None:
-        """record.leader() is accessible and returns a Leader object."""
+        """record.leader is accessible and returns a Leader object."""
         if not fixture_records:
             pytest.skip("no fixture .mrc files available")
 
         for record in fixture_records:
-            leader = record.leader()
-            assert leader is not None, "record.leader() returned None"
+            leader = record.leader
+            assert leader is not None, "record.leader returned None"
             # Leader is a mrrc.Leader object with properties like
             # record_type, bibliographic_level, etc.
             # str(leader) gives an object repr, not a 24-char string.
@@ -125,11 +126,11 @@ class TestEncodingQuality:
 
         violations: list[str] = []
         for record in fixture_records:
-            # Check control fields
-            for tag, value in record.control_fields():
-                if value and "\ufffd" in value:
+            # Check control fields (fields() yields control + data)
+            for field in record.fields():
+                if field.is_control_field() and field.data and "\ufffd" in field.data:
                     violations.append(
-                        f"Field {tag}: replacement char in data"
+                        f"Field {field.tag}: replacement char in data"
                     )
             # Check data field subfields
             for field in record.fields():
@@ -165,8 +166,8 @@ class TestRoundTrip:
         )
 
         for orig, reread in zip(fixture_records, reread_records):
-            orig_leader = orig.leader()
-            reread_leader = reread.leader()
+            orig_leader = orig.leader
+            reread_leader = reread.leader
             assert orig_leader is not None
             assert reread_leader is not None
             # Compare leader record_type as a proxy for leader equality
@@ -269,7 +270,7 @@ class TestLargeDatasetEncoding:
             # as a character position on the Leader object.  Fall back to
             # reading the raw bytes from the file for this specific test.
             # For now, just count records by record_type as a proxy.
-            leader = record.leader()
+            leader = record.leader
             if leader is not None and hasattr(leader, "character_coding_scheme"):
                 enc_char = leader.character_coding_scheme or "?"
             else:

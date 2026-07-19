@@ -17,7 +17,7 @@ def _make_record(
     """Build a Record with optional leader mods, control fields, and fields."""
     rec = mrrc.Record()
     if leader_mods:
-        leader = rec.leader()
+        leader = rec.leader
         for pos, char in leader_mods.items():
             leader[pos] = char
     if control_fields:

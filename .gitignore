@@ -34,3 +34,6 @@ uv.lock
 
 # Abacus
 .abacus/
+
+# Scratch (throwaway scripts, probes, downloaded LGPL sources for inspection)
+tmp/
