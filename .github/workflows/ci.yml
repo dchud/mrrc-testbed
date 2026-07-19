@@ -1,8 +1,8 @@
 name: CI
 
+# Runs on pull requests only. Direct pushes to main are gated by the local
+# pre-push hook (`just install-hooks`); Dependabot bump PRs are verified here.
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
