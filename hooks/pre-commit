@@ -39,14 +39,11 @@ echo "Lint checks passed."
 # --- Beads flush ---
 # Flush pending beads changes to .beads/issues.jsonl before commit.
 
-if command -v br >/dev/null 2>&1; then
-    BEADS_CMD="br"
-elif command -v bd >/dev/null 2>&1; then
-    BEADS_CMD="bd"
-else
-    # No beads command available, skip flush
+if ! command -v br >/dev/null 2>&1; then
+    # br not available, skip beads flush
     exit 0
 fi
+BEADS_CMD="br"
 
 BEADS_DIR=""
 if git rev-parse --git-dir >/dev/null 2>&1; then
