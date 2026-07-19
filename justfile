@@ -104,6 +104,7 @@ generate-synthetic:
 install-hooks:
     ln -sf ../../hooks/pre-commit .git/hooks/pre-commit
     ln -sf ../../hooks/pre-push .git/hooks/pre-push
+    ln -sf ../../hooks/post-merge .git/hooks/post-merge
     echo "Git hooks installed."
 
 # Remove git hooks

@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# beads (br) post-merge hook
+#
+# After a git pull or merge that updated .beads/issues.jsonl, reconcile the
+# beads database so it reflects the merged changes. This project uses br only
+# (never bd).
+
+if ! command -v br >/dev/null 2>&1; then
+    echo "Warning: br not found, skipping post-merge beads sync" >&2
+    exit 0
+fi
+
+# Locate .beads (in the main repo root, even when run from a worktree).
+BEADS_DIR=""
+if git rev-parse --git-dir >/dev/null 2>&1; then
+    if [ "$(git rev-parse --git-dir)" != "$(git rev-parse --git-common-dir)" ]; then
+        MAIN_REPO_ROOT="$(dirname "$(git rev-parse --git-common-dir)")"
+        [ -d "$MAIN_REPO_ROOT/.beads" ] && BEADS_DIR="$MAIN_REPO_ROOT/.beads"
+    elif [ -d .beads ]; then
+        BEADS_DIR=".beads"
+    fi
+fi
+
+[ -z "$BEADS_DIR" ] && exit 0
+[ -f "$BEADS_DIR/issues.jsonl" ] || exit 0
+
+# Reconcile the database with the (possibly updated) JSONL.
+if ! br sync >/dev/null 2>&1; then
+    echo "Warning: 'br sync' failed after merge; run it manually to reconcile beads" >&2
+fi
+
+exit 0
