@@ -84,7 +84,7 @@ the manifest entry in one step:
 ```
 just add-regression <path-to-input> \
     --source fuzzer --target parse_record \
-    --mrrc-sha <sha> --issue mrrc#NN \
+    --mrrc-source <version-or-sha> --issue mrrc#NN \
     --summary "one-line description of the defect"
 ```
 

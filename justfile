@@ -65,6 +65,10 @@ validate:
     uv run python scripts/validate_fixtures.py --strict
     uv run python scripts/validate_regressions.py --strict
 
+# Add a crash/regression input to data/regressions/ (see data/regressions/README.md)
+add-regression FILE *ARGS:
+    uv run python scripts/import_regression.py {{FILE}} {{ARGS}}
+
 # Import test results from results/discoveries/ into persistent state
 import:
     uv run python scripts/import_run.py results/discoveries/
