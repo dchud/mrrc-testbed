@@ -200,14 +200,23 @@ Three workstreams, partially overlapping.
    Document any cases where pymarc is clearly wrong; file upstream issues.
 3. Write a `just fuzz-seed` recipe that copies `data/fixtures/*.mrc` to a
    directory suitable for `cargo fuzz` corpus seeding.
-4. As mrrc's fuzzer finds crashes, receive the crashing inputs as new fixtures.
-   Add them to `data/fixtures/` with `manifest.json` provenance noting they
-   came from fuzzing. Run the testbed's property tests against them to verify
-   the fix.
+4. As mrrc's fuzzer finds crashes, capture each crashing input in the
+   **regression corpus** (`data/regressions/`, a committed sibling of
+   `data/fixtures/` — see its `README.md`). Use `just add-regression <file>
+   --source fuzzer --target <t> --mrrc-source <sha> --issue mrrc#NN --summary
+   "..."`; it copies the input, records provenance (sha256, target, mrrc source,
+   upstream issue), and appends a manifest entry. The CI-safe
+   `regression_inputs_no_panic` test (`crates/mrrc_testbed/tests/regressions.rs`)
+   then guards every captured input against panics across all recovery modes, and
+   `just validate` checks the manifest. These inputs are malformed by design, so
+   they live outside `data/fixtures/` to keep the fixtures' parse-clean invariant
+   intact. Never commit an external corpus's bytes verbatim — a reduction from a
+   restrictively-licensed source (e.g. marc4j) must be a license-clean minimization.
 
 **Coordination points:**
 
-- Fuzzer-found crashes flow from mrrc to testbed as new fixtures (mrrc -> testbed).
+- Fuzzer-found crashes flow from mrrc to testbed as regression-corpus inputs
+  (`data/regressions/`, captured via `just add-regression`) (mrrc -> testbed).
 - Fixture data flows from testbed to mrrc as fuzzer corpus seeds (testbed -> mrrc).
 - Strategy improvements flow from testbed to mrrc as upstreamed code (testbed -> mrrc).
 - mrrc releases with new fixes and strategies flow back (mrrc -> testbed via version bump).

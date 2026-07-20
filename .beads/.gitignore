@@ -15,3 +15,6 @@ daemon.log
 
 # Local state
 .local_version
+
+# History backups
+.br_history/
