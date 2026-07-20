@@ -119,7 +119,11 @@ impl DiscoveryWriter {
         // 1. Compute sha256
         let mut hasher = Sha256::new();
         hasher.update(raw_bytes);
-        let hash_hex = format!("{:x}", hasher.finalize());
+        let hash_hex = hasher
+            .finalize()
+            .iter()
+            .map(|b| format!("{b:02x}"))
+            .collect::<String>();
 
         // 2. Deduplicate
         if self.seen_hashes.contains(&hash_hex) {
