@@ -1,6 +1,9 @@
 # mrrc-testbed task runner
 # Run `just --list` for available recipes
 
+# Forward recipe args to commands verbatim (preserves quoting, e.g. add-regression)
+set positional-arguments
+
 # Setup — build Rust crate, install Python deps, create .env from template
 setup:
     cargo build
@@ -66,8 +69,8 @@ validate:
     uv run python scripts/validate_regressions.py --strict
 
 # Add a crash/regression input to data/regressions/ (see data/regressions/README.md)
-add-regression FILE *ARGS:
-    uv run python scripts/import_regression.py {{FILE}} {{ARGS}}
+add-regression *ARGS:
+    uv run python scripts/import_regression.py "$@"
 
 # Import test results from results/discoveries/ into persistent state
 import:

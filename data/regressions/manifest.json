@@ -1,5 +1,19 @@
 {
   "description": "Regression corpus: real-world and generated MARC inputs that once caused mrrc to mishandle a record (panic, hang, silent data loss, or a wrong/opaque error). Each committed input is a permanent regression guard. See README.md for the invariant and the provenance schema.",
   "schema_version": 1,
-  "records": []
+  "records": [
+    {
+      "filename": "crash_0001.mrc",
+      "sha256": "f2558e1a57af679a8fdc98da10b4ecdc8e778b7e50dcc5acad5a3ab2d4542d97",
+      "source": "synthetic",
+      "origin": null,
+      "fuzz_target": null,
+      "mrrc_source": "0.9.1",
+      "upstream_issue": null,
+      "discovered": "2026-07-19",
+      "crash_summary": "directory entry for 001 points to offset 99999, past end of record",
+      "expected_behavior": "no panic; parse error or recovery, no crash",
+      "notes": "Synthetic bootstrap seed for the regression intake pipeline (bd-ndx); mirrors malformed.rs dir_past_end."
+    }
+  ]
 }
