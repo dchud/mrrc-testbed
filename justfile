@@ -60,9 +60,10 @@ download NAME:
 download-verify:
     uv run python scripts/download_datasets.py --verify
 
-# Validate committed fixtures and manifests
+# Validate committed fixtures, regression corpus, and manifests
 validate:
     uv run python scripts/validate_fixtures.py --strict
+    uv run python scripts/validate_regressions.py --strict
 
 # Import test results from results/discoveries/ into persistent state
 import:
